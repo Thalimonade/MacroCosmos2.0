@@ -37,11 +37,12 @@ Chaque utilisateur doit compléter un formulaire d'information lors de l'inscrip
 
 Nous imaginons plusieurs types d'interfaces pour les utilisateurs:
 
-Interface type "Découverte" : avec une archistecture s'inspirant du modèle swipe de Tinder. L'utilisation de cette interface commence par la sélection de différents critères (champ artistique, compétence, données géographiques, etc.). Lorsque ces critères sont déterminés, des profils y correspondant sont sélectionnés et proposé aux utilisateurs sous forme de cartes à swiper.
-Interface type "Réseau" : avec un fil d'actualité permettant de rester informer sur les activités des individus faisant partie de notre réseau (soit que l'on a swipé droit soit qu'on l'on ajouté manuellement à partir d'une recherche).
-Interface "Messagerie" : permettant un premier contact (qui pourra être poursuivi sur d'autres réseaux type What'sApp, Facebook, etc.)
+- Interface type "Découverte" : avec une archistecture s'inspirant du modèle swipe de Tinder. L'utilisation de cette interface commence par la sélection de différents critères (champ artistique, compétence, données géographiques, etc.). Lorsque ces critères sont déterminés, des profils y correspondant sont sélectionnés et proposé aux utilisateurs sous forme de cartes à swiper.
+- Interface type "Réseau" : avec un fil d'actualité permettant de rester informer sur les activités des individus faisant partie de notre réseau (soit que l'on a swipé droit soit qu'on l'on ajouté manuellement à partir d'une recherche).
+- Interface "Messagerie" : permettant un premier contact (qui pourra être poursuivi sur d'autres réseaux type What'sApp, Facebook, etc.)
+
 Admin :
 
-Maintenance
-Administration
-Modération
+- Maintenance
+- Administration
+- Modération

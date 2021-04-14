@@ -1,0 +1,78 @@
+<head>
+    <title>MacroCosmos</title>
+  </head>
+  
+  <body>
+    <h1>Welcome to Acceuil Bleu !</h1>
+  
+    {{> profilPersoContact}}
+    {{> réseauVisuCarte}}
+    {{> Chat}}
+    {{> FilActuPerso}}
+  </body>
+  
+  <!-- 
+    distinguer la déclaration des templates
+            <template name="IDBio">
+            <button>Click Me</button>
+            <p>You've pressed the button {{counter}} times.</p>
+        </template>
+    leur appel
+    exemple théorique
+
+    <template name="BadgesRpzGraphiques">
+          <button>Click Me</button>
+          <p>You've pressed the button {{counter}} times.</p>
+    </template>
+
+    <template name="IDBio">
+          <button>Click Me</button>
+          {{> BadgesRpzGraphiques}}
+          {{> reseauCollab}}   
+    </template>
+
+    <template name="reseauCollab">
+      {{> réseauVisuCarte}}
+    </template>
+
+  -->
+
+<template name="profilPersoContact">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+    {> BadgesRpzGraphiques}}
+    {> IDBio}}
+    {> reseauCollab}}
+ </template>  
+
+  <template name="IDBio">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+  </template>
+
+  <template name="BadgesRpzGraphiques">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  </template>
+
+  <template name="reseauCollab">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  </template>
+
+  
+
+  <template name="réseauVisuCarte">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+  </template>
+
+  <template name="Chat">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+  </template>
+
+  <template name="FilActuPerso">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+  </template>

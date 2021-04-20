@@ -4,11 +4,41 @@
   
   <body>
     <h1>Welcome to Sign up!</h1>
-  
+
     {{> signUpPage}}
   </body>
   
   <template name="signUpPage">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
+    <p>To get started, we'll need some personal information:</p>
+    <br>
+    <input type="text" placeholder="Frist Name" class="Name">  <input type="text" placeholder="Last Name" class="Name"> 
+    <br>
+    <input type="text" placeholder="Current Location" class="Location">  <!-- On pourrait ajouter un bouton pour se geolocaliser automatiquement-->
+    <br>
+    <input type="text" placeholder="email adress" class="email">
+    <br>
+    <select name="area code " id="code-select">
+      <option value="">--Please choose an area code--</option>
+      <option value="±41">+41</option>
+      <option value="±33">+33</option>
+      <option value="+31">+31</option>
+      <option value="±44">+44</option>
+  </select> 
+    <input type="tel" placeholder="mobile number" class="phone">
+    <br>
+    <input type="password" placeholder="create password" class="password">
+    <input type="password" placeholder="verify password" class="verify">
+    <br>
+    <label for="birthday">Birthday:</label> <input type="date" id="birthday" value="1980-01-01"
+    min="1920-01-01" max="2021-01-01">
+    <br>
+    <p>Please read our following <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ffragilistic.blog%2F2018%2F01%2F16%2Fanimal-kingdom%2Fpisicute%2F&psig=AOvVaw0aR9Hj2AVxVOuRpha6VcS0&ust=1619020451056000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDg6KmXjfACFQAAAAAdAAAAABAJ">user conditions.</a> </p>
+    <br>
+    <input type="checkbox" class ="userConditions" name="userConditions">
+    <label for="userConditions">I have read and agree to the user conditions</label>
+    <br>
+    <input type="checkbox" class ="geolocation" name="geolocation">
+    <label for="geolocation">I grant MacroCosmos the access to my geolocation</label>
+    <br> <br>
+    <button>Next step</button>
   </template>

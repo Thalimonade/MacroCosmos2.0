@@ -19,44 +19,43 @@
       <input type="file" id="myFile" name="filename">
       <input type="submit">
     </form>
-    <input type="text" placeholder="Pronouns" class="Pronoms">
+    <input type="text" placeholder="PrefPronouns" class="Pronouns">
   </template>
 
   <template name="liensExt">
-    <h2>Liens vers d'autres Comptes</h2>
+    <h2>Links to other accounts</h2>
     <input type="url" name="url" id="Lien"
        placeholder="https://example.com"
        pattern="https://.*" size="30"
        required>
-    <input type="button" class="Boutton" value="Submit">
+    <input type="button" class="Button" value="Submit">
   </template>
 
   <template name="CVart">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
+
   </template>
 
   <template name= "listCategories">
-    <h2>Liste des catégories de pratiques artistiques</h2>
-    <p>Musique</p>
-    <p>Cinéma</p>
-    <p>Audio-visuel</p>
-    <p>Littérature</p>
-    <p>Théâtre</p>
-    <p>Danse</p>
-    <p>Arts Graphiques</p>
+    <h2>List of artistic practices</h2>
+    <p>Music</p>
+    <p>Cinema</p>
+    <p>Audio-visual</p>
+    <p>Literature</p>
+    <p>Theatre</p>
+    <p>Dance</p>
+    <p>Graphic Design</p>
     <p>Architecture</p>
-    <p>Mode</p>
-    <p>Modifications Corporelles</p>
+    <p>Fashion</p>
+    <p>Body Modifications</p>
     <p>Digital Art</p>
-    <p>Art Culinaire</p>
+    <p>Culinary Arts</p>
     <p>Tuning</p>
     <input name= "newCateg" type="text" placeholder="Proposer une catégorie">
-    <input type="button" class="Boutton" value="Submit">
+    <input type="submit" value="Submit">
   </template>
 
   <template name="NotesAuto">
-    <h2>Notes Autobiographiques:</h2>
+    <h2>Autobiography:</h2>
     <form action="/action_page.php">
       <input type="text" id="bio" name="NotesAuto" maxlength="500"><br><br>
       <input type="submit" value="Submit">

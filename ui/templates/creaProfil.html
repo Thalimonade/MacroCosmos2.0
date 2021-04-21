@@ -12,8 +12,15 @@
   </body>
   
   <template name="idUser">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
+    <input type="text" placeholder="Nickname" class="Pseudo">
+    <br>
+    <p>Profile Picture</p>
+    <form action="/action_page.php">
+      <input type="file" id="myFile" name="filename">
+      <input type="submit">
+    </form>
+    <br>
+    <input type="text" placeholder="Pronouns" class="Pronoms">
   </template>
 
   <template name="liensExt">

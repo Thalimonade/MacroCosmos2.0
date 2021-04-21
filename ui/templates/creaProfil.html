@@ -8,24 +8,27 @@
     {{> idUser}}
     {{> liensExt}}
     {{> CVart}}
+    {{> listCategories}}
     {{> NotesAuto}}
   </body>
   
   <template name="idUser">
     <input type="text" placeholder="Nickname" class="Pseudo">
-    <br>
-    <p>Profile Picture</p>
+    <h2>Profile Picture</h2>
     <form action="/action_page.php">
       <input type="file" id="myFile" name="filename">
       <input type="submit">
     </form>
-    <br>
     <input type="text" placeholder="Pronouns" class="Pronoms">
   </template>
 
   <template name="liensExt">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
+    <h2>Liens vers d'autres Comptes</h2>
+    <input type="url" name="url" id="Lien"
+       placeholder="https://example.com"
+       pattern="https://.*" size="30"
+       required>
+    <input type="button" class="Boutton" value="Submit">
   </template>
 
   <template name="CVart">
@@ -33,19 +36,37 @@
     <p>You've pressed the button {{counter}} times.</p>
   </template>
 
-  <template name="NotesAuto">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
+  <template name= "listCategories">
+    <h2>Liste des catégories de pratiques artistiques</h2>
+    <p>Musique</p>
+    <p>Cinéma</p>
+    <p>Audio-visuel</p>
+    <p>Littérature</p>
+    <p>Théâtre</p>
+    <p>Danse</p>
+    <p>Arts Graphiques</p>
+    <p>Architecture</p>
+    <p>Mode</p>
+    <p>Modifications Corporelles</p>
+    <p>Digital Art</p>
+    <p>Art Culinaire</p>
+    <p>Tuning</p>
+    <input name= "newCateg" type="text" placeholder="Proposer une catégorie">
+    <input type="button" class="Boutton" value="Submit">
   </template>
 
-  <br>
+  <template name="NotesAuto">
+    <h2>Notes Autobiographiques:</h2>
+    <form action="/action_page.php">
+      <input type="text" id="bio" name="NotesAuto" maxlength="500"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </template>
 
   <template name="BoutonP">
-    <button>Preview Profil</button>
-    <p>You've pressed the button {{counter}} times.</p>
+    <input type="button" class="Boutton" value="Preview">
   </template>
 
   <template name="BoutonC">
-    <button>Create Profil</button>
-    <p>You've pressed the button {{counter}} times.</p>
+    <input type="button" class="Boutton" value="Create">
   </template>

@@ -24,3 +24,4 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 kadira:flow-router
 kadira:blaze-layout
 accounts-password
+ostrio:flow-router-extra@=2.12.6

@@ -1,13 +1,45 @@
 <template name="accueilBleu">
-    <h1>Welcome to Acceuil Bleu !</h1>
+    <h1>Welcome to Accueil Bleu !</h1>
   
     {{> profilPersoContact}}
+    {{> reseauCollab}}
     {{> réseauVisuCarte}}
     {{> Chat}}
     {{> FilActuPerso}}
 </template>
-  
-  <!-- 
+
+<template name="profilPersoContact">
+  <p>Son profil et ceux de ses contacts</p>
+    <!--{> BadgesRpzGraphiques}}
+    {> IDBio}}
+    {> reseauCollab}}-->
+ </template>  
+
+<template name="IDBio">
+  <p>Biographie</p>
+</template>
+
+<template name="BadgesRpzGraphiques">
+  <p>Badges ou représentation graphique de ses capacités</p>
+</template>
+
+<template name="reseauCollab">
+  <p>Réseau des collaborations accomplies</p>
+</template>
+
+<template name="réseauVisuCarte">
+  <p>Réseau des collaborations accomplies (carte/visuel)</p>
+</template>
+
+<template name="Chat">
+  <p>Chat/discussion</p>
+</template>
+
+<template name="FilActuPerso">
+  <p>Fil d'actualité liés à ses contacts</p>
+</template>
+
+    <!-- 
     distinguer la déclaration des templates
             <template name="IDBio">
             <button>Click Me</button>
@@ -32,43 +64,3 @@
     </template>
 
   -->
-
-<template name="profilPersoContact">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-    {> BadgesRpzGraphiques}}
-    {> IDBio}}
-    {> reseauCollab}}
- </template>  
-
-  <template name="IDBio">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-  </template>
-
-  <template name="BadgesRpzGraphiques">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-  </template>
-
-  <template name="reseauCollab">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-  </template>
-
-  
-
-  <template name="réseauVisuCarte">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-  </template>
-
-  <template name="Chat">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-  </template>
-
-  <template name="FilActuPerso">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-  </template>

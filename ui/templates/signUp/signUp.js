@@ -6,9 +6,9 @@ import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 //import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
-/* 
-Template.login.events({
-	'click #nouvelle_connexion'(event, template) {
+
+Template.signUpPage.events({
+	/*'click #nouvelle_connexion'(event, template) {
 		event.preventDefault();
 		console.log(template);
 		template.nouveau.get()
@@ -26,24 +26,31 @@ Template.login.events({
 				setTimeout(() => FlowRouter.go('accueil'), 200);
 			}
 		});
-	},
+	},*/
 	'click #creer_compte'(event) {
 		event.preventDefault();
-		let nom = document.getElementById('nom_utilisateur').value;
+		let firstName = document.getElementById('firstName').value;
+        let lasttName = document.getElementById('lasttName').value;
+        let alias = document.getElementById('alias').value;
+        let email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
 		let mdp = document.getElementById('mdp').value;
-		let mdp_conf = document.getElementById('mdp_conf').value;
-		let age = document.getElementById('age').value;
-		let animal = document.getElementById('animal').value;
+		let mdpConf = document.getElementById('mdpConf').value;
+		let birthday = document.getElementById('birthday').value;
 		if (mdp.length > 5) {
-			if (mdp == mdp_conf) {
-				if (nom != '' && mdp != '' && age != '') {
+			if (mdp == mdpConf) {
+				if (firstName != '' && mdp != '' && email != '' && lastName != '' && phone != '') {
 					Accounts.createUser(
 						{
-							username: nom,
+							username: email,
 							password: mdp,
 							profile: {
-								age: age,
-								animal: animal != '' ? animal : null,
+								firstName: firstName,
+								lasttName: lasttName,
+                                alias: alias != '' ? alias : null,
+                                phone: phone,
+                                mdpConf: mdpConf,
+                                birthday: birthday
 							},
 						},
 						(error) => {
@@ -64,4 +71,4 @@ Template.login.events({
 			alert('Mot de passe trop court');
 		}
 	},
-});*/
+});

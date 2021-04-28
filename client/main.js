@@ -1,5 +1,8 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Mongo } from 'meteor/mongo';
+
+//userInfo = new Mongo.Collection('userInfo');
 
 import './main.html';
 import '../ui/templates/body/body.js';

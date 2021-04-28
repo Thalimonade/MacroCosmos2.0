@@ -25,3 +25,4 @@ kadira:flow-router
 kadira:blaze-layout
 accounts-password
 ostrio:flow-router-extra@=2.12.6
+accounts-ui

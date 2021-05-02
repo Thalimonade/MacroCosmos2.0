@@ -66,7 +66,7 @@ Template.signUpPage.events({
 				}
 			} else {
 				alert('Veuillez confirmer le mot de passe');
-			}
+			}a
 		} else {
 			alert('Mot de passe trop court');
 		}

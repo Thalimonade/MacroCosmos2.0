@@ -1,4 +1,234 @@
 body {
   padding: 10px;
-  font-family: sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background: url(https://i.pinimg.com/originals/f8/14/cd/f814cd9030f0ab158438122256745aab.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  align-content: space-around;
+}
+
+form{
+  float:center; 
+  width:300px;
+}
+
+input{
+  float:center;
+  width:150px;
+  margin-bottom:10px;
+}
+
+h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 60px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  float:center;
+  width:150px;
+  margin-bottom:10px;
+}
+
+.btn-group button {
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none;
+}
+
+.btn-group:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.Name {
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  text-align: center;
+}
+
+.Location {
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 29%;
+  text-align: center;
+}
+
+.email {
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 29%;
+  text-align: center;
+}
+
+#code-select {
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 10%;
+}
+
+.phone{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 19%;
+  text-align: center;
+}
+
+.password{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  text-align: center;
+}
+
+.verify{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  text-align: center;
+}
+
+#birthday{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  width: 22.5%; 
+  text-align: center;
+}
+
+.userConditions{
+  border:1px solid rgb(117, 0, 92);
+  background: white;
+  padding: 10px 24px; 
+}
+
+.geolocation {
+  border:1px solid rgb(117, 0, 92);
+  background: white;
+  padding: 10px 24px; 
+}
+
+.ButtonNS{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+}
+
+.container-fluid{
+  background-color: violet;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 10px;
+  cursor: pointer;
+  float: right;
+}
+
+.newCat{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 29%;
+}
+
+#map {
+  width: 800px;
+  max-width: 100%;
+  height: 500px;
+}
+
+.Mail{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 29%;
+}
+
+.pwd{
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px;
+  width: 29%;
+}
+
+.SignUp{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: center;
+}
+
+.ClickMe{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+}
+
+.LogIn{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: center;
+}
+
+.Pseudo{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  text-align: center;
+  float: left;
+}
+
+p1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  float: left;
+  margin: 0;
+}
+
+#myFile{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  float: middle;
+}
+
+.submit{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
 }

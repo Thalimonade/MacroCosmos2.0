@@ -1,29 +1,62 @@
+<head>
+    <title>MacroCosmos</title>
+  </head>
+  
+  <body>
+    <h1>Welcome to Sign up!</h1>
+
+    {{> signUpPage}}
+  </body>
+  
   <template name="signUpPage">
     <p>To get started, we'll need some personal information:</p>
     <br>
+<<<<<<< Updated upstream
     <input type="text" placeholder="Frist Name" id="firstName" class="Name"> 
     <input type="text" placeholder="Last Name" id="lastName" class="Name"> 
     <input type="text" placeholder="Alias" id="alias" class="Name"> 
+=======
+    <input type="text" placeholder="Frist Name" class="Name">  <input type="text" placeholder="Last Name" class="Name"> 
+>>>>>>> Stashed changes
     <br>
-    <input type="text" placeholder="Current Location" id="location" class="Location"> 
+    <input type="text" placeholder="Current Location" class="Location">  <!-- On pourrait ajouter un bouton pour se geolocaliser automatiquement-->
     <br>
-    <input type="text" placeholder="email adress" id="email" class="email">
+    <input type="text" placeholder="email adress" class="email">
     <br>
-    <input type="tel" placeholder="area code + mobile number" id="phone" class="phone">
+    <select name="area code " id="code-select">
+      <option value="">--Please choose an area code--</option>
+      <option value="±41">+41</option>
+      <option value="±33">+33</option>
+      <option value="+31">+31</option>
+      <option value="±44">+44</option>
+
+      <!-- Interraction scroll-down pour le choix de code de region -->
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Area Code</button>
+        </div>
+        <input type="tel" placeholder="mobile number" class="phone">
+      </div>
+
+    </select> 
     <br>
-    <input type="password" placeholder="create password" id="mdp" class="password">
-    <input type="password" placeholder="verify password" id="mdpConf" class="verify">
+    <input type="password" placeholder="create password" class="password">
+    <input type="password" placeholder="verify password" class="verify">
     <br>
     <label for="birthday">Birthday:</label> <input type="date" id="birthday" value="1980-01-01"
     min="1920-01-01" max="2021-01-01">
     <br>
     <p>Please read our following <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ffragilistic.blog%2F2018%2F01%2F16%2Fanimal-kingdom%2Fpisicute%2F&psig=AOvVaw0aR9Hj2AVxVOuRpha6VcS0&ust=1619020451056000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDg6KmXjfACFQAAAAAdAAAAABAJ">user conditions.</a> </p>
     <br>
-    <input type="checkbox" class ="userConditions" id="userConditions">
+    <input type="checkbox" class ="userConditions" name="userConditions">
     <label for="userConditions">I have read and agree to the user conditions</label>
     <br>
-    <input type="checkbox" class ="geolocation" id="geolocation">
+    <input type="checkbox" class ="geolocation" name="geolocation">
     <label for="geolocation">I grant MacroCosmos the access to my geolocation</label>
     <br> <br>
+<<<<<<< Updated upstream
     <button id="creer_compte">Next step</button>
+=======
+    <input type="button" class="ButtonNS" value="Next Step">
+>>>>>>> Stashed changes
   </template>

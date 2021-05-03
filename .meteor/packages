@@ -26,9 +26,6 @@ kadira:blaze-layout
 accounts-password
 ostrio:flow-router-extra@=2.12.6
 accounts-ui
-<<<<<<< Updated upstream
 msavin:mongol
-=======
 dburles:google-maps
 mdg:geolocation
->>>>>>> Stashed changes

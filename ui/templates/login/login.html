@@ -1,31 +1,36 @@
 <template name="login">
-    <h1>Welcome to MacroCosmos !</h1>
+  <h1>Welcome to MacroCosmos !</h1>
   
-    {{> listCategories}}
-    <br>
-    {{> LoginSignUp}}
-    <br>
-    {{> Map}}
+  {{> listCategories}}
+  <br>
+  {{> LoginSignUp}}
+  <br>
+  {{> Map}}
 </template>
-  
-  <template name="listCategories">
-    <h2>List of artstic practices</h2>
-    <p>Music</p>
-    <p>Cinema</p>
-    <p>Audio-visual</p>
-    <p>Litterature</p>
-    <p>Scenic Arts</p>
-    <p>Danse</p>
-    <p>Graphical Arts</p>
-    <p>Architecture</p>
-    <p>Mode</p>
-    <p>Body Modifications</p>
-    <p>Digital Art</p>
-    <p>Culinary Arts</p>
-    <p>Tuning</p>
-    <input name= "newCateg" type="text" placeholder="Proposer une catégorie">
-  </template>
 
+<template name="listCategories">
+  <div class="container-fluid">
+    <h2>List of artistic practices</h2>
+    <ul>
+      <li>Music</li>
+      <li>Cinema</li>
+      <li>Audio-visual</li>
+      <li>Litterature</li>
+      <li>Scenic Arts</li>
+      <li>Danse</li>
+      <li>Graphical Arts</li>
+      <li>Architecture</li>
+      <li>Mode</li>
+      <li>Body Modifications</li>
+      <li>Digital Art</li>
+      <li>Culinary Arts</li>
+      <li>Tuning</li>
+    </ul>
+    <input class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
+  </div>
+</template>
+
+<<<<<<< Updated upstream
   <template name="LoginSignUp">
     <input id="user" name="eMail" type="text" placeholder="Email adress">
     <input id="pwd" name="pwd" type="text" placeholder="Password">
@@ -35,8 +40,21 @@
     <br>
     <button>Sign Up</button>
   </template>
+=======
+<template name="LoginSignUp">
+  <input name="eMail" class= "Mail" type="text" placeholder="Email adress">
+  <input name="pwd" class="pwd" type="text" placeholder="Password">
+  <br>
+  <button class="LogIn">Log in</button>
+  <br>
+  <p> Not a registered artist yet? Help yourself and Sign up! </p>
+  <br>
+  <button class="SignUp">Sign Up</button>
+</template>
+>>>>>>> Stashed changes
 
-  <template name="Map">
-    <p>MAP</p>
-    <button>Click Me</button>
-  </template>
+<template name="Map">
+  <p>MAP</p>
+  <div id="map"></div>
+  <button>Click Me</button>
+</template>

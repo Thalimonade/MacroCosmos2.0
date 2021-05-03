@@ -30,14 +30,14 @@ Template.signUpPage.events({
 	'click #creer_compte'(event) {
 		event.preventDefault();
 		let firstName = document.getElementById('firstName').value;
-        let lasttName = document.getElementById('lasttName').value;
+        let lastName = document.getElementById('lastName').value;
         let alias = document.getElementById('alias').value;
         let email = document.getElementById('email').value;
         let phone = document.getElementById('phone').value;
 		let mdp = document.getElementById('mdp').value;
 		let mdpConf = document.getElementById('mdpConf').value;
 		let birthday = document.getElementById('birthday').value;
-		if (mdp.length > 5) {
+		 if (mdp.length > 5) {
 			if (mdp == mdpConf) {
 				if (firstName != '' && mdp != '' && email != '' && lastName != '' && phone != '') {
 					Accounts.createUser(
@@ -46,7 +46,7 @@ Template.signUpPage.events({
 							password: mdp,
 							profile: {
 								firstName: firstName,
-								lasttName: lasttName,
+								lastName: lastName,
                                 alias: alias != '' ? alias : null,
                                 phone: phone,
                                 mdpConf: mdpConf,
@@ -57,18 +57,18 @@ Template.signUpPage.events({
 							if (error) {
 								alert(error.message);
 							} else {
-								setTimeout(() => FlowRouter.go('accueil'), 200);
+								setTimeout(() => FlowRouter.go('newProfil'), 200);
 							}
 						},
 					);
 				} else {
 					alert('Veuillez renseigner les champs obligatioires');
 				}
-			} else {
+		  	} else {
 				alert('Veuillez confirmer le mot de passe');
-			}a
+			}
 		} else {
 			alert('Mot de passe trop court');
-		}
+		} 
 	},
-});
+}); 

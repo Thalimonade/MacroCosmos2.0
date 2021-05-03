@@ -33,6 +33,17 @@ h2{
   font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+  float: center;
+}
+
+h3{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+  float: left;
 }
 
 p {
@@ -215,7 +226,8 @@ p1 {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   float: left;
-  margin: 0;
+  clear:left;
+  text-align: left;
 }
 
 #myFile{
@@ -223,7 +235,35 @@ p1 {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   padding: 10px 24px;
-  float: middle;
+  float: left;
+  clear: left;
+}
+
+.Pronouns{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  text-align: center;
+  clear:left;
+  float: left;
+}
+
+.container{
+  background-color: violet;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.container2{
+  background-color: violet;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .submit{
@@ -231,4 +271,62 @@ p1 {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   padding: 10px 24px;
+  float: left;
+  clear: left;
+}
+
+.Lien{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  text-align: center;
+}
+
+.Button{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+}
+
+#experienceTitle{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  text-align: center; 
+}
+
+#details{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  text-align: center;
+}
+
+#bio{
+  font-family: 'Times New Roman', Times, serif;
+  border:1px solid rgb(117, 0, 92);
+  padding: 10px 24px; 
+  text-align: center;
+  size: 50%;
+  cursor: pointer;
+  float: center;
+  clear: left;
+}
+
+.preview{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: center; 
+}
+
+.create{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left; 
 }

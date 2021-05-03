@@ -1,60 +1,64 @@
 <template name="creationProfil">
-    <h1>Welcome to Create Profile!</h1>
+  <h1>Welcome to Create Profile!</h1>
   
-    {{> idUser}}
-    {{> liensExt}}
-    {{> CVart}}
-    {{> listCategories}}
-    {{> NotesAuto}}
+  {{> idUser}}
+  {{> liensExt}}
+  {{> CVart}}
+  {{> listCategories}}
+  {{> NotesAuto}}
 </template>
-  
-  <template name="idUser">
-    <input type="text" placeholder="Nickname" class="Pseudo">
-    <br>
-    <br>
-    <p1>Profile Picture</p1>
-    <form action="/action_page.php">
-      <input type="file" id="myFile" name="filename">
-      <input type="submit" class="submit">
-    </form>
-    <input type="text" placeholder="PrefPronouns" class="Pronouns">
-  </template>
 
-  <template name="liensExt">
+<template name="idUser">
+  <input type="text" placeholder="Nickname" class="Pseudo">
+  <p1>Profile Picture</p1>
+  <form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+  </form>
+  <input type="text" placeholder="PrefPronouns" class="Pronouns">
+  <input type="button" class="submit" value="Submit">
+</template>
+
+<template name="liensExt">
+  <div class="container">
     <h2>Links to other accounts</h2>
-    <input type="url" name="url" id="Lien"
-       placeholder="https://example.com"
-       pattern="https://.*" size="30"
-       required>
+    <input type="url" name="url" class="Lien"
+    placeholder="https://example.com"
+    pattern="https://.*" size="30"
+    required>
     <input type="button" class="Button" value="Submit">
-  </template>
+  </div>
+</template>
 
-  <template name="CVart">
+<template name="CVart">
+  <div class="container">
     <h2>Artistic Resume</h2>
-      <dl>
-        <dt>
-          <input type="text" name="experience" id="experienceTitle"> 
-        </dt>
-        <br>
-        <dd>
-          <input type="text" name="description" id="details">
-        </dd>
-      </dl>
-      <input type="button" class="Button" value="Submit">
-  </template>
+    <dl>
+      <dt>
+        <input type="text" name="experience" id="experienceTitle"> 
+      </dt>
+      <br>
+      <dd>
+        <input type="text" name="description" id="details">
+      </dd>
+    </dl>
+    <input type="button" class="Button" value="Submit">
+  </div>
+</template>
 
-  <template name="NotesAuto">
-    <h2>Autobiography:</h2>
-    <form action="/action_page.php">
-      <input type="text" id="bio" name="NotesAuto" maxlength="500"><br><br>
-      <input type="submit" value="Submit">
-    </form>
-  </template>
+<template name="NotesAuto">
+  <h3>Autobiography:</h3>
+  <form action="/action_page.php">
+    <textarea class="bio" name="bio"
+    rows="5" cols="33" maxlength="500">
+  </textarea>
+  <button class="Button">Submit</button>
+</form>
+</template>
 
-  <template name="BoutonP">
-    <input type="button" class="Boutton" value="Preview">
-  </template>
+<template name="BoutonP">
+  <button class= "preview">Preview</button>
+</template>
 
-  <template name="BoutonC">
-    <input type="button" class="Boutton" value="Create">
-  </template>
+<template name="BoutonC">
+  <button class="create">Create</button>
+</template>

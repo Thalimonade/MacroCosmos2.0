@@ -9,7 +9,7 @@ import './login.html';
 Template.LoginSignUp.events({
     'click #LogIn'(event) {
 		event.preventDefault();
-		let nom = document.getElementById('user').value;
+		let nom = document.getElementById('eMail').value;
 		let mdp = document.getElementById('pwd').value;
 		Meteor.loginWithPassword(nom, mdp, (error) => {
 			if (error) {

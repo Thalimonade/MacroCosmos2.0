@@ -6,11 +6,11 @@
     <h1>Let's sign you up!</h1>
     <p>To get started, we'll need some personal information:</p>
     <br>
-    <input type="text" placeholder="Frist Name" class="Name">  <input type="text" placeholder="Last Name" class="Name"> 
+    <input id="firstName" type="text" placeholder="Frist Name" class="Name">  <input  id="lastName" type="text" placeholder="Last Name" class="Name"> 
     <br>
-    <input type="text" placeholder="Current Location" class="Location">  <!-- On pourrait ajouter un bouton pour se geolocaliser automatiquement-->
+    <input id="Location" type="text" placeholder="Current Location" class="Location">  <!-- On pourrait ajouter un bouton pour se geolocaliser automatiquement-->
     <br>
-    <input type="text" placeholder="email adress" class="email">
+    <input id="email" type="text" placeholder="email adress" class="email">
     <br>
     <select name="area code " id="code-select">
       <option value="">--Please choose an area code--</option>
@@ -24,13 +24,13 @@
         <div class="input-group-prepend">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Area Code</button>
         </div>
-        <input type="tel" placeholder="mobile number" class="phone">
+        <input id= "phone" type="tel" placeholder="mobile number" class="phone">
       </div>
 
     </select> 
     <br>
-    <input type="password" placeholder="create password" class="password">
-    <input type="password" placeholder="verify password" class="verify">
+    <input id="mdp" type="password" placeholder="create password" class="password">
+    <input id="mdpConf" type="password" placeholder="verify password" class="verify">
     <br>
     <label for="birthday">Birthday:</label> <input type="date" id="birthday" value="1980-01-01"
     min="1920-01-01" max="2021-01-01">

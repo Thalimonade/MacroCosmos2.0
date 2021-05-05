@@ -31,7 +31,7 @@ Template.signUpPage.events({
 		event.preventDefault();
 		let firstName = document.getElementById('firstName').value;
         let lastName = document.getElementById('lastName').value;
-        let alias = document.getElementById('alias').value;
+        //let alias = document.getElementById('alias').value;
         let email = document.getElementById('email').value;
         let phone = document.getElementById('phone').value;
 		let mdp = document.getElementById('mdp').value;
@@ -47,7 +47,7 @@ Template.signUpPage.events({
 							profile: {
 								firstName: firstName,
 								lastName: lastName,
-                                alias: alias != '' ? alias : null,
+                                //alias: alias != '' ? alias : null,
                                 phone: phone,
                                 mdpConf: mdpConf,
                                 birthday: birthday

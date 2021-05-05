@@ -7,7 +7,7 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import './login.html';
 
 Template.LoginSignUp.events({
-    'click #logIn'(event) {
+    'click #LogIn'(event) {
 		event.preventDefault();
 		let nom = document.getElementById('user').value;
 		let mdp = document.getElementById('pwd').value;
@@ -18,5 +18,9 @@ Template.LoginSignUp.events({
 				setTimeout(() => FlowRouter.go('Ableu'), 200);
 			}
 		});
+	},
+	'click #SignUp'(event) {
+		event.preventDefault();
+		setTimeout(() => FlowRouter.go('signUpP'), 200);
 	},
 })

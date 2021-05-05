@@ -21,11 +21,12 @@
 <template name="liensExt">
   <div class="container">
     <h2>Links to other accounts</h2>
-    <input id="plateforme" type="text">
+    <input id="plateforme" type="text" placeholder="name of the site">
     <input id="liens" type="url" name="url" class="Lien"
     placeholder="https://example.com"
     pattern="https://.*" size="30"
     required>
+    <br>
     <input id="submitLiens" type="button" class="Button" value="Submit">
   </div>
 </template>
@@ -35,24 +36,24 @@
     <h2>Artistic Resume</h2>
     <dl>
       <dt>
-        <input type="text" name="experience" id="experienceTitle"> 
+        <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
       </dt>
       <br>
       <dd>
-        <input type="text" name="description" id="details">
+        <input type="text" name="description" id="details" placeholder="Experience details">
       </dd>
     </dl>
-    <input type="button" class="Button" value="Submit">
+    <input id= "submitExp" type="button" class="Button" value="Submit">
   </div>
 </template>
 
 <template name="NotesAuto">
   <h3>Autobiography:</h3>
   <form action="/action_page.php">
-    <textarea class="bio" name="bio"
+    <textarea id="autoBio" class="bio" name="bio"
     rows="5" cols="33" maxlength="500">
   </textarea>
-  <button class="Button">Submit</button>
+  <button id="submitBio" class="Button">Submit</button>
 </form>
 </template>
 

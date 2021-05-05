@@ -24,7 +24,7 @@ Template.LoginSignUp.events({
 		event.preventDefault();
 		setTimeout(() => FlowRouter.go('signUpP'), 200);
 	},
-})
+}) 
 
 
 Template.LoginSignUp.events({

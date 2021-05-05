@@ -20,6 +20,18 @@ Template.LoginSignUp.events({
 			}
 		});
 	},
+
+'click #SignUp'(event) {
+		event.preventDefault();
+		setTimeout(() => FlowRouter.go('signUpP'), 200);
+	},
+})
+
+
+Template.LoginSignUp.events({
+    'click #Suggest'(event) {
+		
+	},
 })
 
 Meteor.startup(function() {
@@ -42,15 +54,3 @@ Template.map.onCreated(function() {
 	   console.log("I'm ready!");
 	});
   });
-	'click #SignUp'(event) {
-		event.preventDefault();
-		setTimeout(() => FlowRouter.go('signUpP'), 200);
-	},
-})
-
-
-Template.LoginSignUp.events({
-    'click #Suggest'(event) {
-		
-	},
-})

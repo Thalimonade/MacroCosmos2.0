@@ -4,12 +4,13 @@ import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
+
 import './login.html';
 
 Template.LoginSignUp.events({
-    'click #logIn'(event) {
+    'click #LogIn'(event) {
 		event.preventDefault();
-		let nom = document.getElementById('user').value;
+		let nom = document.getElementById('eMail').value;
 		let mdp = document.getElementById('pwd').value;
 		Meteor.loginWithPassword(nom, mdp, (error) => {
 			if (error) {
@@ -41,3 +42,15 @@ Template.map.onCreated(function() {
 	   console.log("I'm ready!");
 	});
   });
+	'click #SignUp'(event) {
+		event.preventDefault();
+		setTimeout(() => FlowRouter.go('signUpP'), 200);
+	},
+})
+
+
+Template.LoginSignUp.events({
+    'click #Suggest'(event) {
+		
+	},
+})

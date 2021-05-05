@@ -9,23 +9,23 @@
 </template>
 
 <template name="idUser">
-  <input type="text" placeholder="Nickname" class="Pseudo">
+  <input id= "Nickname" type="text" placeholder="Nickname" class="Pseudo">
   <p1>Profile Picture</p1>
   <form action="/action_page.php">
     <input type="file" id="myFile" name="filename">
   </form>
-  <input type="text" placeholder="PrefPronouns" class="Pronouns">
-  <input type="button" class="submit" value="Submit">
+  <input id="PrefPronouns" type="text" placeholder="PrefPronouns" class="Pronouns">
+  <input id="submitId" type="button" class="submit" value="Submit">
 </template>
 
 <template name="liensExt">
   <div class="container">
     <h2>Links to other accounts</h2>
-    <input type="url" name="url" class="Lien"
+    <input id="liens" type="url" name="url" class="Lien"
     placeholder="https://example.com"
     pattern="https://.*" size="30"
     required>
-    <input type="button" class="Button" value="Submit">
+    <input id="submitLiens" type="button" class="Button" value="Submit">
   </div>
 </template>
 

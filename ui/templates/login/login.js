@@ -4,6 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
+
 import './login.html';
 
 Template.LoginSignUp.events({
@@ -22,5 +23,12 @@ Template.LoginSignUp.events({
 	'click #SignUp'(event) {
 		event.preventDefault();
 		setTimeout(() => FlowRouter.go('signUpP'), 200);
+	},
+})
+
+
+Template.LoginSignUp.events({
+    'click #Suggest'(event) {
+		
 	},
 })

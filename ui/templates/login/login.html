@@ -5,7 +5,7 @@
   <br>
   {{> LoginSignUp}}
   <br>
-  {{> Map}}
+  {{> map}}
 </template>
 
 <template name="listCategories">
@@ -42,8 +42,8 @@
   <button id= "SignUp" class="SignUp">Sign Up</button>
 </template>
 
-<template name="Map">
-  <p>MAP</p>
-  <div id="map"></div>
-  <button>Click Me</button>
+<template name="map">
+  <div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
 </template>

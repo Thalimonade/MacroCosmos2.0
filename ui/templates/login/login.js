@@ -21,11 +21,11 @@ Template.LoginSignUp.events({
 		});
 	},
 
-'click #SignUp'(event) {
-		event.preventDefault();
-		setTimeout(() => FlowRouter.go('signUpP'), 200);
-	},
-}) 
+	'click #SignUp'(event) {
+			event.preventDefault();
+			setTimeout(() => FlowRouter.go('signUpP'), 200);
+		},
+	}) 
 
 
 Template.LoginSignUp.events({

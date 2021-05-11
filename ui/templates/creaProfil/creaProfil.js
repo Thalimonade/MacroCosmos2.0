@@ -23,13 +23,20 @@ Template.idUser.events({
 Template.liensExt.events({
     'click #submitLiens'(event) {
      event.preventDefault();
-	let plateforme = document.getElementById('plateforme').value;
-    let Liens = document.getElementById('Liens').value;
+	var plateforme = document.getElementById('plateforme').value;
+    var Liens = document.getElementById('liens').value;
+    
     Meteor.users.update({_id: Meteor.userId()}, 
-    {$set: {"profile.plateforme": plateforme}})
+    {$addToSet: {"profile.plateformes": plateforme}});
 
     Meteor.users.update({_id: Meteor.userId()},
-    {$set: {"profile.lien": Liens}});			
+    {$addToSet: {"profile.plateformes": Liens}});	
+    
+    var x = document.querySelector("p");  
+    var liste = document.createElement("LI");                    
+    var t = document.createTextNode("Your " + <a href={Liens}>plateforme</a> );    
+    liste.appendChild(t);    
+    x.appendChild(liste);                              
 	},
 });
 

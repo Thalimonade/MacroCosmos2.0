@@ -50,7 +50,8 @@ Template.signUpPage.events({
                                 //alias: alias != '' ? alias : null,
                                 phone: phone,
                                 mdpConf: mdpConf,
-                                birthday: birthday
+                                birthday: birthday,
+								plateformes: [0,0],
 							},
 						},
 						(error) => {

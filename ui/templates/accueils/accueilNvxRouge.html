@@ -1,5 +1,5 @@
 <template name="accueilRouge">
-    <h1>Welcome to Acceuil rouge !</h1>
+    <h1>Welcome to Acceuil rouge !</h1>  {{> logoutRéglages}}
   
     {{> Carte}}
     {{> Swipe}}
@@ -23,4 +23,10 @@
 
   <template name="FilActuGlobal">
     <p>Fil d'actualité global</p>
+  </template>
+
+  <template name="logoutRéglages">
+    <p><button id="logout">logout</button>
+    <br>
+    <button id="preferences">preferences</button></p>
   </template>

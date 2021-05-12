@@ -77,3 +77,15 @@ Template.listCategoriesCoches.events({
     return Cats;
     },
 })
+
+Template.BoutonP.events({
+    'click #preview'(event) {
+        setTimeout(() => FlowRouter.go('Ableu'), 200);
+    },
+})
+
+Template.BoutonC.events({
+    'click #create'(event) {
+        setTimeout(() => FlowRouter.go('Ableu'), 200);
+    },
+})

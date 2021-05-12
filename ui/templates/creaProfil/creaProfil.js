@@ -20,6 +20,9 @@ Template.idUser.events({
 	},
 });
 
+var tab = [];
+var tabCv = [];
+
 Template.liensExt.events({
     'click #submitLiens'(event) {
      event.preventDefault();
@@ -27,16 +30,12 @@ Template.liensExt.events({
     var Liens = document.getElementById('liens').value;
     
     Meteor.users.update({_id: Meteor.userId()}, 
-    {$addToSet: {"profile.plateformes": plateforme}});
-
-    Meteor.users.update({_id: Meteor.userId()},
-    {$addToSet: {"profile.plateformes": Liens}});	
+    {$push: {"profile.plateformes": [plateforme, Liens]}});
     
-    var x = document.querySelector("p");  
-    var liste = document.createElement("LI");                    
-    var t = document.createTextNode("Your " + <a href={Liens}>plateforme</a> );    
-    liste.appendChild(t);    
-    x.appendChild(liste);                              
+    var x = document.getElementById("liensDonnés");       
+    var link =  `<br>` + " your " + `<a href="${Liens}">${plateforme}</a>`;
+    tab.push(link);
+    x.innerHTML = "Now, we've got " + tab;                                
 	},
 });
 
@@ -46,12 +45,14 @@ Template.CVart.events({
 	let exp = document.getElementById('experienceTitle1').value;
     let details = document.getElementById('details').value;
     Meteor.users.update({_id: Meteor.userId()}, 
-    {$set: {"profile.experience1": exp}})
-
-    Meteor.users.update({_id: Meteor.userId()},
-    {$set: {"profile.details1": details}});			
+    {$push: {"profile.experiences": [exp, details]}})
+    
+    var y = document.getElementById("expDonnées");       
+    var expe =  `<br>` + exp;
+    tabCv.push(expe);
+    y.innerHTML = "You've done " + tabCv;
 	},
-});
+})
 
 Template.NotesAuto.events({
     'click #submitBio'(event) {
@@ -59,6 +60,20 @@ Template.NotesAuto.events({
 	let autoBio = document.getElementById('autoBio').value;
     Meteor.users.update({_id: Meteor.userId()}, 
     {$set: {"profile.autoBio": autoBio}})
-	
 	},
 });
+
+Template.listCategoriesCoches.events({
+    'click #joinCat'(event) {
+     event.preventDefault();
+    let checkboxes = document.querySelectorAll(`input[name="Cats"]:checked`);
+    let Cats = [];
+    checkboxes.forEach((checkbox) => {
+        Cats.push(checkbox.value);
+    });
+    Meteor.users.update({_id: Meteor.userId()}, 
+    {$set: {"profile.categories": Cats}})
+    console.log(Cats);
+    return Cats;
+    },
+})

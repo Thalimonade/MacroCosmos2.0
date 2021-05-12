@@ -4,7 +4,7 @@
   {{> idUser}}
   {{> liensExt}}
   {{> CVart}}
-  {{> listCategories}}
+  {{> listCategoriesCoches}}
   {{> NotesAuto}}
   <br>
   <br>
@@ -41,6 +41,7 @@
 <template name="CVart">
   <div class="container">
     <h2>Artistic Resume</h2>
+    <p id="expDonnées"></p>
     <dl>
       <dt>
         <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
@@ -70,4 +71,30 @@
 
 <template name="BoutonC">
   <button class="create">Create</button>
+</template>
+
+<template name="listCategoriesCoches">
+  <div class="container-fluid">
+    <h2>List of artistic practices</h2>
+    <ul>
+      <input type="checkbox" name="Cats" value="Music" >Music
+      <input type="checkbox" name="Cats" value="Cinema">Cinema
+      <input type="checkbox" name="Cats" value="Audio-visual">Audio-visual
+      <input type="checkbox" name="Cats" value="Litterature">Litterature
+      <input type="checkbox" name="Cats" value="ScenicArts">Scenic Arts
+      <input type="checkbox" name="Cats" value="Danse">Danse
+      <input type="checkbox" name="Cats" value="GraphicalArts">Graphical Arts
+      <input type="checkbox" name="Cats" value="Architecture">Architecture
+      <input type="checkbox" name="Cats" value="Fashion">Fashion
+      <input type="checkbox" name="Cats" value="BodyModification">Body Modifications
+      <input type="checkbox" name="Cats" value="DigitalArt">Digital Art
+      <input type="checkbox" name="Cats" value="CulinaryArts">Culinary Arts
+      <input type="checkbox" name="Cats" value="Tuning">Tuning
+    </ul>
+    <button id="joinCat">Join these practice fields
+    </button>
+    <br>
+    <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
+    <button id="Suggest">Suggest</button>
+  </div>
 </template>

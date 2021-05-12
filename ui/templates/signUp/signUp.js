@@ -51,7 +51,8 @@ Template.signUpPage.events({
                                 phone: phone,
                                 mdpConf: mdpConf,
                                 birthday: birthday,
-								plateformes: [0,0],
+								plateformes: [],
+								experiences: []
 							},
 						},
 						(error) => {

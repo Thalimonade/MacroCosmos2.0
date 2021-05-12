@@ -35,10 +35,6 @@ Template.LoginSignUp.events({
 })
 
 Meteor.startup(function() {
-	GoogleMaps.load();
-  });
-
-Meteor.startup(function() {
 GoogleMaps.load({key: 'AIzaSyBDLhhz9MZHAh3IFhIzU0cPunkBBDEzXXo'});
 });
   

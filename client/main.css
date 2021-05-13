@@ -152,13 +152,22 @@ label {
   padding: 10px 24px; 
 }
 
+/* liste catégories*/
 .container-fluid{
-  background-color: violet;
+  position: relative;
+  bottom: 450px; right: 200px;
+  background-color: #FAEBD7;
   border: 1px solid rgb(117, 0, 92);
   color: black;
   padding: 10px 10px;
   cursor: pointer;
   float: right;
+}
+
+/*log in & sign up; login template*/
+.logSign{
+  position: relative;
+  height: 200px; left: 100px;
 }
 
 .newCat{
@@ -167,9 +176,11 @@ label {
   width: 29%;
 }
 
-/* carte login */
+/* carte */
 .map-container {
-  width: 100%;
+  position: relative;
+  left: 200px;
+  width: 50%;
   max-width: 100%;
   height: 500px;
 }

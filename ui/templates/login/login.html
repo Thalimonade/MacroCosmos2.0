@@ -1,11 +1,11 @@
 <template name="login">
   <h1>Welcome to MacroCosmos !</h1>
   
+  {{> map}}
+
   {{> listCategories}}
   <br>
   {{> LoginSignUp}}
-  <br>
-  {{> map}}
 </template>
 
 <template name="listCategories">
@@ -26,12 +26,13 @@
       <li>Culinary Arts</li>
       <li>Tuning</li>
     </ul>
-    <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
+    <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="new category">
     <button id="Suggest">Suggest</button>
   </div>
 </template>
 
 <template name="LoginSignUp">
+<div class="logSign">
   <input id="eMail" class= "Mail" type="text" placeholder="Email adress">
   <input id="pwd" class="pwd" type="text" placeholder="Password">
   <br>
@@ -40,6 +41,7 @@
   <p> Not a registered artist yet? Help yourself and Sign up! </p>
   <br>
   <button id= "SignUp" class="SignUp">Sign Up</button>
+  </div>
 </template>
 
 <template name="map">

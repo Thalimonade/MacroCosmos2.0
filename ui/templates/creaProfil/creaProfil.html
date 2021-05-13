@@ -1,5 +1,5 @@
 <template name="creationProfil">
-  <h1>Welcome to Create Profile!</h1>
+  <h1>You can now create your profile</h1>
   
   {{> idUser}}
   {{> liensExt}}
@@ -56,17 +56,21 @@
 </template>
 
 <template name="NotesAuto">
-  <h3>Autobiography:</h3>
-  <form action="/action_page.php">
-    <textarea id="autoBio" class="bio" name="bio"
-    rows="5" cols="33" maxlength="500">
-  </textarea>
-  <button id="submitBio" class="Button">Submit</button>
-</form>
+  <div id="bio">
+    <h3>Autobiography:</h3>
+    <form action="/action_page.php">
+      <textarea id="autoBio" class="bio" name="bio"
+      rows="5" cols="33" maxlength="500">
+    </textarea>
+    <button id="submitBio" class="Button">Submit</button>
+    </form> 
+  </div>
 </template>
 
 <template name="BoutonP">
+  <div class="prev">
   <button id="preview" class= "preview">Preview</button>
+  </div>
 </template>
 
 <template name="BoutonC">
@@ -74,7 +78,7 @@
 </template>
 
 <template name="listCategoriesCoches">
-  <div class="container-fluid">
+  <div id="categCrea">
     <h2>List of artistic practices</h2>
     <ul>
       <input type="checkbox" name="Cats" value="Music" >Music
@@ -91,8 +95,7 @@
       <input type="checkbox" name="Cats" value="CulinaryArts">Culinary Arts
       <input type="checkbox" name="Cats" value="Tuning">Tuning
     </ul>
-    <button id="joinCat">Join these practice fields
-    </button>
+    <button id="joinCat">Join these practice fields</button>
     <br>
     <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
     <button id="Suggest">Suggest</button>

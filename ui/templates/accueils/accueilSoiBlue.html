@@ -33,7 +33,44 @@
 
 <template name="Chat">
   <p>Chat/discussion</p>
+  <div class="containerChat">
+    <header>
+      <h1>MacroChat</h1>
+    </header>
+    {{#each messages}}
+  <p><b>{{getUsername}} </b>-{{formatDate CreatedAt}}-: {{text}} </p>
+  {{else}}
+  <p>No messages.</p>
+  {{/each}}
+  <form id="chat-form">
+    <p><textarea rows="3" width= relative name="text" placeholder="Write a message!">
+    </textarea></p>
+    <p><input type="submit" value="send"></p>
+  </form>
+    <!-- Alterniative de code 
+      chat messages here
+    <ul class="message-window">
+      {{#each recentMessages}}
+        {{> message}}
+      {{/each}}
+    </ul>
+     more-messages button
+    <footer>
+      {{#if currentUser}}
+        <form class="new-message">
+          <input type="text" name="text" placeholder="Add a message" autocomplete="off" />
+        </form>
+      {{/if}}
+    </footer> -->
+  </div>
 </template>
+
+<!--<template name="message">
+  <li class="message">
+    <div class="username">{{username}}</div>
+    <div class="message-text">{{messageText}}</div>
+  </li>
+</template> -->
 
 <template name="FilActuPerso">
   <p>Fil d'actualité liés à ses contacts</p>

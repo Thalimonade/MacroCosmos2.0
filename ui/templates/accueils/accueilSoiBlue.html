@@ -1,11 +1,20 @@
 <template name="accueilBleu">
+  <header>
     <h1>Keep up with your mates !</h1>
-  
+  </header>
+  <div class="btn-accRouge" >
+    <button id="profilPerso">My profil</button>
+    <button id="reseauPerso">My collaborations</button>
+    <button id="carteBlue">My network</button>
+    <button id="chatBlue">Chat</button>
+    <button id="filActuBlue">Feed</button>
+  </div>
+  {{>Template.dynamic template=blueMenu}}  
+      <!--{{{> map}} 
     {{> profilPersoContact}}
     {{> reseauCollab}}
-    {{> map}} 
     {{> Chat}}
-    {{> FilActuPerso}}
+    {{> FilActuPerso}}-->
 </template>
 
 <template name="profilPersoContact">

@@ -33,6 +33,43 @@ Template.Chat.events({
     },
   });
 
+if (Meteor.isClient) {
+  Template.accueilBleu.events({
+    'click #profilPerso' (event) {
+    event.preventDefault();
+    BlazeLayout.render("profilPersoContact")
+    }
+  });
+
+  Template.accueilBleu.events({
+    'click #reseauPerso' (event) {
+    event.preventDefault();
+    BlazeLayout.render("reseauCollab")
+    }
+  });
+
+  Template.accueilBleu.events({
+    'click #carteBlue' (event) {
+    event.preventDefault();
+    BlazeLayout.render("map")
+    }
+  }); 
+
+  Template.accueilBleu.events({
+    'click #chatBlue' (event) {
+    event.preventDefault();
+    BlazeLayout.render("Chat")
+    }
+  });
+
+  Template.accueilBleu.events({
+    'click #filActuBlue' (event) {
+    event.preventDefault();
+    BlazeLayout.render("FilActuPerso")
+    }
+  });
+} 
+
 /* 1
 
 import { Mongo } from 'meteor/mongo';

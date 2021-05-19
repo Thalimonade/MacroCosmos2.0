@@ -17,3 +17,10 @@ Template.logoutRéglages.events({
 		});
 
 
+Template.accueilRouge.events({
+	'click #Swipe'(event) {
+		event.preventDefault();
+		FlowRouter.go('SwipeGo');
+	}
+});
+

@@ -2,5 +2,5 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
-Markers = new Mongo.Collection('markers');
+export const Markers = new Mongo.Collection('markers');
 

@@ -376,3 +376,13 @@ p1 {
   cursor: pointer;
   float: left; 
 }
+
+.containerChat{
+  background-image: linear-gradient(to bottom, #76d5f0, #6050f1 100%);
+  width: relative;
+  height: 400px;
+}
+
+#chat-form{
+  bottom: 10px;
+}

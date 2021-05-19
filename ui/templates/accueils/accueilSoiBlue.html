@@ -1,5 +1,5 @@
 <template name="accueilBleu">
-    <h1>Welcome to Accueil Bleu !</h1>
+    <h1>Keep up with your mates !</h1>
   
     {{> profilPersoContact}}
     {{> reseauCollab}}
@@ -39,8 +39,8 @@
     </header>
     {{#each messages}}
   <p><b>{{getUsername}} </b>-{{formatDate CreatedAt}}-: {{text}} </p>
-  {{else}}
-  <p>No messages.</p>
+    {{else}}
+  <p>No messages.</p> 
   {{/each}}
   <form id="chat-form">
     <p><textarea rows="3" width= relative name="text" placeholder="Write a message!">

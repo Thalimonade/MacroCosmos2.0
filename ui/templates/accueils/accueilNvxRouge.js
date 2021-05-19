@@ -9,6 +9,10 @@ Template.logoutRéglages.events({
 		event.preventDefault();
 		Meteor.logout();
         setTimeout(() => FlowRouter.go('log'), 200);
+			},
+
+	'click #boutonPref'(event) {
+		setTimeout(() => FlowRouter.go('preferences'), 200);
 			}
 		});
 

@@ -39,17 +39,13 @@ Meteor.startup(function() {
 GoogleMaps.load({key: 'AIzaSyBDLhhz9MZHAh3IFhIzU0cPunkBBDEzXXo'});
 });
 
-Meteor.methods({
-  'insert' (text) {
-    check(text, Number);
-  }
-})
   
 if (Meteor.isClient) {
   Template.map.onCreated(function() {
+    Meteor.subscribe('markers')
     GoogleMaps.ready('map', function(map) {
       google.maps.event.addListener(map.instance, 'click', function(event) {
-        Markers.insert({ lat: event.latLng.lat(), lng: event.latLng.lng() });
+        Meteor.call('markers.insert', event.latLng.lat(), event.latLng.lng())
       });
 
       var markers = {};
@@ -90,7 +86,7 @@ if (Meteor.isClient) {
     mapOptions: function() {
       if (GoogleMaps.loaded()) {
         return {
-          center: new google.maps.LatLng(46.516, 6.63282),
+          center: new google.maps.LatLng(46.516,  6.63282),
           zoom: 8
         };
       }

@@ -380,7 +380,7 @@ p1 {
 .containerChat{
   background-image: linear-gradient(to bottom, #76d5f0, #6050f1 100%);
   width: relative;
-  height: 400px;
+  height:fit-content;
 }
 
 #chat-form{

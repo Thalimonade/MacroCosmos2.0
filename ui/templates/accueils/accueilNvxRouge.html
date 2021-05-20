@@ -1,43 +1,50 @@
+<template name="indexRouge">
+  {{>accueilRouge}}
+</template>
+
 <template name="accueilRouge">
   <header> 
     <h1>Explore what's new!</h1>
   </header>
-  <div class="btn-accRouge" >
-    <button id="carteRed">Macrocosmos Network</button>
-    <button id="Swipe">Random Encounter</button>
-    <button id="profilSearch">Search profils</button>
-    <button id="filActuRed">Feed</button>
+  <select class="btn-accRouge" >
+    <option value="carteRed">Macrocosmos Network</option>
+    <option value="swipe">Random Encounter</option>
+    <option value="feedRed">Feed</option>
+  </select>
     <input type="text" placeholder="Search for artists around you!">
-    <button id="searchProfil">Search</button>
-  </div>
-  {{> Template.dynamic template=redMenu}}
+    <button id="searchProfil">search</button>
+  <br>
+    {{#if showCosmos}}
+      {{>map3}}
+    {{/if}}
 
-    <!--{{> Carte}}
-    {{> Swipe}}
-    {{> RechercheProf}}
-    {{> FilActuGlobal}}-->
+    {{#if showSwipe}}
+      {{>Swipe}}
+    {{/if}}
+
+    {{#if showFeedMacro}}
+      {{>feedMacro}}
+    {{/if}}
+
 </template>
-  
-  <template name="Carte">
-    <p>Carte hypothétique du monde ici</p>
-    <div id= "map"></div>
-  </template>
 
-  <template name="Swipe">
-    <p>"Swipe", quoi que cela veuille dire</p>
-  </template>
+<template name="map3">
+  <p>ok</p>
+</template>
 
-  <template name="RechercheProf">
-    <p>Recherche de profils:</p>
-    <input type="text" placeholder="Search for artists around you!">
-  </template>
+<template name="Swipe">
+  <p>"Swipe", quoi que cela veuille dire</p>
+</template>
 
-  <template name="FilActuGlobal">
-    <p>Fil d'actualité global</p>
-  </template>
+<template name="feedMacro">
+  <p>Fil d'actualité global</p>
+</template>
 
-  <template name="logoutRéglages">
-    <p><button id="logout">logout</button>
-    <br>
-    <button id="boutonPref">preferences</button></p>
-  </template>
+<template name="RechercheProf">
+  <input type="text" placeholder="Search for artists around!">
+</template>
+
+<template name="logoutRéglages">
+  <p><button id="logout">logout</button>
+  <button id="boutonPref">preferences</button></p>
+</template>

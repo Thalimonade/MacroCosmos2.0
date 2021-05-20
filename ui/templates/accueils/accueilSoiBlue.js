@@ -6,8 +6,8 @@ import { Template } from 'meteor/templating';
 import { Messages } from '../../../import/api/messages'; 
 import { error } from 'jquery';
 
-// ReactiveVars 
-// RVar Profil perso
+// ReactiveVars Blue
+  // RVar Profil perso
 Template.accueilBleu.onCreated(function(){
   this.showProfil = new ReactiveVar( false );
 });
@@ -28,7 +28,7 @@ Template.accueilBleu.events({
   }
 });
 
-// RVar Collaborations
+  // RVar Collaborations
 Template.accueilBleu.onCreated(function(){
   this.showNetwork = new ReactiveVar( false );
 });
@@ -49,7 +49,7 @@ Template.accueilBleu.events({
   }
 });
 
-// Rvar carte réseau personnel
+  // Rvar carte réseau personnel
 Template.accueilBleu.onCreated(function(){
   this.showMap = new ReactiveVar( false );
 });
@@ -70,7 +70,7 @@ Template.accueilBleu.events({
   }
 });
 
-//RVar chat
+  //RVar chat
 Template.accueilBleu.onCreated(function(){
   this.showChat = new ReactiveVar( false );
 });
@@ -91,7 +91,7 @@ Template.accueilBleu.events({
   }
 });
 
-// RVar feed perso
+  // RVar feed perso
 Template.accueilBleu.onCreated(function(){
   this.showFeed = new ReactiveVar( false );
 });

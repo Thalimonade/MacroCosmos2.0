@@ -1,43 +1,57 @@
+<template name="indexBleu">
+  {{>accueilBleu}}
+</template>
+
 <template name="accueilBleu">
   <header>
     <h1>Keep up with your mates !</h1>
   </header>
-  <div class="btn-accRouge" >
-    <button id="profilPerso">My profil</button>
-    <button id="reseauPerso">My collaborations</button>
-    <button id="carteBlue">My network</button>
-    <button id="chatBlue">Chat</button>
-    <button id="filActuBlue">Feed</button>
-  </div>
-  {{>Template.dynamic template=blueMenu}}  
-      <!--{{{> map}} 
-    {{> profilPersoContact}}
-    {{> reseauCollab}}
-    {{> Chat}}
-    {{> FilActuPerso}}-->
+  <select class="btn-accRouge" >
+    <option value="profilPerso">My profil</option>
+    <option value="reseauPerso">My collaborations</option>
+    <option value="mapBlue">My network</option>
+    <option value="chatBlue">Chat</option>
+    <option value="feedBlue">Feed</option>
+  </select>
+    <br>
+    {{#if showProfil}}
+      {{>profilPersoContact}}
+    {{/if}}
+
+    {{#if showNetwork}}
+      {{>reseauCollab}}
+    {{/if}}
+
+    {{#if showMap}}
+      {{>map2}}
+    {{/if}}
+
+    {{#if showChat}}
+      {{>Chat}}
+    {{/if}}
+
+    {{#if showFeed}}
+      {{>FilActuPerso}}
+    {{/if}}
+
 </template>
 
 <template name="profilPersoContact">
   <p>Son profil et ceux de ses contacts</p>
-    <!--{> BadgesRpzGraphiques}}
-    {> IDBio}}
-    {> reseauCollab}}-->
- </template>  
-
-<template name="IDBio">
-  <p>Biographie</p>
-</template>
-
-<template name="BadgesRpzGraphiques">
-  <p>Badges ou représentation graphique de ses capacités</p>
-</template>
+</template>  
 
 <template name="reseauCollab">
   <p>Réseau des collaborations accomplies</p>
 </template>
 
-<template name="réseauVisuCarte">
-  <p>Réseau des collaborations accomplies (carte/visuel)</p>
+<template name="map2">
+  <div class="map-container">
+    {{#unless geolocationError}}
+         {{> googleMap name="map" options=mapOptions}}
+       {{else}}
+         Geolocation failed: {{geolocationError}}
+    {{/unless}}
+   </div>
 </template>
 
 <template name="Chat">
@@ -56,7 +70,7 @@
     </textarea></p>
     <p><input type="submit" value="send"></p>
   </form>
-    <!-- Alterniative de code 
+    <!-- Alternative de code 
       chat messages here
     <ul class="message-window">
       {{#each recentMessages}}
@@ -74,20 +88,17 @@
   </div>
 </template>
 
+<template name="FilActuPerso">
+  <p>Fil d'actualité liés à ses contacts</p>
+</template>
+
+
 <!--<template name="message">
   <li class="message">
     <div class="username">{{username}}</div>
     <div class="message-text">{{messageText}}</div>
   </li>
 </template> -->
-
-<template name="FilActuPerso">
-  <p>Fil d'actualité liés à ses contacts</p>
-</template>
-
-<template name="preview">
-  
-</template>
 
     <!-- 
     distinguer la déclaration des templates

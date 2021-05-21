@@ -10,10 +10,14 @@ Template.idUser.events({
     'click #submitId'(event) {
      event.preventDefault();
 	let Nickname = document.getElementById('Nickname').value;
-	//let photo = document.getElementById('myfile').value;
+	//let picture = document.getElementById('myfile').value;
     let pronouns = document.getElementById('PrefPronouns').value;
     Meteor.users.update({_id: Meteor.userId()}, 
-    {$set: {"profile.PrefPronouns": pronouns}})
+    {$set: {"profile.PrefPronouns": pronouns}});
+
+   // Meteor.users.update({_id: Meteor.userId()},
+    //{$set: {"profile.picture": picture}});	
+    //CMT FAIRE POUR PRENDRE UN PHOTO?
 
     Meteor.users.update({_id: Meteor.userId()},
     {$set: {"profile.Nickname": Nickname}});			
@@ -86,6 +90,6 @@ Template.BoutonP.events({
 
 Template.BoutonC.events({
     'click #create'(event) {
-        setTimeout(() => FlowRouter.go('Ableu'), 200);
+        setTimeout(() => FlowRouter.go('accueils2x'), 200);
     },
 })

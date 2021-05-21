@@ -201,7 +201,51 @@ Meteor.startup(function() {
   });
   }
 
-
+  Template.profilPersoContact.helpers({
+    getPhoto: function() {
+    let user = Meteor.user().profile;
+      if (user) return user.picture
+      else return "none"
+    },
+    getName: function() {
+     let user = Meteor.user().profile;
+     if (user) return user.firstName
+    }, 
+    getLastName: function() {
+      let user = Meteor.user().profile;
+      if (user) return user.lastName
+     }, 
+    getPronouns: function() {
+      let user = Meteor.user().profile.PrefPronouns;
+      let PP = `Would like to be adressed as ${user}`;
+      if (user) return PP                             
+	  },
+    getNickname: function() {
+      let user = Meteor.user().profile.Nickname;
+      let NN = `Also known as ${user}`;
+      if (user) {
+        return NN
+      } 
+     },     
+    getBday: function() {
+    let user = Meteor.user().profile.birthday;
+    let BD = `Born on ${user}`;
+    if (user) {
+      return BD
+     }                             
+  },
+  getLiens: function() {
+    let user = Meteor.user().profile.plateformes;
+    let Pf = `Find ${Meteor.user().profile.firstName} on ${user}`;
+    if (user) {
+      for (let plateformes = 0; plateformes < user.length; plateformes++) {
+        const element = array[plateformes];
+        
+      }
+      return pf
+     }                             
+  },
+});
 
 
 

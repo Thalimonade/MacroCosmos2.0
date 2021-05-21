@@ -14,6 +14,8 @@
     <option value="feedBlue">Feed</option>
   </select>
   <br>
+  {{>profilPersoContact}}
+
     {{#if showProfil}}
       {{>profilPersoContact}}
     {{/if}}
@@ -38,6 +40,17 @@
 
 <template name="profilPersoContact">
   <p>Son profil et ceux de ses contacts</p>
+  <div class="Profil"> <p id="identité">{{getPhoto}} Photo
+    <br>
+   <b>{{getName}} {{getLastName}}</b> 
+   <br>
+   {{getPronouns}}
+   <br>
+   {{getNickname}}
+  </p> </div>
+  <div class="profil"> <p id="experience">
+    
+  </p> </div>
 </template>  
 
 <template name="reseauCollab">

@@ -386,3 +386,12 @@ p1 {
 #chat-form{
   bottom: 10px;
 }
+
+.Profil{
+  background-image: linear-gradient(to bottom, #403547, #351e4d 100%);
+  width: 450px;
+  padding: 3px;
+  height:fit-content;
+  position: relative;
+  text-shadow: black;
+}

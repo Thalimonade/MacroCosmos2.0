@@ -6,17 +6,17 @@ import { Template } from 'meteor/templating';
 
 // ReactiveVars Red
 	// RV carte réseau macro 
-Template.accueilBleu.onCreated(function(){
+Template.accueilRouge.onCreated(function(){
 	this.showCosmos = new ReactiveVar( false );
 	});
 
-Template.accueilBleu.helpers({
+Template.accueilRouge.helpers({
 	showCosmos: function() {
 		return Template.instance().showCosmos.get();
 	}
 });
 
-Template.accueilBleu.events({
+Template.accueilRouge.events({
 	'change select': function( event, template ) {
 	  if ( $( event.target ).val() === "carteRed" ) {
 		template.showCosmos.set( true );
@@ -27,17 +27,17 @@ Template.accueilBleu.events({
   });
 
   	// RV Swipe 
-Template.accueilBleu.onCreated(function(){
+Template.accueilRouge.onCreated(function(){
 	this.showSwipe = new ReactiveVar( false );
 	});
 
-Template.accueilBleu.helpers({
+Template.accueilRouge.helpers({
 	showSwipe: function() {
 		return Template.instance().showSwipe.get();
 	}
 });
 
-Template.accueilBleu.events({
+Template.accueilRouge.events({
 	'change select': function( event, template ) {
 	  if ( $( event.target ).val() === "swipe" ) {
 		template.showSwipe.set( true );
@@ -48,17 +48,17 @@ Template.accueilBleu.events({
   });
 
     	// RV feed macro 
-Template.accueilBleu.onCreated(function(){
+Template.accueilRouge.onCreated(function(){
 	this.showFeedMacro = new ReactiveVar( false );
 	});
 
-Template.accueilBleu.helpers({
+Template.accueilRouge.helpers({
 	showFeedMacro: function() {
 		return Template.instance().showFeedMacro.get();
 	}
 });
 
-Template.accueilBleu.events({
+Template.accueilRouge.events({
 	'change select': function( event, template ) {
 	  if ( $( event.target ).val() === "feedRed" ) {
 		template.showFeedMacro.set( true );

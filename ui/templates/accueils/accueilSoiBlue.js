@@ -236,16 +236,38 @@ Meteor.startup(function() {
   },
     getLiens: function() {
     let user = Meteor.user().profile.plateformes;
-    let ptf = document.getElementById("ptf");
+    var ptf = document.getElementById("ptf");
+    let linktab = [];
     if (user) {
       for (let i = 0; i < user.length; i++) {
         let element = user[i];
-        let Phref = `<a href= ${element[0]} > ${element[1]} </a>`;
-        let pf = `Find ${Meteor.user().profile.firstName} on ${Phref}`;
+        let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+        linktab.push(Phref);
         console.log(element);
-        ptf.innerHTML = pf
+        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
        }
      }                             
+  },
+  getExp: function() {
+    let user = Meteor.user().profile.experiences;
+    var expCv = document.getElementById("expCv");
+    let exptab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
+        exptab.push(explist);
+        console.log(element);
+        expCv.innerHTML = ` ${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
+       }
+     }                             
+  },
+  getBio: function() {
+    let user = Meteor.user().profile.autoBio;
+    let Abio = `${user}`;
+    if (user) {
+      return Abio
+     }                            
   },
 });
 

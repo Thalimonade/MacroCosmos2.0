@@ -399,4 +399,5 @@ p1 {
   height:fit-content;
   position: relative;
   text-shadow: black;
+  display: inline-block;
 }

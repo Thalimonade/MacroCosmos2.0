@@ -16,22 +16,27 @@
   <br>
 
     {{#if showProfil}}
+    <br>
       {{>profilPersoContact}}
     {{/if}}
 
     {{#if showNetwork}}
+    <br>
       {{>reseauCollab}}
     {{/if}}
 
     {{#if showMap}}
+    <br>
       {{>map2}}
     {{/if}}
 
     {{#if showChat}}
+    <br>
       {{>Chat}}
     {{/if}}
 
     {{#if showFeed}}
+    <br>
       {{>FilActuPerso}}
     {{/if}}
 
@@ -45,10 +50,17 @@
    {{getPronouns}}
    <br>
    {{getNickname}}
+   <br> <br>
+   {{getBio}}
   </p> </div>
-  <div class="profil"> <p id="ptf">
+  <div  id= "infos">
+  <div class="Profil"> <p id="ptf">
     {{getLiens}}
   </p> </div>
+  <div class="Profil"> <p id="expCv">
+    {{getExp}}
+  </p> </div>
+</div>
 </template>  
 
 <template name="reseauCollab">

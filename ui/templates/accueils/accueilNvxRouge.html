@@ -1,3 +1,8 @@
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+-->
 <template name="accueilRouge">
     <h1>Welcome to Acceuil rouge !</h1>  {{> logoutRéglages}}
   
@@ -5,6 +10,11 @@
     {{> Swipe}}
     {{> RechercheProf}}
     {{> FilActuGlobal}}
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container3">
+        {{> logoutRéglages}}
+        </div>
+        </nav>
 </template>
   
   <template name="Carte">
@@ -16,17 +26,92 @@
     <p>"Swipe", quoi que cela veuille dire</p>
   </template>
 
-  <template name="RechercheProf">
-    <p>Recherche de profils:</p>
-    <input type="text" placeholder="Search for artists around you!">
-  </template>
-
   <template name="FilActuGlobal">
     <p>Fil d'actualité global</p>
   </template>
 
   <template name="logoutRéglages">
-    <p><button id="logout">logout</button>
-    <br>
-    <button id="preferences">preferences</button></p>
+      <p><button id="logout">logout</button>
+        <br>
+      <button id="preferences">preferences</button></p>
   </template>
+
+  <template name="RechercheProf">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search for artists around you!">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+</template>
+
+<!--
+<div class="container">
+  <div class="stack">
+    <div class="final-message"> There are no other recommendations</div>
+    <ul>
+      <li>
+
+        Trouver comment lier l'image des profils dans data-original
+
+        <div id="card10" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card9" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="car8" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card7" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card6" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card5" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card4" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card3" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card2" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+      <li>
+        <div id="card1" class="card js-swiping-card">
+          <div class="card-illustration js-lazyload" data-original=></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-controls text-center">
+    <button type="button" class="btn btn-danger js-left-trigger">
+      Reject
+    </button>
+    <button type="button" class="btn btn-primary js-right-trigger">
+      Heart
+    </button>
+  </div>
+</div>
+-->

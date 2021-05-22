@@ -24,34 +24,42 @@
   <input id="submitId" type="button" class="submit" value="Submit">
 </template>
 
-<template name="liensExt">
-  <div class="container">
-    <h2>Links to other accounts</h2>
-    <p id="liensDonnés"></p>
-    <input id="plateforme" type="text" placeholder="name of the site">
-    <input id="liens" type="url" name="url" class="Lien"
-    placeholder="https://example.com"
-    pattern="https://.*" size="30"
-    required>
-    <br>
-    <input id="submitLiens" type="button" class="Button" value="Submit">
+<template name="CVart">
+  <div class="container3">
+    <div class= "row">
+      <div class="col-sm-12 col-md-6">
+        <h2>Artistic Resume</h2>
+        <p id="expDonnées"></p>
+        <dl>
+          <dt>
+            <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
+          </dt>
+          <br>
+          <dd>
+            <input type="text" name="description" id="details" placeholder="Experience details">
+          </dd>
+        </dl>
+        <input id= "submitExp" type="button" class="Button" value="Submit">
+      </div>
+    </div>
   </div>
 </template>
 
-<template name="CVart">
-  <div class="container2">
-    <h2>Artistic Resume</h2>
-    <p id="expDonnées"></p>
-    <dl>
-      <dt>
-        <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
-      </dt>
-      <br>
-      <dd>
-        <input type="text" name="description" id="details" placeholder="Experience details">
-      </dd>
-    </dl>
-    <input id= "submitExp" type="button" class="Button" value="Submit">
+<template name="liensExt">
+  <div class="container">
+    <div class= "row">
+      <div class="col-sm-12 col-md-6">
+        <h2>Links to other accounts</h2>
+        <p id="liensDonnés"></p>
+        <input id="plateforme" type="text" placeholder="name of the site">
+        <input id="liens" type="url" name="url" class="Lien"
+        placeholder="https://example.com"
+        pattern="https://.*" size="30"
+        required>
+        <br>
+        <input id="submitLiens" type="button" class="Button" value="Submit">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -63,13 +71,13 @@
       rows="5" cols="33" maxlength="500">
     </textarea>
     <button id="submitBio" class="Button">Submit</button>
-    </form> 
-  </div>
+  </form> 
+</div>
 </template>
 
 <template name="BoutonP">
   <div class="prev">
-  <button id="preview" class= "preview">Preview</button>
+    <button id="preview" class= "preview">Preview</button>
   </div>
 </template>
 
@@ -79,25 +87,42 @@
 
 <template name="listCategoriesCoches">
   <div id="categCrea">
+     <div class= "row">
+      <div class="col-sm-12 col-md-6">
     <h2>List of artistic practices</h2>
     <ul>
-      <input type="checkbox" name="Cats" value="Music" >Music
-      <input type="checkbox" name="Cats" value="Cinema">Cinema
-      <input type="checkbox" name="Cats" value="Audio-visual">Audio-visual
-      <input type="checkbox" name="Cats" value="Litterature">Litterature
-      <input type="checkbox" name="Cats" value="ScenicArts">Scenic Arts
-      <input type="checkbox" name="Cats" value="Danse">Danse
-      <input type="checkbox" name="Cats" value="GraphicalArts">Graphical Arts
-      <input type="checkbox" name="Cats" value="Architecture">Architecture
-      <input type="checkbox" name= "Cats" value="Fashion">Fashion
-      <input type="checkbox" name="Cats" value="BodyModification">Body Modifications
-      <input type="checkbox" name="Cats" value="DigitalArt">Digital Art
-      <input type="checkbox" name="Cats" value="CulinaryArts">Culinary Arts
-      <input type="checkbox" name="Cats" value="Tuning">Tuning
+      <input type="checkbox" name="Music" value="Music" >
+      <label for="Music">Music</label>
+      <input type="checkbox" name="Cinema" value="Cinema">
+      <label for="Cinema">Cinema</label>
+      <input type="checkbox" name="Audio-visual" value="Audio-visual">
+      <label type="Audio-visual">Audio-Visual</label>
+      <input type="checkbox" name="Litterature" value="Litterature">
+      <label type="Litterature">Litterature</label>
+      <input type="checkbox" name="Scenic Arts" value="ScenicArts">
+      <label type="Scenic Arts">Scenic Arts</label>
+      <input type="checkbox" name="Danse" value="Danse">
+      <label type= "Danse">Dance</label>
+      <input type="checkbox" name="Graphical Arts" value="GraphicalArts">
+      <label type="Graphical Arts">Graphic Arts</label>
+      <input type="checkbox" name="Architecture" value="Architecture">
+      <label type="Architecture">Architecture</label>
+      <input type="checkbox" name= "Fashion" value="Fashion">
+      <label type= "Fashion">Fashion</label>
+      <input type="checkbox" name="BodyModification" value="BodyModification">
+      <label type="BodyModification">Body Modifications</label>
+      <input type="checkbox" name="DigitalArt" value="DigitalArt">
+      <label type="DigitalArt">Digital Art</label>
+      <input type="checkbox" name="CulinaryArts" value="CulinaryArts">
+      <label type= "CulinaryArts">Culinary Arts</label>
+      <input type="checkbox" name="Tuning" value="Tuning">
+      <label type= "Tuning">Tuning</label>
     </ul>
     <button id="joinCat">Join these practice fields</button>
     <br>
     <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
     <button id="Suggest">Suggest</button>
   </div>
+</div>
+</div>
 </template>

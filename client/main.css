@@ -82,6 +82,7 @@ label {
   display: table;
 }
 
+/*Sign Up*/
 .Name {
   border:1px solid rgb(117, 0, 92);
   padding: 10px 24px;
@@ -152,12 +153,13 @@ label {
   padding: 10px 24px; 
 }
 
+/*Log In */
 /* liste catégories */
 .container-fluid{
   height: 450px;
   width: 300px;
   position: absolute;
-  background-color: #FAEBD7;
+  background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
   padding: 10px 10px;
@@ -165,26 +167,18 @@ label {
   right: 150px;
   top: 370px;
 }
-
+ /*Creation Profil */
 /* liste catégories creation profil */
 #categCrea{
-  
-  height: 550px;
-  width: 400px;
-  position: relative;
-  bottom: 550px; 
-  right: 50px;
-  background-color: #FAEBD7;
+  background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 10px;
-  left: 800px;
 }
 
 /* autobiographie */
 #bio{
   font-family: 'Times New Roman', Times, serif;
-  background-color: #FAEBD7;
+  background-color: #ffa6c8;
   border:1px solid rgb(117, 0, 92);
   padding: 10px 24px; 
   width: 50%;
@@ -213,6 +207,7 @@ label {
   width: 29%;
 }
 
+/*Log In */
 /* carte */
 .map-container {
   position: relative;
@@ -260,7 +255,7 @@ label {
   cursor: pointer;
   float: center;
 }
-
+ /*Creation Profil */
 .Pseudo{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
@@ -299,28 +294,16 @@ p1 {
 
 /*LiensExt*/
 .container{
-  background-color: violet;
+  background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  position: relative;
-  margin: left;
-  width: 50%;
-  min-height: fit-content;
-  padding: 10px;
-  top: 850px
 }
 
  /*cv artistique*/
 .container2{
-  background-color: violet;
+  background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  margin: auto;
-  position: relative;
-  min-height: fit-content;
-  width: 50%;
-  padding: 10px;
-  bottom: 250px;
 }
 
 .submit{
@@ -385,4 +368,30 @@ p1 {
 
 #chat-form{
   bottom: 10px;
+}
+
+/* Nav Rouge*/
+
+/*RechercheProf*/
+.form-control{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 5px 50px;
+  word-wrap: break-word;
+}
+
+.btn{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  padding: 5px 24px;
+}
+
+.container3{
+  margin: auto;
+  width: 50%;
+  border: 3px rgb(117, 0, 92);
+  padding: 10px;
+  background-color: #ffa6c8;
 }

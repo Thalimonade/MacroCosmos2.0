@@ -7,7 +7,7 @@ import { Template } from 'meteor/templating';
 // ReactiveVars Red
 	// RV carte réseau macro 
 Template.accueilRouge.onCreated(function(){
-	this.showCosmos = new ReactiveVar( false );
+	this.showCosmos = new ReactiveVar( true );
 	});
 
 Template.accueilRouge.helpers({
@@ -83,3 +83,62 @@ Template.logoutRéglages.events({
 		});
 
 
+
+// Création de la carte pour accueil rouge
+if (Meteor.isClient) {
+	var MAP_ZOOM = 15;
+
+		Meteor.startup(function() {
+		GoogleMaps.load();
+		});
+
+		Template.redMap.onCreated(function() {
+		var self = this;
+
+		GoogleMaps.ready('redMap', function(map) {
+			var marker;
+
+			// Création du marker en fonction de lat et lng
+			self.autorun(function() {
+			var latLng = Geolocation.latLng();
+			if (! latLng)
+				return;
+
+			// Si pas de marker, création
+			if (! marker) {
+				marker = new google.maps.Marker({
+				position: new google.maps.LatLng(latLng.lat, latLng.lng),
+				map: redMap.instance
+				});
+			}
+			// Si marker, changement de position
+			else {
+				marker.setPosition(latLng);
+			}
+
+			// Zoom sur la position
+			map.instance.setCenter(marker.getPosition());
+			map.instance.setZoom(MAP_ZOOM);
+			});
+		});
+		});
+		
+		// Demande d'activation geoloc du navigateur
+		Template.redMap.helpers({
+		geolocationError: function() {
+			var error = Geolocation.error();
+			return error && error.message;
+		},
+
+		mapOptions: function() {
+			var latLng = Geolocation.latLng();
+			// lancement de la carte ggl si on a info sur latlng
+			if (GoogleMaps.loaded() && latLng) {
+			return {
+				center: new google.maps.LatLng(latLng.lat, latLng.lng),
+				zoom: MAP_ZOOM
+			};
+			}
+		}
+		});
+	}

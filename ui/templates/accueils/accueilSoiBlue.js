@@ -9,7 +9,7 @@ import { error } from 'jquery';
 // ReactiveVars Blue
   // RVar Profil perso
 Template.accueilBleu.onCreated(function(){
-  this.showProfil = new ReactiveVar( false );
+  this.showProfil = new ReactiveVar( true );
 });
 
 Template.accueilBleu.helpers({

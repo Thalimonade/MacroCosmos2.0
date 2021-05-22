@@ -15,7 +15,7 @@
     <button id="searchProfil">search</button>
   <br>
     {{#if showCosmos}}
-      {{>map3}}
+      {{>redMap}}
     {{/if}}
 
     {{#if showSwipe}}
@@ -28,8 +28,14 @@
 
 </template>
 
-<template name="map3">
-  <p>ok</p>
+<template name="redMap">
+  <div class="map-container">
+    {{#unless geolocationError}}
+      {{> googleMap name="redMap" options=mapOptions}}
+    {{else}}
+      Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
 </template>
 
 <template name="Swipe">

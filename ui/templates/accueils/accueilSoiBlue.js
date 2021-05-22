@@ -6,6 +6,113 @@ import { Template } from 'meteor/templating';
 import { Messages } from '../../../import/api/messages'; 
 import { error } from 'jquery';
 
+// ReactiveVars Blue
+  // RVar Profil perso
+Template.accueilBleu.onCreated(function(){
+  this.showProfil = new ReactiveVar( true );
+});
+
+Template.accueilBleu.helpers({
+  showProfil: function() {
+    return Template.instance().showProfil.get();
+  }
+});
+
+Template.accueilBleu.events({
+  'change select': function( event, template ) {
+    if ( $( event.target ).val() === "profilPerso" ) {
+      template.showProfil.set( true );
+    } else {
+      template.showProfil.set( false );
+    }
+  }
+});
+
+  // RVar Collaborations
+Template.accueilBleu.onCreated(function(){
+  this.showNetwork = new ReactiveVar( false );
+});
+
+Template.accueilBleu.helpers({
+  showNetwork: function() {
+    return Template.instance().showNetwork.get();
+  }
+});
+
+Template.accueilBleu.events({
+  'change select': function( event, template ) {
+    if ( $( event.target ).val() === "reseauPerso" ) {
+      template.showNetwork.set( true );
+    } else {
+      template.showNetwork.set( false );
+    }
+  }
+});
+
+  // Rvar carte réseau personnel
+Template.accueilBleu.onCreated(function(){
+  this.showMap = new ReactiveVar( false );
+});
+
+Template.accueilBleu.helpers({
+  showMap: function() {
+    return Template.instance().showMap.get();
+  }
+});
+
+Template.accueilBleu.events({
+  'change select': function( event, template ) {
+    if ( $( event.target ).val() === "mapBlue" ) {
+      template.showMap.set( true );
+    } else {
+      template.showMap.set( false );
+    }
+  }
+});
+
+  //RVar chat
+Template.accueilBleu.onCreated(function(){
+  this.showChat = new ReactiveVar( false );
+});
+
+Template.accueilBleu.helpers({
+  showChat: function() {
+    return Template.instance().showChat.get();
+  }
+});
+
+Template.accueilBleu.events({
+  'change select': function( event, template ) {
+    if ( $( event.target ).val() === "chatBlue" ) {
+      template.showChat.set( true );
+    } else {
+      template.showChat.set( false );
+    }
+  }
+});
+
+  // RVar feed perso
+Template.accueilBleu.onCreated(function(){
+  this.showFeed = new ReactiveVar( false );
+});
+
+Template.accueilBleu.helpers({
+  showFeed: function() {
+    return Template.instance().showFeed.get();
+  }
+});
+
+Template.accueilBleu.events({
+  'change select': function( event, template ) {
+    if ( $( event.target ).val() === "feedBlue" ) {
+      template.showFeed.set( true );
+    } else {
+      template.showFeed.set( false );
+    }
+  }
+});
+
+// chat
 Template.Chat.helpers({
    messages() {
        return Messages.find();
@@ -32,6 +139,151 @@ Template.Chat.events({
       })
     },
   });
+
+// Carte
+Meteor.startup(function() {
+  GoogleMaps.load({key: 'AIzaSyBDLhhz9MZHAh3IFhIzU0cPunkBBDEzXXo'});
+  });
+  
+  if (Meteor.isClient) {
+  var MAP_ZOOM = 15;
+  
+  Meteor.startup(function() {
+    GoogleMaps.load();
+  });
+  
+  Template.map2.onCreated(function() {
+    var self = this;
+  
+    GoogleMaps.ready('map2', function(map) {
+      var marker;
+  
+      // Create and move the marker when latLng changes.
+      self.autorun(function() {
+        var latLng = Geolocation.latLng();
+        if (! latLng)
+          return;
+  
+        // If the marker doesn't yet exist, create it.
+        if (! marker) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(latLng.lat, latLng.lng),
+            map: map.instance
+          });
+        }
+        // The marker already exists, so we'll just change its position.
+        else {
+          marker.setPosition(latLng);
+        }
+  
+        // Center and zoom the map view onto the current position.
+        map.instance.setCenter(marker.getPosition());
+        map.instance.setZoom(MAP_ZOOM);
+      });
+    });
+  });
+  
+  Template.map2.helpers({
+    geolocationError: function() {
+      var error = Geolocation.error();
+      return error && error.message;
+    },
+    mapOptions: function() {
+      var latLng = Geolocation.latLng();
+      // Initialize the map once we have the latLng.
+      if (GoogleMaps.loaded() && latLng) {
+        return {
+          center: new google.maps.LatLng(latLng.lat, latLng.lng),
+          zoom: MAP_ZOOM
+        };
+      }
+    }
+  });
+  }
+
+  Template.profilPersoContact.helpers({
+    getPhoto: function() {
+    let user = Meteor.user().profile;
+      if (user) return user.picture
+      else return "none"
+    },
+    getName: function() {
+     let user = Meteor.user().profile;
+     if (user) return user.firstName
+    }, 
+    getLastName: function() {
+      let user = Meteor.user().profile;
+      if (user) return user.lastName
+     }, 
+    getPronouns: function() {
+      let user = Meteor.user().profile.PrefPronouns;
+      let PP = `Would like to be adressed as ${user}`;
+      if (user) return PP                             
+	  },
+    getNickname: function() {
+      let user = Meteor.user().profile.Nickname;
+      let NN = `Also known as ${user}`;
+      if (user) {
+        return NN
+      } 
+     },     
+    getBday: function() {
+    let user = Meteor.user().profile.birthday;
+    let BD = `Born on ${user}`;
+    if (user) {
+      return BD
+     }                             
+  },
+    getLiens: function() {
+    let user = Meteor.user().profile.plateformes;
+    var ptf = document.getElementById("ptf");
+    let linktab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+        linktab.push(Phref);
+        console.log(element);
+        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+       }
+     }                             
+  },
+  getExp: function() {
+    let user = Meteor.user().profile.experiences;
+    var expCv = document.getElementById("expCv");
+    let exptab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
+        exptab.push(explist);
+        console.log(element);
+        expCv.innerHTML = ` ${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
+       }
+     }                             
+  },
+  getBio: function() {
+    let user = Meteor.user().profile.autoBio;
+    let Abio = `${user}`;
+    if (user) {
+      return Abio
+     }                            
+  },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 1
 

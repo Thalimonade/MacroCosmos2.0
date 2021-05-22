@@ -5,6 +5,8 @@ import '../accueils/accueilSoiBlue.js';
 import '../accueils/accueilNvxRouge.js';
 import '../creaProfil/creaProfil.js'; 
 import '../../../lib/routing.js';
+import '../accueils/accueils2x.js';
+import '../preferences/preferences.js';
 
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
@@ -31,4 +33,16 @@ Template.app_body.events({
         event.preventDefault();
         FlowRouter.go('Ableu')
     },
+    'click #accueils2x'(event) {
+        event.preventDefault();
+        FlowRouter.go('accueils2x')
+    },
+    'click #Logout'(event) {
+		event.preventDefault();
+		Meteor.logout();
+        setTimeout(() => FlowRouter.go('log'), 200);
+	},
+    'click #préf'(event) {
+		setTimeout(() => FlowRouter.go('preferences'), 200);
+	},
 })

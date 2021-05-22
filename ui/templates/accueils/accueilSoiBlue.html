@@ -1,34 +1,80 @@
+<template name="indexBleu">
+  {{>accueilBleu}}
+</template>
+
 <template name="accueilBleu">
-    <h1>Welcome to Accueil Bleu !</h1>
-  
-    {{> profilPersoContact}}
-    {{> reseauCollab}}
-    {{> map}} 
-    {{> Chat}}
-    {{> FilActuPerso}}
+  <header>
+    <h1>Keep up with your mates !</h1>
+  </header>
+  <select class="btn-accBleu" >
+    <option value="profilPerso">My profil</option>
+    <option value="reseauPerso">My collaborations</option>
+    <option value="mapBlue">My network</option>
+    <option value="chatBlue">Chat</option>
+    <option value="feedBlue">Feed</option>
+  </select>
+  <br>
+
+    {{#if showProfil}}
+    <br>
+      {{>profilPersoContact}}
+    {{/if}}
+
+    {{#if showNetwork}}
+    <br>
+      {{>reseauCollab}}
+    {{/if}}
+
+    {{#if showMap}}
+    <br>
+      {{>map2}}
+    {{/if}}
+
+    {{#if showChat}}
+    <br>
+      {{>Chat}}
+    {{/if}}
+
+    {{#if showFeed}}
+    <br>
+      {{>FilActuPerso}}
+    {{/if}}
+
 </template>
 
 <template name="profilPersoContact">
-  <p>Son profil et ceux de ses contacts</p>
-    <!--{> BadgesRpzGraphiques}}
-    {> IDBio}}
-    {> reseauCollab}}-->
- </template>  
-
-<template name="IDBio">
-  <p>Biographie</p>
-</template>
-
-<template name="BadgesRpzGraphiques">
-  <p>Badges ou représentation graphique de ses capacités</p>
-</template>
+  <div class="Profil"> <p id="identité">{{getPhoto}} Photo
+    <br>
+   <b>{{getName}} {{getLastName}}</b> 
+   <br>
+   {{getPronouns}}
+   <br>
+   {{getNickname}}
+   <br> <br>
+   {{getBio}}
+  </p> </div>
+  <div  id= "infos">
+  <div class="Profil"> <p id="ptf">
+    {{getLiens}}
+  </p> </div>
+  <div class="Profil"> <p id="expCv">
+    {{getExp}}
+  </p> </div>
+</div>
+</template>  
 
 <template name="reseauCollab">
   <p>Réseau des collaborations accomplies</p>
 </template>
 
-<template name="réseauVisuCarte">
-  <p>Réseau des collaborations accomplies (carte/visuel)</p>
+<template name="map2">
+  <div class="map-container">
+    {{#unless geolocationError}}
+         {{> googleMap name="map" options=mapOptions}}
+       {{else}}
+         Geolocation failed: {{geolocationError}}
+    {{/unless}}
+   </div>
 </template>
 
 <template name="Chat">
@@ -39,15 +85,15 @@
     </header>
     {{#each messages}}
   <p><b>{{getUsername}} </b>-{{formatDate CreatedAt}}-: {{text}} </p>
-  {{else}}
-  <p>No messages.</p>
+    {{else}}
+  <p>No messages.</p> 
   {{/each}}
   <form id="chat-form">
     <p><textarea rows="3" width= relative name="text" placeholder="Write a message!">
     </textarea></p>
     <p><input type="submit" value="send"></p>
   </form>
-    <!-- Alterniative de code 
+    <!-- Alternative de code 
       chat messages here
     <ul class="message-window">
       {{#each recentMessages}}
@@ -65,20 +111,17 @@
   </div>
 </template>
 
+<template name="FilActuPerso">
+  <p>Fil d'actualité liés à ses contacts</p>
+</template>
+
+
 <!--<template name="message">
   <li class="message">
     <div class="username">{{username}}</div>
     <div class="message-text">{{messageText}}</div>
   </li>
 </template> -->
-
-<template name="FilActuPerso">
-  <p>Fil d'actualité liés à ses contacts</p>
-</template>
-
-<template name="preview">
-  
-</template>
 
     <!-- 
     distinguer la déclaration des templates

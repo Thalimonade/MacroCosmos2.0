@@ -10,6 +10,11 @@ body {
   align-content: space-around;
 }
 
+/* barre dynamique */
+.btn-group{
+  float: center;
+}
+
 form{
   float:center; 
   width:300px;
@@ -297,7 +302,7 @@ p1 {
   float: left;
 }
 
-/*LiensExt*/
+/* LiensExt */
 .container{
   background-color: violet;
   border: 1px solid rgb(117, 0, 92);
@@ -310,7 +315,7 @@ p1 {
   top: 850px
 }
 
- /*cv artistique*/
+ /* cv artistique */
 .container2{
   background-color: violet;
   border: 1px solid rgb(117, 0, 92);

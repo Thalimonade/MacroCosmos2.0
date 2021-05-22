@@ -234,15 +234,17 @@ Meteor.startup(function() {
       return BD
      }                             
   },
-  getLiens: function() {
+    getLiens: function() {
     let user = Meteor.user().profile.plateformes;
-    let Pf = `Find ${Meteor.user().profile.firstName} on ${user}`;
+    let ptf = document.getElementById("ptf");
     if (user) {
-      for (let plateformes = 0; plateformes < user.length; plateformes++) {
-        const element = array[plateformes];
-        
-      }
-      return pf
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let Phref = `<a href= ${element[0]} > ${element[1]} </a>`;
+        let pf = `Find ${Meteor.user().profile.firstName} on ${Phref}`;
+        console.log(element);
+        ptf.innerHTML = pf
+       }
      }                             
   },
 });

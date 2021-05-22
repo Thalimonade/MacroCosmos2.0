@@ -17,7 +17,7 @@ Template.LoginSignUp.events({
 			if (error) {
 				alert(error.message);
 			} else {
-				setTimeout(() => FlowRouter.go('Ableu'), 200);
+				setTimeout(() => FlowRouter.go('accueils2x'), 200);
 			}
 		});
 	},

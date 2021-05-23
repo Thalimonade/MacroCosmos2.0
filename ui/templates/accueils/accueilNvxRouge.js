@@ -1,14 +1,17 @@
-import './accueilNvxRouge.html';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { Template } from 'meteor/templating'; 
 
+import './accueilNvxRouge.html';
+/*
+import 'jquery-ui-dist/jquery-ui'
+import 'jquery-ui-dist/jquery-ui.css'
+*/
 
 // ReactiveVars Red
 	// RV carte réseau macro 
 Template.accueilRouge.onCreated(function(){
 	this.showCosmos = new ReactiveVar( true );
-	});
+});
 
 Template.accueilRouge.helpers({
 	showCosmos: function() {
@@ -18,18 +21,18 @@ Template.accueilRouge.helpers({
 
 Template.accueilRouge.events({
 	'change select': function( event, template ) {
-	  if ( $( event.target ).val() === "carteRed" ) {
+		if ( $( event.target ).val() === "carteRed" ) {
 		template.showCosmos.set( true );
-	  } else {
+		} else {
 		template.showCosmos.set( false );
-	  }
+		}
 	}
-  });
+});
 
-  	// RV Swipe 
+	// RV Swipe 
 Template.accueilRouge.onCreated(function(){
 	this.showSwipe = new ReactiveVar( false );
-	});
+});
 
 Template.accueilRouge.helpers({
 	showSwipe: function() {
@@ -39,18 +42,18 @@ Template.accueilRouge.helpers({
 
 Template.accueilRouge.events({
 	'change select': function( event, template ) {
-	  if ( $( event.target ).val() === "swipe" ) {
+		if ( $( event.target ).val() === "swipe" ) {
 		template.showSwipe.set( true );
-	  } else {
+		} else {
 		template.showSwipe.set( false );
-	  }
+		}
 	}
-  });
+});
 
-    	// RV feed macro 
+		// RV feed macro 
 Template.accueilRouge.onCreated(function(){
 	this.showFeedMacro = new ReactiveVar( false );
-	});
+});
 
 Template.accueilRouge.helpers({
 	showFeedMacro: function() {
@@ -60,86 +63,122 @@ Template.accueilRouge.helpers({
 
 Template.accueilRouge.events({
 	'change select': function( event, template ) {
-	  if ( $( event.target ).val() === "feedRed" ) {
+		if ( $( event.target ).val() === "feedRed" ) {
 		template.showFeedMacro.set( true );
-	  } else {
+		} else {
 		template.showFeedMacro.set( false );
-	  }
+		}
 	}
-  });
-
-
+});
 
 Template.logoutRéglages.events({
     'click #logout'(event) {
-		event.preventDefault();
-		Meteor.logout();
+        event.preventDefault();
+        Meteor.logout();
         setTimeout(() => FlowRouter.go('log'), 200);
-			},
+            },
 
-	'click #boutonPref'(event) {
-		setTimeout(() => FlowRouter.go('preferences'), 200);
-			}
-		});
-
-
+    'click #boutonPref'(event) {
+        setTimeout(() => FlowRouter.go('preferences'), 200);
+            }
+});
 
 // Création de la carte pour accueil rouge
 if (Meteor.isClient) {
-	var MAP_ZOOM = 15;
+    var MAP_ZOOM = 15;
 
-		Meteor.startup(function() {
-		GoogleMaps.load();
-		});
+	Meteor.startup(function() {
+	GoogleMaps.load();
+	});
 
-		Template.redMap.onCreated(function() {
-		var self = this;
+	Template.redMap.onCreated(function() {
+	var self = this;
 
-		GoogleMaps.ready('redMap', function(map) {
-			var marker;
+	GoogleMaps.ready('redMap', function(map) {
+		var marker;
 
-			// Création du marker en fonction de lat et lng
-			self.autorun(function() {
-			var latLng = Geolocation.latLng();
-			if (! latLng)
-				return;
+		// Création du marker en fonction de lat et lng
+		self.autorun(function() {
+		var latLng = Geolocation.latLng();
+		if (! latLng)
+			return;
 
-			// Si pas de marker, création
-			if (! marker) {
-				marker = new google.maps.Marker({
-				position: new google.maps.LatLng(latLng.lat, latLng.lng),
-				map: redMap.instance
-				});
-			}
-			// Si marker, changement de position
-			else {
-				marker.setPosition(latLng);
-			}
-
-			// Zoom sur la position
-			map.instance.setCenter(marker.getPosition());
-			map.instance.setZoom(MAP_ZOOM);
+		// Si pas de marker, création
+		if (! marker) {
+			marker = new google.maps.Marker({
+			position: new google.maps.LatLng(latLng.lat, latLng.lng),
+			map: redMap.instance
 			});
-		});
-		});
-		
-		// Demande d'activation geoloc du navigateur
-		Template.redMap.helpers({
-		geolocationError: function() {
-			var error = Geolocation.error();
-			return error && error.message;
-		},
-
-		mapOptions: function() {
-			var latLng = Geolocation.latLng();
-			// lancement de la carte ggl si on a info sur latlng
-			if (GoogleMaps.loaded() && latLng) {
-			return {
-				center: new google.maps.LatLng(latLng.lat, latLng.lng),
-				zoom: MAP_ZOOM
-			};
-			}
 		}
+		// Si marker, changement de position
+		else {
+			marker.setPosition(latLng);
+		}
+
+		// Zoom sur la position
+		map.instance.setCenter(marker.getPosition());
+		map.instance.setZoom(MAP_ZOOM);
+		});
+	});
+	});
+	
+	// Demande d'activation geoloc du navigateur
+	Template.redMap.helpers({
+	geolocationError: function() {
+		var error = Geolocation.error();
+		return error && error.message;
+	},
+
+	mapOptions: function() {
+		var latLng = Geolocation.latLng();
+		// lancement de la carte ggl si on a info sur latlng
+		if (GoogleMaps.loaded() && latLng) {
+		return {
+			center: new google.maps.LatLng(latLng.lat, latLng.lng),
+			zoom: MAP_ZOOM
+		};
+		}
+	}
+	});
+}
+/* Swipe */
+/*
+$('.js-lazyload').lazyload({
+	effect: 'fadeIn',
+	threshold: 50,
+});
+
+var $topCard,
+deltaThreshold = 100,
+deltaX = 0;
+
+function swipeEnded(event, direction, $card) {
+	var  directionFactor,
+	transform;
+	if (event.type === 'click') {
+		directionFactor = direction === 'right' ? -1 : 1;
+	}
+	else if (event.deltaX) {
+		directionFactor = event.deltaX >= 0 ? -1 : 1;
+	}
+	if ( event.deltaX && deltaX > deltaThreshold || event.deltaX && deltaX < -1 * deltaThreshold || direction) {
+		transform = 'translate(' + directionFactor * -100 + 'vw, 0) rotate(' + directionFactor * -5 + 'deg)';
+		$card
+		.delay(100)
+		.queue(function () { 
+			$(this).css('transform', transform).dequeue(); 
+		})
+		.delay(300)
+		.queue(function () { 
+			$(this).addClass('done').remove(); 
+		});
+		console.log('Swipe done. \nCard:', $card, '\nDirection:', directionFactor);
+		
+	}
+	else {
+		transform = 'translate(0, 0) rotate(0)';
+		$card.css({
+			'transform': transform,
 		});
 	}
 
@@ -348,3 +387,50 @@ var love = document.getElementById('love');*/
 		}
 
 	}) */
+}
+
+function swipeLeft(event, $card) {
+	var transform;
+	deltaX = event.deltaX;
+	transform = 'translate(' + deltaX * 0.8 + 'px, 0) rotate(5deg)';
+	//translate the card on swipe
+	$card.css({
+		'transform': transform,
+	});
+}
+
+function swipeRight(event, $card) {
+	var transform;
+	deltaX = event.deltaX;
+	transform = 'translate(' + deltaX * 0.8 + 'px, 0) rotate(-5deg)';
+	//translate the card on swipe
+	$card.css({
+		'transform': transform,
+	});
+}
+
+/*Pour les interactions sur les écrans des tel portables */
+/*
+$('.js-swiping-card').each(function(index, element) {
+	var $card = $(element),
+	hammertime = new Hammer(element);
+	hammertime.on('panleft swipeleft', function(event) {
+		swipeLeft(event, $card);
+	});
+	hammertime.on('panright swiperight', function(event) {
+		swipeRight(event, $card);
+	});
+	hammertime.on('panend', function(event) {
+		swipeEnded(event, false, $card);
+	});
+});
+
+$('.js-left-trigger').on('click', function(event) {
+	var $topCard= $('.js-swiping-card').last();
+	swipeEnded(event, 'left', $topCard);
+});
+$('.js-right-trigger').on('click', function(event) {
+  var $topCard = $('.js-swiping-card').last();
+  swipeEnded(event, 'right', $topCard);
+}); 
+*/

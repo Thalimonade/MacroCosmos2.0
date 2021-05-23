@@ -3,48 +3,62 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 -->
+<template name="indexRouge">
+  {{>accueilRouge}}
+</template>
+
 <template name="accueilRouge">
-    <h1>Welcome to Acceuil rouge !</h1>  {{> logoutRéglages}}
-  
-    {{> Carte}}
-    {{> Swipe}}
-    {{> RechercheProf}}
-    {{> FilActuGlobal}}
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container3">
-        {{> logoutRéglages}}
-        </div>
-        </nav>
-</template>
-  
-  <template name="Carte">
-    <p>Carte hypothétique du monde ici</p>
-    <div id= "map"></div>
-  </template>
+  <header> 
+    <h1>Explore what's new!</h1>
+  </header>
+  <select class="btn-accRouge" >
+    <option value="carteRed">Macrocosmos Network</option>
+    <option value="swipe">Random Encounter</option>
+    <option value="feedRed">Feed</option>
+  </select>
+    <input id="search" type="text" placeholder="Search for artists around you!">
+    <button id="searchProfil">search</button>
+    <div><p id="finds"></p></div>
+  <br>
+    {{#if showCosmos}}
+    <br>
+      {{>redMap}}
+    {{/if}}
 
-  <template name="Swipe">
-    <p>"Swipe", quoi que cela veuille dire</p>
-  </template>
+    {{#if showSwipe}}
+    <br>
+      {{>Swipe}}
+    {{/if}}
 
-  <template name="FilActuGlobal">
-    <p>Fil d'actualité global</p>
-  </template>
-
-  <template name="logoutRéglages">
-      <p><button id="logout">logout</button>
-        <br>
-      <button id="preferences">preferences</button></p>
-  </template>
-
-  <template name="RechercheProf">
-  <nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search for artists around you!">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </nav>
+    {{#if showFeedMacro}}
+    <br>
+      {{>feedMacro}}
+    {{/if}}
 </template>
 
+<template name="redMap">
+  <div class="map-container">
+    {{#unless geolocationError}}
+      {{> googleMap name="redMap" options=mapOptions}}
+    {{else}}
+      Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
+</template>
+
+<template name="feedMacro">
+  <p>Fil d'actualité global</p>
+</template>
+
+<template name="RechercheProf">
+  <input type="text" placeholder="Search for artists around!">
+</template>
+
+<template name="logoutRéglages">
+  <p><button id="logout">logout</button>
+  <button id="boutonPref">preferences</button></p>
+</template> 
+  
 <!--
 <div class="container">
   <div class="stack">

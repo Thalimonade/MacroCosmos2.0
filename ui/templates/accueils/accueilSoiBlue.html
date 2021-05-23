@@ -83,7 +83,7 @@
       <h1>MacroChat</h1>
     </header>
     {{#each messages}}
-  <p><b>{{getUsername}} </b>-{{formatDate CreatedAt}}-: {{text}} </p>
+  <p><b>{{userId}} </b>-{{formatDate CreatedAt}}-: {{text}} </p>
     {{else}}
   <p>No messages.</p> 
   {{/each}}

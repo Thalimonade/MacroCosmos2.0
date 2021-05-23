@@ -12,9 +12,11 @@ Meteor.methods({
             throw new Meteor.Error('Not-autorised');
         } */
 
+        //var sender = Meteor.users.find({ username: Meteor.user().username }).fetch();
+
         Messages.insert({
             text, 
-            userId: Meteor.userId(),
+            userId: Meteor.user().username,
             CreatedAt: new Date()
         })
     },

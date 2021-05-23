@@ -141,6 +141,24 @@ if (Meteor.isClient) {
 	}
 	});
 }
+//rechercher des utilisateur 
+Template.accueilRouge.events({
+	'click #searchProfil'(event) {
+	  event.preventDefault();  
+	  var search = document.getElementById("search").value;
+	  var finds = document.getElementById("finds");
+	  console.log(Meteor.users.find({ username: search }).fetch());
+	  foundUser = Meteor.users.find({ username: search }).fetch();
+	  if (foundUser) {
+		finds.innerHTML = `We found a match: <br> <b>${foundUser[0].profile.firstName} ${foundUser[0].profile.lastName} </b> 
+		(${foundUser[0].profile.Nickname}) <button id="viewP">view profile</button>`
+	  } else {
+		finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
+	  }
+	} // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
+	// VAR POUR AFFICHER LE PROFILE
+  })
+
 /* Swipe */
 /*
 $('.js-lazyload').lazyload({
@@ -182,19 +200,8 @@ function swipeEnded(event, direction, $card) {
 		});
 	}
 
-	//rechercher des utilisateur 
-Template.accueilRouge.events({
-  'click #searchProfil'(event) {
-	event.preventDefault();  
-	var search = document.getElementById("search").value;
-	var finds = document.getElementById("finds");
-	console.log(Meteor.users.find({ username: search }).fetch());
-	foundUser = Meteor.users.find({ username: search }).fetch();
-	finds.innerHTML = `We found a match: <br> <b>${foundUser[0].profile.firstName} ${foundUser[0].profile.lastName} </b> 
-	(${foundUser[0].profile.Nickname}) <button id="viewP">view profile</button>`
-  } // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
-  // VAR POUR AFFICHER LE PROFILE
-})
+
+	TENTATIVE DE SWIPE 2
 
 	/*'use strict';
 

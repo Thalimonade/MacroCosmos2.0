@@ -386,8 +386,8 @@ var love = document.getElementById('love');*/
 			loveListener
 		}
 
-	}) */
-}
+	}) 
+}*/
 
 function swipeLeft(event, $card) {
 	var transform;

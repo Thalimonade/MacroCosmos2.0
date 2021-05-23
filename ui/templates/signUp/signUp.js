@@ -31,6 +31,7 @@ Template.signUpPage.events({
 		event.preventDefault();
 		let firstName = document.getElementById('firstName').value;
         let lastName = document.getElementById('lastName').value;
+		let Un = document.getElementById('username').value;
         //let alias = document.getElementById('alias').value;
         let email = document.getElementById('email').value;
         let phone = document.getElementById('phone').value;
@@ -42,7 +43,7 @@ Template.signUpPage.events({
 				if (firstName != '' && mdp != '' && email != '' && lastName != '' && phone != '') {
 					Accounts.createUser(
 						{
-							username: email,
+							username: Un,
 							password: mdp,
 							profile: {
 								firstName: firstName,

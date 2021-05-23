@@ -243,7 +243,6 @@ Meteor.startup(function() {
         let element = user[i];
         let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
         linktab.push(Phref);
-        console.log(element);
         ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
        }
      }                             
@@ -257,7 +256,6 @@ Meteor.startup(function() {
         let element = user[i];
         let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
         exptab.push(explist);
-        console.log(element);
         expCv.innerHTML = ` ${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
        }
      }                             
@@ -270,6 +268,8 @@ Meteor.startup(function() {
      }                            
   },
 });
+
+
 
 
 

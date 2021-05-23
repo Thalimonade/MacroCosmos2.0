@@ -11,18 +11,22 @@
     <option value="swipe">Random Encounter</option>
     <option value="feedRed">Feed</option>
   </select>
-    <input type="text" placeholder="Search for artists around you!">
+    <input id="search" type="text" placeholder="Search for artists around you!">
     <button id="searchProfil">search</button>
+    <div><p id="finds"></p></div>
   <br>
     {{#if showCosmos}}
+    <br>
       {{>redMap}}
     {{/if}}
 
     {{#if showSwipe}}
+    <br>
       {{>Swipe}}
     {{/if}}
 
     {{#if showFeedMacro}}
+    <br>
       {{>feedMacro}}
     {{/if}}
 
@@ -40,6 +44,48 @@
 
 <template name="Swipe">
   <p>"Swipe", quoi que cela veuille dire</p>
+  <br>
+  <div class="tinder">
+    <div class="tinder--status">
+      <i class="fa fa-remove"></i>
+      <i class="fa fa-heart"></i>
+    </div>
+  
+    <div class="tinder--cards">
+      <div class="tinder--card">
+        <img src="https://placeimg.com/600/300/people">
+        <h3>Demo User 1</h3>
+        <p>This is a demo for Tinder like swipe cards</p>
+      </div>
+      <div class="tinder--card">
+        <img src="https://placeimg.com/600/300/animals">
+        <h3>Demo User 2</h3>
+        <p>This is a demo for Tinder like swipe cards</p>
+      </div>
+      <div class="tinder--card">
+        <img src="https://placeimg.com/600/300/nature">
+        <h3>Demo User 3</h3>
+        <p>This is a demo for Tinder like swipe cards</p>
+      </div>
+      <div class="tinder--card">
+        <img src="https://placeimg.com/600/300/tech">
+        <h3>Demo User 4</h3>
+        <p>This is a demo for Tinder like swipe cards</p>
+      </div>
+      <div class="tinder--card">
+        <img src="https://placeimg.com/600/300/arch">
+        <h3>Demo User 5</h3>
+        <p>This is a demo for Tinder like swipe cards</p>
+      </div>
+      {{initCards}} 
+  {{createButtonListener}}
+    </div>
+  
+    <div class="tinder--buttons">
+      <button id="nope"><i class="fa fa-remove"></i></button>
+      <button id="love"><i class="fa fa-heart"></i></button>
+    </div>
+  </div>
 </template>
 
 <template name="feedMacro">

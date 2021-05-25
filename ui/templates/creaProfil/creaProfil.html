@@ -1,15 +1,31 @@
 <template name="creationProfil">
   <h1>Complete your profile</h1>
   
-  {{> idUser}}
-  {{> liensExt}}
-  {{> CVart}}
-  {{> listCategoriesCoches}}
-  {{> NotesAuto}}
-  <br>
-  <br>
-  <br>
-  <br>
+  <div class="container">
+    <div class= "row">
+      <div class="col-sm-12 col-md-2">
+        {{> idUser}}
+      </div>
+      <br>
+      <div class="col-sm-12 col-md-5">
+        {{> liensExt}}
+      </div>
+      <br>
+      <div class="col-sm-12 col-md-5">
+        {{> CVart}}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class= "row">
+      <div class="col-sm-12 col-md-6">
+        {{> listCategoriesCoches}}
+      </div>
+      <div class="col-sm-12 col-md-6">
+        {{> NotesAuto}}
+      </div>
+    </div>
+  </div>
   {{> BoutonC}}
   {{> BoutonP}}
 </template>
@@ -25,42 +41,30 @@
 </template>
 
 <template name="CVart">
-  <div class="container3">
-    <div class= "row">
-      <div class="col-sm-12 col-md-6">
-        <h2>Artistic Resume</h2>
-        <p id="expDonnées"></p>
-        <dl>
-          <dt>
-            <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
-          </dt>
-          <br>
-          <dd>
-            <input type="text" name="description" id="details" placeholder="Experience details">
-          </dd>
-        </dl>
-        <input id= "submitExp" type="button" class="Button" value="Submit">
-      </div>
-    </div>
-  </div>
+  <h2>Artistic Resume</h2>
+  <p id="expDonnées"></p>
+  <dl>
+    <dt>
+      <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
+    </dt>
+    <br>
+    <dd>
+      <input type="text" name="description" id="details" placeholder="Experience details">
+    </dd>
+  </dl>
+  <input id= "submitExp" type="button" class="Button" value="Submit">
 </template>
 
 <template name="liensExt">
-  <div class="container">
-    <div class= "row">
-      <div class="col-sm-12 col-md-6">
-        <h2>Links to other accounts</h2>
-        <p id="liensDonnés"></p>
-        <input id="plateforme" type="text" placeholder="name of the site">
-        <input id="liens" type="url" name="url" class="Lien"
-        placeholder="https://example.com"
-        pattern="https://.*" size="30"
-        required>
-        <br>
-        <input id="submitLiens" type="button" class="Button" value="Submit">
-      </div>
-    </div>
-  </div>
+  <h2>Links to other accounts</h2>
+  <p id="liensDonnés"></p>
+  <input id="plateforme" type="text" placeholder="name of the site">
+  <input id="liens" type="url" name="url" class="Lien"
+  placeholder="https://example.com"
+  pattern="https://.*" size="30"
+  required>
+  <br>
+  <input id="submitLiens" type="button" class="Button" value="Submit">
 </template>
 
 <template name="NotesAuto">
@@ -87,8 +91,6 @@
 
 <template name="listCategoriesCoches">
   <div id="categCrea">
-     <div class= "row">
-      <div class="col-sm-12 col-md-6">
     <h2>List of artistic practices</h2>
     <ul>
       <input type="checkbox" name="Music" value="Music" >
@@ -123,6 +125,4 @@
     <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
     <button id="Suggest">Suggest</button>
   </div>
-</div>
-</div>
 </template>

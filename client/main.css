@@ -292,18 +292,12 @@ p1 {
   float: left;
 }
 
-/*LiensExt*/
+/*Grids*/
 .container{
   background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-}
-
- /*cv artistique*/
-.container2{
-  background-color: #ffa6c8;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
+  column-rule-style:solid;
 }
 
 .submit{
@@ -385,25 +379,22 @@ p1 {
 /* Nav Rouge*/
 
 /*RechercheProf*/
-.form-control{
+.btn-accueilRouge{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 5px 50px;
-  word-wrap: break-word;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: center;
 }
 
-.btn{
+/*Accueil Bleu*/
+.btn-accBleu {
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 5px 24px;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: center;
 }
 
-.container3{
-  margin: auto;
-  width: 50%;
-  border: 3px rgb(117, 0, 92);
-  padding: 10px;
-  background-color: #ffa6c8;
-}

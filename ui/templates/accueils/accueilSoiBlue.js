@@ -7,14 +7,34 @@ import { Messages } from '../../../import/api/messages';
 import { error } from 'jquery';
 
 // ReactiveVars Blue
-  // RVar Profil perso
+  // RVar profil, collab, carte, chat, feed
 Template.accueilBleu.onCreated(function(){
   this.showProfil = new ReactiveVar( true );
+  this.showNetwork = new ReactiveVar( false );
+  this.showMap = new ReactiveVar( false );
+  this.showChat = new ReactiveVar( false );
+  this.showFeed = new ReactiveVar( false );
 });
 
 Template.accueilBleu.helpers({
   showProfil: function() {
     return Template.instance().showProfil.get();
+  },
+
+  showNetwork: function() {
+    return Template.instance().showNetwork.get();
+  },
+
+  showMap: function() {
+    return Template.instance().showMap.get();
+  },
+
+  showChat: function() {
+    return Template.instance().showChat.get();
+  },
+
+  showFeed: function() {
+    return Template.instance().showFeed.get();
   }
 });
 
@@ -25,85 +45,21 @@ Template.accueilBleu.events({
     } else {
       template.showProfil.set( false );
     }
-  }
-});
-
-  // RVar Collaborations
-Template.accueilBleu.onCreated(function(){
-  this.showNetwork = new ReactiveVar( false );
-});
-
-Template.accueilBleu.helpers({
-  showNetwork: function() {
-    return Template.instance().showNetwork.get();
-  }
-});
-
-Template.accueilBleu.events({
-  'change select': function( event, template ) {
     if ( $( event.target ).val() === "reseauPerso" ) {
       template.showNetwork.set( true );
     } else {
       template.showNetwork.set( false );
     }
-  }
-});
-
-  // Rvar carte réseau personnel
-Template.accueilBleu.onCreated(function(){
-  this.showMap = new ReactiveVar( false );
-});
-
-Template.accueilBleu.helpers({
-  showMap: function() {
-    return Template.instance().showMap.get();
-  }
-});
-
-Template.accueilBleu.events({
-  'change select': function( event, template ) {
     if ( $( event.target ).val() === "mapBlue" ) {
       template.showMap.set( true );
     } else {
       template.showMap.set( false );
     }
-  }
-});
-
-  //RVar chat
-Template.accueilBleu.onCreated(function(){
-  this.showChat = new ReactiveVar( false );
-});
-
-Template.accueilBleu.helpers({
-  showChat: function() {
-    return Template.instance().showChat.get();
-  }
-});
-
-Template.accueilBleu.events({
-  'change select': function( event, template ) {
     if ( $( event.target ).val() === "chatBlue" ) {
       template.showChat.set( true );
     } else {
       template.showChat.set( false );
     }
-  }
-});
-
-  // RVar feed perso
-Template.accueilBleu.onCreated(function(){
-  this.showFeed = new ReactiveVar( false );
-});
-
-Template.accueilBleu.helpers({
-  showFeed: function() {
-    return Template.instance().showFeed.get();
-  }
-});
-
-Template.accueilBleu.events({
-  'change select': function( event, template ) {
     if ( $( event.target ).val() === "feedBlue" ) {
       template.showFeed.set( true );
     } else {

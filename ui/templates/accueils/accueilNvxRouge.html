@@ -15,10 +15,8 @@
     <option value="carteRed">Macrocosmos Network</option>
     <option value="swipe">Random Encounter</option>
     <option value="feedRed">Feed</option>
+    <option value="searchProfil">Profil search</option>
   </select>
-    <input id="search" type="text" placeholder="Search for artists around you!">
-    <button id="searchProfil">search</button>
-    <div><p id="finds"></p></div>
   <br>
     {{#if showCosmos}}
     <br>
@@ -33,6 +31,11 @@
     {{#if showFeedMacro}}
     <br>
       {{>feedMacro}}
+    {{/if}}
+
+    {{#if showSearch}}
+    <br>
+     {{>RechercheProf}}
     {{/if}}
 </template>
 
@@ -97,7 +100,9 @@
 </template>
 
 <template name="RechercheProf">
-  <input type="text" placeholder="Search for artists around!">
+  <input id="search" type="text" placeholder="Search for artists around!">
+  <button id="searchProfil">search</button>
+  <div><p id="finds"></p></div>
 </template>
 
 <template name="logoutRéglages">

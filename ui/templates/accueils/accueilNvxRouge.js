@@ -7,15 +7,33 @@ import 'jquery-ui-dist/jquery-ui'
 import 'jquery-ui-dist/jquery-ui.css'
 */
 
+
+
 // ReactiveVars Red
-	// RV carte réseau macro 
+	// RV carte réseau macro, RV Swipe 
 Template.accueilRouge.onCreated(function(){
 	this.showCosmos = new ReactiveVar( true );
+	this.showSwipe = new ReactiveVar( false );
+	this.showFeedMacro = new ReactiveVar( false );
+	this.showSearch = new ReactiveVar( false );
+
+	this.prof = new ReactiveVar(true);
 });
 
 Template.accueilRouge.helpers({
 	showCosmos: function() {
 		return Template.instance().showCosmos.get();
+	},
+
+	showSwipe: function() {
+		return Template.instance().showSwipe.get();
+	},
+
+	showFeedMacro: function() {
+		return Template.instance().showFeedMacro.get();
+	},
+	showSearch: function() {
+		return Template.instance().showSearch.get();
 	}
 });
 
@@ -26,71 +44,25 @@ Template.accueilRouge.events({
 		} else {
 		template.showCosmos.set( false );
 		}
-	}
-});
-
-	// RV Swipe 
-Template.accueilRouge.onCreated(function(){
-	this.showSwipe = new ReactiveVar( false );
-});
-
-Template.accueilRouge.helpers({
-	showSwipe: function() {
-		return Template.instance().showSwipe.get();
-	}
-});
-
-Template.accueilRouge.events({
-	'change select': function( event, template ) {
 		if ( $( event.target ).val() === "swipe" ) {
 		template.showSwipe.set( true );
 		} else {
 		template.showSwipe.set( false );
 		}
-	}
-});
-
-		// RV feed macro 
-Template.accueilRouge.onCreated(function(){
-	this.showFeedMacro = new ReactiveVar( false );
-});
-
-Template.accueilRouge.helpers({
-	showFeedMacro: function() {
-		return Template.instance().showFeedMacro.get();
-	}
-});
-
-Template.accueilRouge.events({
-	'change select': function( event, template ) {
 		if ( $( event.target ).val() === "feedRed" ) {
 		template.showFeedMacro.set( true );
 		} else {
 		template.showFeedMacro.set( false );
 		}
-	}
-});
-
-		// RV recherche profil
-Template.accueilRouge.onCreated(function(){
-	this.showSearch = new ReactiveVar( false );
-});
-
-Template.accueilRouge.helpers({
-	showSearch: function() {
-		return Template.instance().showSearch.get();
-	}
-});
-
-Template.accueilRouge.events({
-	'change select': function( event, template ) {
 		if ( $( event.target ).val() === "searchProfil" ) {
 		template.showSearch.set( true );
 		} else {
 		template.showSearch.set( false );
 		}
-	}
+	},
 });
+
+
 
 Template.logoutRéglages.events({
     'click #logout'(event) {
@@ -165,21 +137,38 @@ if (Meteor.isClient) {
 
 //rechercher des utilisateur 
 Template.accueilRouge.events({
-    'click #searchProfil'(event) {
+    'click #searchProfil'(event, template) {
       event.preventDefault();  
       var search = document.getElementById("search").value;
       var finds = document.getElementById("finds");
+	  template.prof.set(Meteor.users.find({ username: search }).fetch());
       console.log(Meteor.users.find({ username: search }).fetch());
-      foundUser = Meteor.users.find({ username: search }).fetch();
-      if (foundUser) {
-        finds.innerHTML = `We found a match: <br> <b>${foundUser[0].profile.firstName} ${foundUser[0].profile.lastName} </b> 
-        (${foundUser[0].profile.Nickname}) <button id="viewP">view profile</button>`
+      //var foundUser = Meteor.users.find({ username: search }).fetch();
+      if (template.prof.get()) {
+        finds.innerHTML = `We found a match: <br> <b>${template.prof.get()[0].profile.firstName} ${template.prof.get()[0].profile.lastName} </b> 
+        (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button>`
       } else {
         finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
       }
+<<<<<<< Updated upstream
     } // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
     // VAR POUR AFFICHER LE PROFILE
   })
+=======
+    },
+	'click #viewP'(event) {
+		event.preventDefault();  
+		var viewP = document.getElementById("viewP");
+
+	}
+  }),
+
+  Template.accueilRouge.helpers({
+    getName: function() {
+    return Template.instance().prof.get()[0].profile.Nickname
+    },
+});
+>>>>>>> Stashed changes
 
   /*
 Template.profilPersoContact.helpers({

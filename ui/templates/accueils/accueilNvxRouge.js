@@ -38,10 +38,6 @@ Template.accueilRouge.helpers({
 	},
 
 	//recherche Utilisateurs
-	'click #viewP'(event) {
-		event.preventDefault();  
-		var viewP = document.getElementById("viewP");
-	}
 });
 
 Template.accueilRouge.events({
@@ -82,7 +78,11 @@ Template.accueilRouge.events({
 		} else {
 		  finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
 		}
-	  }
+	  },
+	  'click #viewP'(event) {
+		event.preventDefault();  
+		var viewP = document.getElementById("viewP");
+	}
 });
 
 

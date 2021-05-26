@@ -10,7 +10,7 @@ import 'jquery-ui-dist/jquery-ui.css'
 
 
 // ReactiveVars Red
-	// RV carte réseau macro, RV Swipe 
+	// RV carte réseau macro, Swipe, recherche et feed
 Template.accueilRouge.onCreated(function(){
 	this.showCosmos = new ReactiveVar( true );
 	this.showSwipe = new ReactiveVar( false );
@@ -21,6 +21,7 @@ Template.accueilRouge.onCreated(function(){
 });
 
 Template.accueilRouge.helpers({
+	//RV
 	showCosmos: function() {
 		return Template.instance().showCosmos.get();
 	},
@@ -34,6 +35,12 @@ Template.accueilRouge.helpers({
 	},
 	showSearch: function() {
 		return Template.instance().showSearch.get();
+	},
+
+	//recherche Utilisateurs
+	'click #viewP'(event) {
+		event.preventDefault();  
+		var viewP = document.getElementById("viewP");
 	}
 });
 
@@ -60,6 +67,22 @@ Template.accueilRouge.events({
 		template.showSearch.set( false );
 		}
 	},
+
+	//recherche utilisateurs
+	'click #searchProfil'(event, template) {
+		event.preventDefault();  
+		var search = document.getElementById("search").value;
+		var finds = document.getElementById("finds");
+		template.prof.set(Meteor.users.find({ username: search }).fetch());
+		console.log(Meteor.users.find({ username: search }).fetch());
+		//var foundUser = Meteor.users.find({ username: search }).fetch();
+		if (template.prof.get()) {
+		  finds.innerHTML = `We found a match: <br> <b>${template.prof.get()[0].profile.firstName} ${template.prof.get()[0].profile.lastName} </b> 
+		  (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button>`
+		} else {
+		  finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
+		}
+	  }
 });
 
 
@@ -135,40 +158,7 @@ if (Meteor.isClient) {
 	});
 }
 
-//rechercher des utilisateur 
-Template.accueilRouge.events({
-    'click #searchProfil'(event, template) {
-      event.preventDefault();  
-      var search = document.getElementById("search").value;
-      var finds = document.getElementById("finds");
-	  template.prof.set(Meteor.users.find({ username: search }).fetch());
-      console.log(Meteor.users.find({ username: search }).fetch());
-      //var foundUser = Meteor.users.find({ username: search }).fetch();
-      if (template.prof.get()) {
-        finds.innerHTML = `We found a match: <br> <b>${template.prof.get()[0].profile.firstName} ${template.prof.get()[0].profile.lastName} </b> 
-        (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button>`
-      } else {
-        finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
-      }
-<<<<<<< Updated upstream
-    } // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
-    // VAR POUR AFFICHER LE PROFILE
-  })
-=======
-    },
-	'click #viewP'(event) {
-		event.preventDefault();  
-		var viewP = document.getElementById("viewP");
 
-	}
-  }),
-
-  Template.accueilRouge.helpers({
-    getName: function() {
-    return Template.instance().prof.get()[0].profile.Nickname
-    },
-});
->>>>>>> Stashed changes
 
   /*
 Template.profilPersoContact.helpers({

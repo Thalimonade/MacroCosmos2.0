@@ -3,36 +3,39 @@
   
   <div class="container">
     <div class= "row">
-      <div class="col-sm-12 col-md-2">
+      <div class="col-sm-12 col-lg-4">
         {{> idUser}}
       </div>
-      <br>
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-lg-4">
         {{> liensExt}}
       </div>
-      <br>
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-lg-4">
         {{> CVart}}
       </div>
     </div>
-  </div>
-  <div class="container">
     <div class= "row">
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-6 col-lg-6">
         {{> listCategoriesCoches}}
       </div>
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-6 col-lg-6">
         {{> NotesAuto}}
       </div>
     </div>
   </div>
   {{> BoutonC}}
   {{> BoutonP}}
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-4'>A</div>
+      <div class='col-md-4'>B</div>
+      <div class='col-md-4'>C</div>
+    </div>    
+  </div>
 </template>
 
 <template name="idUser">
   <input id= "Nickname" type="text" placeholder="Nickname" class="Pseudo">
-  <p1>Profile Picture</p1>
+  <p>Profile Picture</p>
   <form action="/action_page.php">
     <input type="file" id="myFile" name="filename">
   </form>
@@ -43,15 +46,9 @@
 <template name="CVart">
   <h2>Artistic Resume</h2>
   <p id="expDonnées"></p>
-  <dl>
-    <dt>
-      <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
-    </dt>
-    <br>
-    <dd>
-      <input type="text" name="description" id="details" placeholder="Experience details">
-    </dd>
-  </dl>
+    <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
+    <br />
+    <input type="text" name="description" id="details" placeholder="Experience details">
   <input id= "submitExp" type="button" class="Button" value="Submit">
 </template>
 

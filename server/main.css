@@ -1,7 +1,7 @@
 body {
   padding: 10px;
   font-family: 'Times New Roman', Times, serif;
-  text-align: center;
+  /*text-align: center;*/
   background: url(https://i.pinimg.com/originals/f8/14/cd/f814cd9030f0ab158438122256745aab.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,16 +10,12 @@ body {
   align-content: space-around;
 }
 
-form{
-  float:center; 
-  width:300px;
-}
 
-input{
+/*input{
   float:center;
   width:150px;
   margin-bottom:10px;
-}
+}*/
 
 h1{
   font-family: 'Times New Roman', Times, serif;
@@ -33,8 +29,9 @@ h2{
   font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /*
   text-align: center;
-  float: center;
+  float: center;*/
 }
 
 h3{
@@ -180,12 +177,12 @@ label {
   font-family: 'Times New Roman', Times, serif;
   background-color: #ffa6c8;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
+  /* padding: 10px 24px; 
   width: 50%;
   padding: 10px;
   text-align: center;
   position: relative;
-  left: 900px;
+  left: 900px; */
 }
 
 /*bouton preview*/
@@ -297,7 +294,18 @@ p1 {
   background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
+}
+
+
+
+.row2{
+  column-count: 2;
+  column-rule-style: solid;
+  column-rule-color: rgb(117, 0, 92);
   column-rule-style:solid;
+  column-width: auto;
+  column-fill: auto;
+  column-span: all;
 }
 
 .submit{
@@ -398,3 +406,6 @@ p1 {
   float: center;
 }
 
+.couleur{
+  background-color: blue;
+}

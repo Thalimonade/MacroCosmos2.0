@@ -180,6 +180,80 @@ Template.accueilRouge.events({
     } // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
     // VAR POUR AFFICHER LE PROFILE
   })
+<<<<<<< Updated upstream
+=======
+
+  /*
+Template.profilPersoContact.helpers({
+    getPhoto: function() {
+      if (foundUser) return foundUser.picture
+      else return "none"
+    },
+    getName: function() {
+     let user = Meteor.user().profile;
+     if (user) return user.firstName
+    }, 
+    getLastName: function() {
+      let user = Meteor.user().profile;
+      if (user) return user.lastName
+     }, 
+    getPronouns: function() {
+      let user = Meteor.user().profile.PrefPronouns;
+      let PP = `Would like to be adressed as ${user}`;
+      if (user) return PP                             
+	  },
+    getNickname: function() {
+      let user = Meteor.user().profile.Nickname;
+      let NN = `Also known as ${user}`;
+      if (user) {
+        return NN
+      } 
+     },     
+    getBday: function() {
+    let user = Meteor.user().profile.birthday;
+    let BD = `Born on ${user}`;
+    if (user) {
+      return BD
+     }                             
+  },
+    getLiens: function() {
+    let user = Meteor.user().profile.plateformes;
+    var ptf = document.getElementById("ptf");
+    let linktab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+        linktab.push(Phref);
+        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+       }
+     }                             
+  },
+  getExp: function() {
+    let user = Meteor.user().profile.experiences;
+    var expCv = document.getElementById("expCv");
+    let exptab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
+        exptab.push(explist);
+        expCv.innerHTML = ` ${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
+       }
+     }                             
+  },
+  getBio: function() {
+    let user = Meteor.user().profile.autoBio;
+    let Abio = `${user}`;
+    if (user) {
+      return Abio
+     }                            
+  },
+});
+
+  */
+
+>>>>>>> Stashed changes
 /* Swipe */
 /*
 $('.js-lazyload').lazyload({

@@ -180,8 +180,6 @@ Template.accueilRouge.events({
     } // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
     // VAR POUR AFFICHER LE PROFILE
   })
-<<<<<<< Updated upstream
-=======
 
   /*
 Template.profilPersoContact.helpers({
@@ -253,7 +251,6 @@ Template.profilPersoContact.helpers({
 
   */
 
->>>>>>> Stashed changes
 /* Swipe */
 /*
 $('.js-lazyload').lazyload({

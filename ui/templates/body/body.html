@@ -2,10 +2,14 @@
     <header>
       <h1 style="display: inline-block;">MACROCOSMOS</h1>
     </header>
+    {{#if currentUser}}
     <div class="btn-group">
       <button id="accueils2x">home</button>
       <button id="préf">settings</button>
       <button id="Logout">logout</button>
+      {{> Template.dynamic template=main}}
     </div>
-    {{> Template.dynamic template=main}}
+    {{else}}
+      {{> Template.dynamic template=main}}
+    {{/if}}
   </template>

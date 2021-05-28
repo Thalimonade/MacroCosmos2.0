@@ -1,7 +1,5 @@
 body {
-  padding: 10px;
   font-family: 'Times New Roman', Times, serif;
-  /*text-align: center;*/
   background: url(https://i.pinimg.com/originals/f8/14/cd/f814cd9030f0ab158438122256745aab.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,18 +8,12 @@ body {
   align-content: space-around;
 }
 
-
-/*input{
-  float:center;
-  width:150px;
-  margin-bottom:10px;
-}*/
-
 h1{
   font-family: 'Times New Roman', Times, serif;
   font-size: 60px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
 }
 
 h2{
@@ -29,9 +21,6 @@ h2{
   font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  /*
-  text-align: center;
-  float: center;*/
 }
 
 h3{
@@ -39,8 +28,6 @@ h3{
   font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  text-align: center;
-  float: left;
 }
 
 p {
@@ -55,18 +42,12 @@ label {
   font-size: 20px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  float:center;
-  width:150px;
-  margin-bottom:10px;
 }
 
 .btn-group button {
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: left;
 }
 
 .btn-group button:not(:last-child) {
@@ -82,126 +63,73 @@ label {
 /*Sign Up*/
 .Name {
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  text-align: center;
 }
 
 .Location {
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 29%;
-  text-align: center;
 }
 
 .email {
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 29%;
-  text-align: center;
 }
 
 #code-select {
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 10%;
 }
 
 .phone{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 19%;
-  text-align: center;
 }
 
 .password{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  text-align: center;
 }
 
 .verify{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  text-align: center;
 }
 
 #birthday{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-  width: 22.5%; 
-  text-align: center;
 }
 
 .userConditions{
   border:1px solid rgb(117, 0, 92);
   background: white;
-  padding: 10px 24px; 
 }
 
 .geolocation {
   border:1px solid rgb(117, 0, 92);
   background: white;
-  padding: 10px 24px; 
 }
 
 .ButtonNS{
   font-family: 'Times New Roman', Times, serif;
-  border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
 }
 
 /*Log In */
 /* liste catégories */
 .container-fluid{
-  height: 450px;
-  width: 300px;
-  position: absolute;
-  background-color: #ffa6c8;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
-  padding: 10px 10px;
-  cursor: pointer;
-  right: 150px;
-  top: 370px;
-}
- /*Creation Profil */
-/* liste catégories creation profil */
-#categCrea{
   background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
 }
 
-/* autobiographie */
-#bio{
-  font-family: 'Times New Roman', Times, serif;
-  background-color: #ffa6c8;
-  border:1px solid rgb(117, 0, 92);
-  /* padding: 10px 24px; 
-  width: 50%;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  left: 900px; */
-}
+ /*Creation Profil */
 
 /*bouton preview*/
 .prev{
   display: block;
-  margin-left: auto;
-  margin-right: auto 
 }
 
-/*log in & sign up; login template*/
+/*log in & sign up; login template
 .logSign{
-  position: relative;
+   position: relative;
   height: 200px; left: 100px;
-}
+ }*/
 
 .newCat{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 29%;
 }
 
 /*Log In */
@@ -216,49 +144,34 @@ label {
 
 .Mail{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 29%;
 }
 
 .pwd{
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px;
-  width: 29%;
 }
 
 .SignUp{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: center;
 }
 
 .ClickMe{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: left;
 }
 
 .LogIn{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: center;
 }
+
  /*Creation Profil */
 .Pseudo{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-  text-align: center;
-  float: left;
 }
 
 p1 {
@@ -266,27 +179,17 @@ p1 {
   font-size: 20px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  float: left;
-  clear:left;
-  text-align: left;
 }
 
 #myFile{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  float: left;
-  clear: left;
 }
 
 .Pronouns{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-  text-align: center;
-  clear:left;
-  float: left;
 }
 
 /*Grids*/
@@ -294,75 +197,59 @@ p1 {
   background-color: #ffa6c8;
   border: 1px solid rgb(117, 0, 92);
   color: black;
+  column-fill: auto;
+  column-rule: solid;
+  padding: 20px;
 }
 
-
-
-.row2{
-  column-count: 2;
-  column-rule-style: solid;
-  column-rule-color: rgb(117, 0, 92);
-  column-rule-style:solid;
-  column-width: auto;
-  column-fill: auto;
-  column-span: all;
+/*bio*/
+#autoBio{
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+  width: 100%;
+  height: 450px;
 }
 
 .submit{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  float: left;
-  clear: left;
 }
 
 .Lien{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-  text-align: center;
 }
 
 .Button{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-}
+/*   padding: 10px 24px; 
+ */}
 
 #experienceTitle{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-  text-align: center; 
 }
 
 #details{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-  padding: 10px 24px; 
-  text-align: center;
 }
 
 .preview{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: center; 
 }
 
 .create{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: left; 
 }
 
-.containerChat{
+/* .containerChat{
   background-image: linear-gradient(to bottom, #76d5f0, #6050f1 100%);
   width: relative;
   height: fit-content;
@@ -371,16 +258,10 @@ p1 {
 
 #chat-form{
   bottom: 10px;
-}
+} */
 
 .Profil{
-  background-image: linear-gradient(to bottom, #403547, #351e4d 100%);
-  width: 450px;
-  padding: 3px;
-  height:fit-content;
-  position: relative;
-  text-shadow: black;
-  display: inline-block;
+display: inline-block;
 }
 
 /* Swipe */
@@ -391,9 +272,6 @@ p1 {
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: center;
 }
 
 /*Accueil Bleu*/
@@ -401,11 +279,4 @@ p1 {
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: center;
-}
-
-.couleur{
-  background-color: blue;
 }

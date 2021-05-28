@@ -1,15 +1,14 @@
 <template name="creationProfil">
   <h1>Complete your profile</h1>
-  
   <div class="container">
     <div class= "row">
-      <div class="col-sm-12 col-lg-4">
+      <div class="col-sm-12 col-md-3 col-lg-3">
         {{> idUser}}
       </div>
-      <div class="col-sm-12 col-lg-4">
+      <div class="col-sm-12 col-md-5 col-lg-5">
         {{> liensExt}}
       </div>
-      <div class="col-sm-12 col-lg-4">
+      <div class="col-sm-12 col-md-4 col-lg-4">
         {{> CVart}}
       </div>
     </div>
@@ -21,15 +20,14 @@
         {{> NotesAuto}}
       </div>
     </div>
-  </div>
-  {{> BoutonC}}
-  {{> BoutonP}}
-  <div class="container">
-    <div class='row'>
-      <div class='col-md-4'>A</div>
-      <div class='col-md-4'>B</div>
-      <div class='col-md-4'>C</div>
-    </div>    
+    <div class= "row">
+      <div class= "col-sm-6 col-md-6 col-lg-6">
+        {{> BoutonC}}
+      </div>
+      <div class= "col-sm-6 col-md-6 col-lg-6">
+        {{> BoutonP}}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,15 +38,17 @@
     <input type="file" id="myFile" name="filename">
   </form>
   <input id="PrefPronouns" type="text" placeholder="PrefPronouns" class="Pronouns">
+  <br>
   <input id="submitId" type="button" class="submit" value="Submit">
 </template>
 
 <template name="CVart">
   <h2>Artistic Resume</h2>
   <p id="expDonnées"></p>
-    <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
-    <br />
-    <input type="text" name="description" id="details" placeholder="Experience details">
+  <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
+  <br />
+  <input type="text" name="description" id="details" placeholder="Experience details">
+  <br>
   <input id= "submitExp" type="button" class="Button" value="Submit">
 </template>
 
@@ -69,8 +69,8 @@
     <h3>Autobiography:</h3>
     <form action="/action_page.php">
       <textarea id="autoBio" class="bio" name="bio"
-      rows="5" cols="33" maxlength="500">
-    </textarea>
+     minlength="500" placeholder="Tell us something about yourself!"></textarea>
+    <br>
     <button id="submitBio" class="Button">Submit</button>
   </form> 
 </div>
@@ -92,28 +92,40 @@
     <ul>
       <input type="checkbox" name="Music" value="Music" >
       <label for="Music">Music</label>
+      <br>
       <input type="checkbox" name="Cinema" value="Cinema">
       <label for="Cinema">Cinema</label>
+      <br>
       <input type="checkbox" name="Audio-visual" value="Audio-visual">
       <label type="Audio-visual">Audio-Visual</label>
+      <br>
       <input type="checkbox" name="Litterature" value="Litterature">
       <label type="Litterature">Litterature</label>
+      <br>
       <input type="checkbox" name="Scenic Arts" value="ScenicArts">
       <label type="Scenic Arts">Scenic Arts</label>
+      <br>
       <input type="checkbox" name="Danse" value="Danse">
       <label type= "Danse">Dance</label>
+      <br>
       <input type="checkbox" name="Graphical Arts" value="GraphicalArts">
       <label type="Graphical Arts">Graphic Arts</label>
+      <br>
       <input type="checkbox" name="Architecture" value="Architecture">
       <label type="Architecture">Architecture</label>
+      <br>
       <input type="checkbox" name= "Fashion" value="Fashion">
       <label type= "Fashion">Fashion</label>
+      <br>
       <input type="checkbox" name="BodyModification" value="BodyModification">
       <label type="BodyModification">Body Modifications</label>
+      <br>
       <input type="checkbox" name="DigitalArt" value="DigitalArt">
       <label type="DigitalArt">Digital Art</label>
+      <br>
       <input type="checkbox" name="CulinaryArts" value="CulinaryArts">
       <label type= "CulinaryArts">Culinary Arts</label>
+      <br>
       <input type="checkbox" name="Tuning" value="Tuning">
       <label type= "Tuning">Tuning</label>
     </ul>

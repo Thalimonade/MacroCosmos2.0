@@ -123,7 +123,7 @@ if (Meteor.isClient) {
 		if (! marker) {
 			marker = new google.maps.Marker({
 			position: new google.maps.LatLng(latLng.lat, latLng.lng),
-			map: redMap.instance
+			map: map.instance
 			});
 		}
 		// Si marker, changement de position

@@ -96,7 +96,7 @@ Template.Chat.events({
     },
   });
 
-// Carte
+// Carte accueil bleu
 Meteor.startup(function() {
   GoogleMaps.load({key: 'AIzaSyBDLhhz9MZHAh3IFhIzU0cPunkBBDEzXXo'});
   });
@@ -108,10 +108,10 @@ Meteor.startup(function() {
     GoogleMaps.load();
   });
   
-  Template.map2.onCreated(function() {
+  Template.blueMap.onCreated(function() {
     var self = this;
   
-    GoogleMaps.ready('map2', function(map) {
+    GoogleMaps.ready('blueMap', function(map) {
       var marker;
   
       // Create and move the marker when latLng changes.
@@ -139,7 +139,7 @@ Meteor.startup(function() {
     });
   });
   
-  Template.map2.helpers({
+  Template.blueMap.helpers({
     geolocationError: function() {
       var error = Geolocation.error();
       return error && error.message;

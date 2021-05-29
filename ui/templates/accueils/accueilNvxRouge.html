@@ -9,7 +9,7 @@
 
 <template name="accueilRouge">
   <header> 
-    <h1>Explore what's new!</h1>
+    <h1>Explore!</h1>
   </header>
   <select class="btn-accRouge" >
     <option value="carteRed">Macrocosmos Network</option>
@@ -39,6 +39,7 @@
     {{/if}}
 </template>
 
+<!--carte-->
 <template name="redMap">
   <div class="redMap-container">
     {{#unless geolocationError}}
@@ -49,6 +50,7 @@
   </div>
 </template>
 
+<!--Swipe-->
 <template name="Swipe">
   <br>
   <div class="tinder">
@@ -94,10 +96,19 @@
   </div>
 </template>
 
+<!--fil d'actualité-->
 <template name="feedMacro">
-  <p>Fil d'actualité global</p>
+  <h2>What's new ?</h2>
+  <ul>
+    {{#each post}}
+      {{> elements_feed}}
+    {{/each}}
+  </ul>
+  <br>
+  <button id= "newPost">new post</button>
 </template>
 
+<!--recherche des profils hors de ses contacts-->
 <template name="RechercheProf">
   <input id="search" type="text" placeholder="Search for artists around!">
   <button id="searchProfil">search</button>
@@ -106,6 +117,7 @@
   
 </template>
 
+<!--log out-->
 <template name="logoutRéglages">
   <p><button id="logout">logout</button>
   <button id="boutonPref">preferences</button></p>

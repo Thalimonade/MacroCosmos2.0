@@ -1,7 +1,24 @@
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Template } from 'meteor/templating';
+
+// importer DB du fil d'actualité
+import {ObjetsRedFeed} from '../../../import/api/listesDB.js';
 
 import './accueilNvxRouge.html';
+
+Template.feedMacro.helpers({
+	post: function() {
+		return ObjetsRedFeed.find({});
+	}
+})
+
+Template.feedMacro.events({
+	'click #newPost': function() {
+		const newPost = prompt('Share your art!')
+		Meteor.call('ajouterPost', newPost);
+	},
+});
 /*
 import 'jquery-ui-dist/jquery-ui'
 import 'jquery-ui-dist/jquery-ui.css'
@@ -12,9 +29,9 @@ import 'jquery-ui-dist/jquery-ui.css'
 // ReactiveVars Red
 	// RV carte réseau macro, Swipe, recherche et feed
 Template.accueilRouge.onCreated(function(){
-	this.showCosmos = new ReactiveVar( true );
+	this.showCosmos = new ReactiveVar( false );
 	this.showSwipe = new ReactiveVar( false );
-	this.showFeedMacro = new ReactiveVar( false );
+	this.showFeedMacro = new ReactiveVar( true );
 	this.showSearch = new ReactiveVar( false );
 
 	this.prof = new ReactiveVar(true);

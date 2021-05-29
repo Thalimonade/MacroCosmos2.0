@@ -8,6 +8,7 @@ import { Markers } from '../../../import/api/listesDB';
 
 import './login.html';
 
+// login & sign up
 Template.LoginSignUp.events({
     'click #LogIn'(event) {
 		event.preventDefault();
@@ -35,6 +36,7 @@ Template.LoginSignUp.events({
 	},
 })
 
+// carte login
 Meteor.startup(function() {
 GoogleMaps.load({key: 'AIzaSyBDLhhz9MZHAh3IFhIzU0cPunkBBDEzXXo'});
 });

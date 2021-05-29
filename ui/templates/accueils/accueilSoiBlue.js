@@ -155,7 +155,8 @@ Meteor.startup(function() {
       }
     }
   });
-  }
+// Ajouter les markers des utilisateurs avec on est en lien sur cette carte
+}
 
   Template.profilPersoContact.helpers({
     getPhoto: function() {

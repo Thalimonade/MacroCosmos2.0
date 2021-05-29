@@ -99,7 +99,7 @@ Template.logoutRéglages.events({
             }
 });
 
-// Création de la carte pour accueil rouge
+//Création de la carte pour accueil rouge
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;
 
@@ -156,6 +156,8 @@ if (Meteor.isClient) {
 		}
 	}
 	});
+
+// Ajouter les markers de tous les autres utilisateurs du réseau MacroCosmos sur cette carte
 }
 
 

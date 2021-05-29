@@ -7,6 +7,7 @@ import '../creaProfil/creaProfil.js';
 import '../../../lib/routing.js';
 import '../accueils/accueils2x.js';
 import '../preferences/preferences.js';
+import '../elements_feed/elements_feed.js'
 
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';

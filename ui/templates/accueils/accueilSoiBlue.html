@@ -8,17 +8,11 @@
     <h1>Keep up with your mates!</h1>
   </header>
   <select class="btn-accBleu" >
-    <option value="profilPerso">My profil</option>
     <option value="reseauPerso">My collaborations</option>
     <option value="mapBlue">My network</option>
-    <option value="chatBlue">Chat</option>
+    <option value="chatBlue">Forum</option>
   </select>
   <br>
-
-    {{#if showProfil}}
-    <br>
-      {{>profilPersoContact}}
-    {{/if}}
 
     {{#if showNetwork}}
     <br>
@@ -83,7 +77,7 @@
 <template name="Chat">
   <div class="containerChat">
     <header>
-      <h1>MacroChat</h1>
+      <h1>MacroForum</h1>
     </header>
     {{#each messages}}
   <p><b>{{userId}} </b>-{{formatDate CreatedAt}}-: {{text}} </p>

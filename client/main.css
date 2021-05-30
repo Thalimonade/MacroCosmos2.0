@@ -241,7 +241,7 @@ p1 {
   font-family: 'Times New Roman', Times, serif;
   box-sizing: border-box;
   width: 100%;
-  height: 450px;
+  height: 100px;
 }
 
 .submit{
@@ -322,7 +322,7 @@ display: inline-block;
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-  margin: 0 auto;
+  align-self: center;
 }
 
 /*accueil Rouge*/

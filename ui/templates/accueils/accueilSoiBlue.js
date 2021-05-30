@@ -20,9 +20,6 @@ Template.accueilBleu.onCreated(function(){
 
 
 Template.accueilBleu.helpers({
-  showProfil: function() {
-    return Template.instance().showProfil.get();
-  },
 
   showNetwork: function() {
     return Template.instance().showNetwork.get();
@@ -39,14 +36,6 @@ Template.accueilBleu.helpers({
 
 Template.accueilBleu.events({
   'change select': function( event, template ) {
-    if ( $( event.target ).val() === "profilPerso" ) {
-      template.showProfil.set( true );
-      let CU = Meteor.user().profile;
-      template.coUser.set(CU);
-
-    } else {
-      template.showProfil.set( false );
-    }
     if ( $( event.target ).val() === "reseauPerso" ) {
       template.showNetwork.set( true );
     } else {

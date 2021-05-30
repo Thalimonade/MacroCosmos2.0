@@ -1,10 +1,9 @@
 <template name="app_body">
-
+  {{#if currentUser}}
   <nav class="navbar navbar-light" style="background-color: #ffa6c8;">
     <div class="container-md">
       <a class="navbar-brand mb-0 h1">MACROCOSMOS</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        {{#if currentUser}}
         <div class="navbar-nav">
           <a class="nav-link" id="accueils2x">Home</a>
           <a class="nav-link" id="préf">Settings</a>
@@ -13,9 +12,8 @@
         </div>
       </div>
     </div>
-  </div>
   </nav>
-  {{else}}
-    {{> Template.dynamic template=main}}
-  {{/if}}
-</template>
+    {{else}}
+      {{> Template.dynamic template=main}}
+    {{/if}}
+  </template>

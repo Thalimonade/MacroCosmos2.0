@@ -32,6 +32,15 @@ h3{
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+h4{
+  font-family: 'TeaPot', sans-serif;  
+  font-size: 40px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-left: 20px;
+  margin-left: 450px;
+}
+
 p {
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
@@ -287,10 +296,11 @@ display: inline-block;
 /* Nav Rouge*/
 
 /*RechercheProf*/
-.btn-accueilRouge{
+.btn-accRouge{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
+  margin-left: 500px;
 }
 
 /*Accueil Bleu*/
@@ -298,6 +308,7 @@ display: inline-block;
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
+  margin-left: 500px;
 }
 
 /*ModifProfil*/
@@ -314,7 +325,6 @@ display: inline-block;
   height: fit-content;
   padding: 3px;
   width: 100%;
-  max-width: 600px;
   margin-bottom: 20px;
 }
 
@@ -343,7 +353,8 @@ border:1px solid rgb(117, 0, 92);
 #newPost{
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
-  color: black;   
+  color: black;  
+  margin-left: 550px; 
 }
 
 #search{
@@ -358,6 +369,14 @@ border:1px solid rgb(117, 0, 92);
 }
 
 .imageFeed{
+  width: 100%;
+}
+
+.container-fluid3{
+  background-color: aquamarine;
+  height: fit-content;
   padding: 3px;
-  width: 100%
+  width: 50%;
+  margin-left: 300px; 
+  margin-bottom: 30px;
 }

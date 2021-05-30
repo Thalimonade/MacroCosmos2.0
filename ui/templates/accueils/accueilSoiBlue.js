@@ -199,7 +199,7 @@ Meteor.startup(function() {
         let element = user.plateformes[i];
         let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
         linktab.push(Phref);
-        //ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
         return `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
        }
      }                             

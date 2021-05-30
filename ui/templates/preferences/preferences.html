@@ -1,13 +1,13 @@
 <template name="preferences">
-<h1>Add, remove or modifiy your data</h1>
+  <h1>Add, remove or modifiy your data</h1>
 
-<br>
-{{> ModifProfil}}
-<h2>See your changes</h2>
-{{> profilPersoContact}}
+  <br>
+  {{> ModifProfil}}
+  <h2>See your changes</h2>
+  {{> profilPersoContact}}
 
-    <button id="Save" class="create">Save changes</button>
-  </template>
+  <button id="save" class="create">Save changes</button>
+</template>
 
 
 <template name="ModifProfil">
@@ -15,8 +15,8 @@
     <div class= "row">
       <div class="col-sm-12 col-md-3 col-lg-3">   
     {{> idUser}}
-  </div>
-  <div class="col-sm-12 col-md-5 col-lg-5">
+      </div>
+    <div class="col-sm-12 col-md-5 col-lg-5">
     {{> liensExt}}
   </div>
   <div class="col-sm-12 col-md-4 col-lg-4">

@@ -209,7 +209,7 @@ p1 {
 
 /*Grids*/
 .container{
-  background-color: #ffa6c8;
+  background-image: linear-gradient(to bottom, #ffa6c8, #e40057 100%);
   border: 1px solid rgb(117, 0, 92);
   color: black;
   column-fill: auto;
@@ -265,7 +265,11 @@ p1 {
 }
 
 .containerChat{
+<<<<<<< Updated upstream
   background-image: linear-gradient(to bottom, #76d5f0, #8073f5 100%);
+=======
+  background-image: linear-gradient(to bottom, aquamarine, #8073f5 100%);
+>>>>>>> Stashed changes
   width: relative;
   height: fit-content;
   padding: 3px;

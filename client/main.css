@@ -46,6 +46,7 @@ p {
   font-size: 20px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
 }
 
 label {
@@ -73,35 +74,59 @@ label {
 
 /*Sign Up*/
 .Name {
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 .Location {
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 .email {
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 #code-select {
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 .phone{
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 .password{
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 .verify{
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 #birthday{
-  border:1px solid rgb(117, 0, 92);
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;
+  align-content: space-around;
 }
 
 .userConditions{
@@ -131,7 +156,7 @@ label {
   align-self: center ;
 }
 
- /*Creation Profil */
+/*Creation Profil */
 
 /*bouton preview*/
 .prev{
@@ -143,7 +168,7 @@ label {
   position: relative; 
   height: 200px; 
   left: 450px;
- }
+}
 
 #newCat{
   border:1px solid rgb(117, 0, 92);
@@ -198,10 +223,10 @@ label {
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
-
+  
 }
 
- /*Creation Profil */
+/*Creation Profil */
 .Pseudo{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
@@ -258,144 +283,144 @@ p1 {
 .Button{
   font-family: 'Times New Roman', Times, serif;
   border:1px solid rgb(117, 0, 92);
-/*   padding: 10px 24px; 
- */}
-
-#experienceTitle{
-  font-family: 'Times New Roman', Times, serif;
-  border:1px solid rgb(117, 0, 92);
-}
-
-#details{
-  font-family: 'Times New Roman', Times, serif;
-  border:1px solid rgb(117, 0, 92);
-}
-
-.preview{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
-}
-
-.create{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
-}
-
-.containerChat{
-  background-image: linear-gradient(to bottom, #76d5f0, #8073f5 100%);
-  width: relative;
-  height: fit-content;
-  padding: 3px;
-}
-
-#chat-form{
-  bottom: 10px;
-} 
-
-.Profil{
-display: inline-block;
-}
-
-/* Swipe */
-/* Nav Rouge*/
-
-/*RechercheProf*/
-.btn-accRouge{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
-  margin-left: 500px;
-}
-
-/*Accueil Bleu*/
-.btn-accBleu {
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
-  margin-left: 500px;
-}
-
-/*ModifProfil*/
-#save{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;
-  margin: 0 auto;
-}
-
-/*accueil Rouge*/
-.container-fluid2{
-  background-color: aquamarine;
-  height: fit-content;
-  padding: 3px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-#searchProfil{
-background-color: white;
-border: 1px solid rgb(117, 0, 92);
-color: black;
-}
-
-#search{
-border:1px solid rgb(117, 0, 92);
-}
-
-#logout{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;  
-}
-
-#boutonPref{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;  
-}
-
-#newPost{
-  background-color: white;
-  border: 1px solid rgb(117, 0, 92);
-  color: black;  
-  margin-left: 550px; 
-}
-
-#search{
-  border:1px solid rgb(117, 0, 92);
-}
-
-/* barre de navigation */
-.navbar-brand{
-  font-family: 'Meltland', serif;
-  color: #76d5f0;
-  text-shadow: 1px solid blue;
-  padding-left: 1690px;
-  padding-top: 10px;
-}
-
-.imageFeed{
-  width: 100%;
-}
-
-.container-fluid3{
-  background-color: aquamarine;
-  height: fit-content;
-  padding: 3px;
-  width: 50%;
-  margin-left: 300px; 
-  margin-bottom: 30px;
-}
-
-/*Fil d'actuelité*/
-p2{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  padding-left: 20px;
-  margin-left: 450px;
-  margin-bottom: 30px;
-}
+  /*   padding: 10px 24px; 
+  */}
+  
+  #experienceTitle{
+    font-family: 'Times New Roman', Times, serif;
+    border:1px solid rgb(117, 0, 92);
+  }
+  
+  #details{
+    font-family: 'Times New Roman', Times, serif;
+    border:1px solid rgb(117, 0, 92);
+  }
+  
+  .preview{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;
+  }
+  
+  .create{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;
+  }
+  
+  .containerChat{
+    background-image: linear-gradient(to bottom, #76d5f0, #8073f5 100%);
+    width: relative;
+    height: fit-content;
+    padding: 3px;
+  }
+  
+  #chat-form{
+    bottom: 10px;
+  } 
+  
+  .Profil{
+    display: inline-block;
+  }
+  
+  /* Swipe */
+  /* Nav Rouge*/
+  
+  /*RechercheProf*/
+  .btn-accRouge{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;
+    margin-left: 500px;
+  }
+  
+  /*Accueil Bleu*/
+  .btn-accBleu {
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;
+    margin-left: 500px;
+  }
+  
+  /*ModifProfil*/
+  #save{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;
+    margin: 0 auto;
+  }
+  
+  /*accueil Rouge*/
+  .container-fluid2{
+    background-color: aquamarine;
+    height: fit-content;
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  #searchProfil{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;
+  }
+  
+  #search{
+    border:1px solid rgb(117, 0, 92);
+  }
+  
+  #logout{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;  
+  }
+  
+  #boutonPref{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;  
+  }
+  
+  #newPost{
+    background-color: white;
+    border: 1px solid rgb(117, 0, 92);
+    color: black;  
+    margin-left: 550px; 
+  }
+  
+  #search{
+    border:1px solid rgb(117, 0, 92);
+  }
+  
+  /* barre de navigation */
+  .navbar-brand{
+    font-family: 'Meltland', serif;
+    color: #76d5f0;
+    text-shadow: 1px solid blue;
+    padding-left: 1690px;
+    padding-top: 10px;
+  }
+  
+  .imageFeed{
+    width: 100%;
+  }
+  
+  .container-fluid3{
+    background-color: aquamarine;
+    height: fit-content;
+    padding: 3px;
+    width: 50%;
+    margin-left: 300px; 
+    margin-bottom: 30px;
+  }
+  
+  /*Fil d'actuelité*/
+  p2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding-left: 20px;
+    margin-left: 450px;
+    margin-bottom: 30px;
+  }

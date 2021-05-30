@@ -18,14 +18,15 @@ h1{
 }
 
 h2{
-  font-family: 'TeaPot', sans-serif;  font-size: 40px;
+  font-family: 'TeaPot', sans-serif;  
+  font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding-left: 20px;
 }
 
 h3{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Meltland', Times, serif;
   font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -312,6 +313,7 @@ display: inline-block;
   background-color: aquamarine;
   height: fit-content;
   padding: 3px;
+  width: 100%;
   max-width: 600px;
   margin-bottom: 20px;
 }
@@ -346,4 +348,16 @@ border:1px solid rgb(117, 0, 92);
 
 #search{
   border:1px solid rgb(117, 0, 92);
+}
+
+.navbar-brand{
+  font-family: 'Meltland', serif;
+  color: #76d5f0;
+  text-shadow: 1px solid blue;
+  padding-left: 30px;
+}
+
+.imageFeed{
+  padding: 3px;
+  width: 100%
 }

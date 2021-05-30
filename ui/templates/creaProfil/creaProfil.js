@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
+import { Suggestions } from '../../../import/api/listesDB';
 
 import './creaProfil.html';
 
@@ -80,6 +81,19 @@ Template.listCategoriesCoches.events({
     console.log(Cats);
     return Cats;
     },
+    'click #Suggest'(event) {
+    event.preventDefault();
+    let newCat = document.getElementById("newCat").value;
+    console.log(newCat);
+    /*Meteor.call('sugg.insert', newCat, (err) => {
+        if (err) {
+            alert(err.message);
+        } else {
+            event.target.reset();
+        }
+    })*/
+    Meteor.call('Suggérer', newCat);
+    }
 })
 
 Template.BoutonP.events({

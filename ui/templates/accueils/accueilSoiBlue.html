@@ -46,7 +46,9 @@
    <br>
    {{getNickname}}
    <br> <br>
-   {{getBio}}
+   {{getBday}}<br> <br>
+   {{getLiens}} <br> <br>
+   {{getExp}}
   </p> </div>
   <div  id= "infos">
   <div class="Profil"> <p id="ptf">
@@ -59,8 +61,11 @@
 </template>  
 
 <template name="reseauCollab">
-  <p>{{showCollabs}}</p> 
-  <p id="myCollabs"></p>
+  <div><p id="myCollabs"> {{getBday}}</p>
+  <p>
+
+  </p> 
+</div>
 </template>
 
 <template name="blueMap">

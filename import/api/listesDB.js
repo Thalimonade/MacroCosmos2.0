@@ -45,3 +45,19 @@ Meteor.methods({
     return post;
   }
 });
+
+// base de données feed rouge
+export const Suggestions = new Mongo.Collection('suggestions');
+
+Meteor.methods({
+  Suggérer: function (newCat) {
+
+     let sugg = Suggestions.insert({
+          newCat, 
+          userId: Meteor.user().username,
+          CreatedAt: new Date()
+      })
+      console.log('ok');
+    return sugg;
+  },
+})

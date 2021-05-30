@@ -13,7 +13,11 @@ Template.accueilBleu.onCreated(function(){
   this.showNetwork = new ReactiveVar( false );
   this.showMap = new ReactiveVar( false );
   this.showChat = new ReactiveVar( false );
+
+  this.coUser = new ReactiveVar();
 });
+
+
 
 Template.accueilBleu.helpers({
   showProfil: function() {
@@ -37,6 +41,9 @@ Template.accueilBleu.events({
   'change select': function( event, template ) {
     if ( $( event.target ).val() === "profilPerso" ) {
       template.showProfil.set( true );
+      let CU = Meteor.user().profile;
+      template.coUser.set(CU);
+
     } else {
       template.showProfil.set( false );
     }
@@ -149,13 +156,15 @@ Meteor.startup(function() {
 }
 
   Template.profilPersoContact.helpers({
+    
+    //template.coUser.set(Meteor.user().profile),
     getPhoto: function() {
     let user = Meteor.user().profile;
       if (user) return user.picture
       else return "none"
     },
     getName: function() {
-     let user = Meteor.user().profile;
+     let user = Meteor.user().profile; 
      if (user) return user.firstName
     }, 
     getLastName: function() {
@@ -163,34 +172,35 @@ Meteor.startup(function() {
       if (user) return user.lastName
      }, 
     getPronouns: function() {
-      let user = Meteor.user().profile.PrefPronouns;
-      let PP = `Would like to be adressed as ${user}`;
+      let user = Meteor.user().profile;
+      let PP = `Would like to be adressed as ${user.PrefPronouns}`;
       if (user) return PP                             
 	  },
     getNickname: function() {
-      let user = Meteor.user().profile.Nickname;
-      let NN = `Also known as ${user}`;
+      let user = Meteor.user().profile;
+      let NN = `Also known as ${user.Nickname}`;
       if (user) {
         return NN
       } 
      },     
     getBday: function() {
-    let user = Meteor.user().profile.birthday;
-    let BD = `Born on ${user}`;
+    let user = Meteor.user().profile;
+    let BD = `Born on ${user.birthday}`;
     if (user) {
       return BD
      }                             
   },
     getLiens: function() {
-    let user = Meteor.user().profile.plateformes;
+    let user = Meteor.user().profile;
     var ptf = document.getElementById("ptf");
     let linktab = [];
     if (user) {
-      for (let i = 0; i < user.length; i++) {
-        let element = user[i];
+      for (let i = 0; i < user.plateformes.length; i++) {
+        let element = user.plateformes[i];
         let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
         linktab.push(Phref);
-        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+        //ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+        return `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
        }
      }                             
   },
@@ -208,22 +218,22 @@ Meteor.startup(function() {
      }                             
   },
   getBio: function() {
-    let user = Meteor.user().profile.autoBio;
-    let Abio = `${user}`;
+    let user = Meteor.user().profile;
+    let Abio = `${user.autoBio}`;
     if (user) {
       return Abio
      }                            
   },
 });
 
-Template.reseauCollab.helpers({
-  showCollabs: function() {
-    let user = Meteor.user().profile.follows;
-    let coll = document.getElementById("myCollabs");
-    let colla = `<b>You currently follow the works of:</b> <br> ${user}`
-    //coll.innerHTML = `<b>You currently follow the works of:</b> <br> ${user}`
-    return colla
-  }
+Template.accueilBleu.helpers({
+      getCollabs: function() {
+        let user = Meteor.user().profile.follows;
+        let coll = document.getElementById("myCollabs");
+        let colla = `<b>You currently follow the works of:</b> <br> ${user}`
+        coll.innerHTML = `<b>You currently follow the works of:</b> <br> ${user}`
+        return colla                         
+    },
 })
 
 

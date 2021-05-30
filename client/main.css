@@ -9,18 +9,19 @@ body {
 }
 
 h1{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Meltland', Times, serif;
   font-size: 60px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
+  padding: 3px;
 }
 
 h2{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 40px;
+  font-family: 'TeaPot', sans-serif;  font-size: 40px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-left: 20px;
 }
 
 h3{
@@ -110,7 +111,7 @@ label {
 /*Log In */
 /* liste catégories */
 .container-fluid{
-  background-color: #ffa6c8;
+  background-image: linear-gradient(to bottom, #ffffff, #5b29ff 100%);
   border: 1px solid rgb(117, 0, 92);
   color: black;
 }
@@ -129,8 +130,9 @@ label {
   left: 450px;
  }
 
-.newCat{
+#newCat{
   border:1px solid rgb(117, 0, 92);
+  padding-left: 20px;
 }
 
 /* carte du Log In */
@@ -209,7 +211,8 @@ p1 {
 
 /*Grids*/
 .container{
-  background-image: linear-gradient(to bottom, #ffa6c8, #e40057 100%);
+  background-image: linear-gradient(to right bottom, #ffa6c8ca, #e40057d8 100%);
+  backdrop-filter: blur (50px);
   border: 1px solid rgb(117, 0, 92);
   color: black;
   column-fill: auto;
@@ -265,11 +268,7 @@ p1 {
 }
 
 .containerChat{
-<<<<<<< Updated upstream
   background-image: linear-gradient(to bottom, #76d5f0, #8073f5 100%);
-=======
-  background-image: linear-gradient(to bottom, aquamarine, #8073f5 100%);
->>>>>>> Stashed changes
   width: relative;
   height: fit-content;
   padding: 3px;

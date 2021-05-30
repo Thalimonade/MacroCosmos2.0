@@ -16,7 +16,8 @@ Meteor.methods({
   'markers.insert': (lat, lng) => {
     const ajout = Markers.insert({
       lat: lat,
-      lng: lng
+      lng: lng,
+      user: Meteor.user().username
     },
     (err, res) => {
       if (err) {
@@ -44,3 +45,19 @@ Meteor.methods({
     return post;
   }
 });
+
+// base de données feed rouge
+export const Suggestions = new Mongo.Collection('suggestions');
+
+Meteor.methods({
+  Suggérer: function (newCat) {
+
+     let sugg = Suggestions.insert({
+          newCat, 
+          userId: Meteor.user().username,
+          CreatedAt: new Date()
+      })
+      console.log('ok');
+    return sugg;
+  },
+})

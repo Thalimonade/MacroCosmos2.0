@@ -13,8 +13,6 @@ Template.accueilBleu.onCreated(function(){
   this.showNetwork = new ReactiveVar( false );
   this.showMap = new ReactiveVar( false );
   this.showChat = new ReactiveVar( false );
-
-  this.coUser = new ReactiveVar();
 });
 
 
@@ -41,9 +39,6 @@ Template.accueilBleu.events({
   'change select': function( event, template ) {
     if ( $( event.target ).val() === "profilPerso" ) {
       template.showProfil.set( true );
-      let CU = Meteor.user().profile;
-      template.coUser.set(CU);
-
     } else {
       template.showProfil.set( false );
     }
@@ -199,27 +194,30 @@ Meteor.startup(function() {
         let element = user.plateformes[i];
         let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
         linktab.push(Phref);
-        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+        //ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
         return `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
        }
      }                             
   },
   getExp: function() {
-    let user = Meteor.user().profile.experiences;
+    let user = Meteor.user().profile;
+    console.log(user);
+    //let user = Meteor.user().profile.experiences;
     var expCv = document.getElementById("expCv");
     let exptab = [];
     if (user) {
-      for (let i = 0; i < user.length; i++) {
-        let element = user[i];
+      for (let i = 0; i < user.experiences.length; i++) {
+        let element = user.experiences[i];
         let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
         exptab.push(explist);
-        expCv.innerHTML = ` ${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
+        //expCv.innerHTML = `${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
+        return `${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>`;
        }
      }                             
   },
   getBio: function() {
     let user = Meteor.user().profile;
-    let Abio = `${user.autoBio}`;
+    let Abio = user.autoBio;
     if (user) {
       return Abio
      }                            
@@ -228,11 +226,8 @@ Meteor.startup(function() {
 
 Template.accueilBleu.helpers({
       getCollabs: function() {
-        let user = Meteor.user().profile.follows;
-        let coll = document.getElementById("myCollabs");
-        let colla = `<b>You currently follow the works of:</b> <br> ${user}`
-        coll.innerHTML = `<b>You currently follow the works of:</b> <br> ${user}`
-        return colla                         
+        console.log(Meteor.user().profile.follows)
+        return Meteor.user().profile.follows                         
     },
 })
 

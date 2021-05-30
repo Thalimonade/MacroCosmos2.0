@@ -48,14 +48,13 @@
    <br>
    {{getNickname}}
    <br> <br>
-   {{getBday}}<br> <br>
-   {{getLiens}} <br> <br>
-   {{getExp}}
+   {{getBday}}
+   <br> <br>
+   <b>bio: </b> <br>{{getBio}}
   </p> </div>
   <div  id= "infos">
-  <div class="Profil"> <p id="ptf">
-    {{getLiens}}
-  </p> </div>
+  <div class="Profil"> {{getLiens}}
+     <p id="ptf">{{getLiens}}</p> </div>
   <div class="Profil"> <p id="expCv">
     {{getExp}}
   </p> </div>
@@ -65,7 +64,7 @@
 
 <template name="reseauCollab">
   <div class="container-fluid2">
-  <div><p id="myCollabs"> {{getBday}}</p>
+  <div><p id="myCollabs"> You have collaborated with: <br> {{getCollabs}}</p>
     </div>
 </div>
 </template>

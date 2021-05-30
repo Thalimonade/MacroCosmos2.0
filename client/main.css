@@ -327,11 +327,12 @@ display: inline-block;
 
 /*accueil Rouge*/
 .container-fluid2{
-  background-color: aquamarine;
+  background-color: rgba(114, 97, 177, 0.685);
   height: fit-content;
   padding: 3px;
   width: 100%;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 #searchProfil{
@@ -381,10 +382,11 @@ border:1px solid rgb(117, 0, 92);
 }
 
 .container-fluid3{
-  background-color: aquamarine;
+  background-color: rgba(114, 97, 177, 0.952);;
   height: fit-content;
   padding: 3px;
   width: 50%;
   margin-left: 300px; 
   margin-bottom: 30px;
+  border-radius: 10px;
 }

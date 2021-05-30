@@ -23,33 +23,32 @@ Template.feedMacro.events({
       (async () => {
         const { value: post } = await Swal.fire({
 		  title: 'Choose a picture',
-		  input: 'text',
 		  input: 'file', 
           inputAttributes: {
             'accept': 'image/*',
             'aria-label': 'Upload your profile picture'
-          }
+		  },
         })
         
         if (post) {
           const reader = new FileReader()
           reader.onload = (e) => {
             Swal.fire({
-              title: 'Your chosen picture',
+			  title: 'Your chosen picture',
               imageUrl: e.target.result,
               imageAlt: 'The uploaded picture',
               confirmButtonText: 'next',
             }).then((result) => {
-              if (result.isConfirmed) {
-                Swal.fire({
-                  title: 'Confirmation',
-                  text: "Add this picture ?",
-                  icon: 'warning',
-                  showCancelButton: true,
-                  confirmButtonColor: '#3085d6',
-                  cancelButtonColor: '#d33',
-                  confirmButtonText: 'yes'
-                }).then((result) => {
+				if (result.isConfirmed) {
+				  Swal.fire({
+					title: 'Confirmation',
+					text: "Confirme your post?",
+					icon: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'yes'
+				  }).then((result) => {
                   if (result.isConfirmed) {
 					  let image = e.target.result;
                       // Appel de la méthode
@@ -70,17 +69,9 @@ Template.feedMacro.events({
         }
         
         })()
-        
-        /**/
     },
 });
 
-/*Template.feedMacro.events({
-	'click #newPost': function() {		
-		const newPost = document.getElementById('feedText').value;
-		Meteor.call('ajouterPost', newPost);
-	}
-});*/
 
 /*
 import 'jquery-ui-dist/jquery-ui'

@@ -32,13 +32,9 @@
 </template>
 
 <template name="idUser">
+  <!--<button id="profilPicture">add profil picture</button>-->
+  <br>
   <input id= "Nickname" type="text" placeholder="Nickname" class="Pseudo">
-  <p1>Profile Picture</p1>
-  {{#with UserImage}}
-  <img src="{{image}}" class="priflePic">
-  {{else}}
-  <img src="MacroPic.jpeg" class="priflePic">
-  {{/with}}
   <!--<form enctype="multipart/form-data" class="editProfile">
     <label for="profilePict">Select a profil picture</label>
     <span id="filename"></span>

@@ -99,13 +99,13 @@
 <!--fil d'actualité-->
 <template name="feedMacro">
   <h2>What's new ?</h2>
+  <button id="newPost">new post</button>
+
   <ul>
     {{#each post}}
       {{> elements_feed}}
     {{/each}}
   </ul>
-  <br>
-  <button id= "newPost">new post</button>
 </template>
 
 <!--recherche des profils hors de ses contacts-->

@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
-// variable map
+// base de données markers map
 export const Markers = new Mongo.Collection('markers');
 
 if (Meteor.isServer) {
@@ -11,6 +11,7 @@ if (Meteor.isServer) {
   })
 }
 
+// methodes map
 Meteor.methods({
   'markers.insert': (lat, lng) => {
     const ajout = Markers.insert({
@@ -26,9 +27,10 @@ Meteor.methods({
   }
 })
 
-// variable feed rouge
+// base de données feed rouge
 export const ObjetsRedFeed = new Mongo.Collection('objets_redFeed');
 
+// methodes feed rouge
 Meteor.methods({
   ajouterPost: function (texte) {
     let add = ObjetsRedFeed.insert({

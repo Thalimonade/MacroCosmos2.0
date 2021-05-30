@@ -13,7 +13,6 @@ Template.accueilBleu.onCreated(function(){
   this.showNetwork = new ReactiveVar( false );
   this.showMap = new ReactiveVar( false );
   this.showChat = new ReactiveVar( false );
-  this.showFeed = new ReactiveVar( false );
 });
 
 Template.accueilBleu.helpers({
@@ -31,10 +30,6 @@ Template.accueilBleu.helpers({
 
   showChat: function() {
     return Template.instance().showChat.get();
-  },
-
-  showFeed: function() {
-    return Template.instance().showFeed.get();
   }
 });
 
@@ -59,11 +54,6 @@ Template.accueilBleu.events({
       template.showChat.set( true );
     } else {
       template.showChat.set( false );
-    }
-    if ( $( event.target ).val() === "feedBlue" ) {
-      template.showFeed.set( true );
-    } else {
-      template.showFeed.set( false );
     }
   }
 });

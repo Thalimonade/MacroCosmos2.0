@@ -7,6 +7,9 @@ import {ObjetsRedFeed} from '../../../import/api/listesDB.js';
 
 import './accueilNvxRouge.html';
 
+const Swal = require('sweetalert2');
+
+// Création du fil
 Template.feedMacro.helpers({
 	post: function() {
 		return ObjetsRedFeed.find({});
@@ -14,11 +17,69 @@ Template.feedMacro.helpers({
 })
 
 Template.feedMacro.events({
-	'click #newPost': function() {
-		const newPost = prompt('Share your art!')
-		Meteor.call('ajouterPost', newPost);
-	},
+    'click #newPost': function() {
+      (async () => {
+        const { value: post } = await Swal.fire({
+		  title: 'Choose a picture',
+		  input: 'text',
+		  input: 'file', 
+          inputAttributes: {
+            'accept': 'image/*',
+            'aria-label': 'Upload your profile picture'
+          }
+        })
+        
+        if (post) {
+          const reader = new FileReader()
+          reader.onload = (e) => {
+            Swal.fire({
+              title: 'Your chosen picture',
+              imageUrl: e.target.result,
+              imageAlt: 'The uploaded picture',
+              confirmButtonText: 'next',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire({
+                  title: 'Confirmation',
+                  text: "Add this picture ?",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'yes'
+                }).then((result) => {
+                  if (result.isConfirmed) {
+					  let image = e.target.result;
+                      // Appel de la méthode
+                      Meteor.call('ajouterPost', image);
+              
+                      //display confirmation message
+                      Swal.fire(
+                          'Added',
+                          'Your post has been successfully added!',
+                          'success',
+                      );
+                  }
+                })
+              }
+            })
+          }
+          reader.readAsDataURL(post)
+        }
+        
+        })()
+        
+        /**/
+    },
 });
+
+/*Template.feedMacro.events({
+	'click #newPost': function() {		
+		const newPost = document.getElementById('feedText').value;
+		Meteor.call('ajouterPost', newPost);
+	}
+});*/
+
 /*
 import 'jquery-ui-dist/jquery-ui'
 import 'jquery-ui-dist/jquery-ui.css'

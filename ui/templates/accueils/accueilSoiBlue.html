@@ -4,14 +4,13 @@
 
 <template name="accueilBleu">
   <header>
-    <h1>Keep up with your mates !</h1>
+    <h1>Keep up with your mates!</h1>
   </header>
   <select class="btn-accBleu" >
     <option value="profilPerso">My profil</option>
     <option value="reseauPerso">My collaborations</option>
     <option value="mapBlue">My network</option>
     <option value="chatBlue">Chat</option>
-    <option value="feedBlue">Feed</option>
   </select>
   <br>
 
@@ -35,10 +34,6 @@
       {{>Chat}}
     {{/if}}
 
-    {{#if showFeed}}
-    <br>
-      {{>FilActuPerso}}
-    {{/if}}
 
 </template>
 
@@ -108,10 +103,6 @@
       {{/if}}
     </footer> -->
   </div>
-</template>
-
-<template name="FilActuPerso">
-  <p>Fil d'actualité liés à ses contacts</p>
 </template>
 
 

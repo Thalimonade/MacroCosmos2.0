@@ -4,12 +4,18 @@
     <div class="container-md">
       <a class="navbar-brand mb-0 h1">MACROCOSMOS</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        {{#if currentUser}}
         <div class="navbar-nav">
           <a class="nav-link" id="accueils2x">Home</a>
           <a class="nav-link" id="préf">Settings</a>
           <a class="nav-link" id="Logout">Log Out</a>
+          {{> Template.dynamic template=main}}
         </div>
       </div>
     </div>
-    </nav>
+  </div>
+  </nav>
+  {{else}}
+    {{> Template.dynamic template=main}}
+  {{/if}}
 </template>

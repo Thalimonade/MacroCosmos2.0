@@ -35,7 +35,7 @@ export const ObjetsRedFeed = new Mongo.Collection('objets_redFeed');
 Meteor.methods({
   ajouterPost: function (texte) {
     let add = ObjetsRedFeed.insert({
-      contenu: texte
+      contenu: texte,
     })
     console.log('ok');
     return add;

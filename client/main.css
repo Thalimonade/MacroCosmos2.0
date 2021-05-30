@@ -165,9 +165,10 @@ label {
 
 /*log in & sign up; login template*/
 .logSign{
-  position: relative; 
+  position: absolute; 
   height: 200px; 
   left: 450px;
+  
 }
 
 #newCat{
@@ -309,10 +310,11 @@ p1 {
 }
 
 .containerChat{
-  background-image: linear-gradient(to bottom, #76d5f0, #8073f5 100%);
+  background-image: linear-gradient(to bottom, #76d6f0bd, #8073f5d8 100%);
   width: relative;
   height: fit-content;
   padding: 3px;
+  border-radius: 10px;
 }
 
 #chat-form{
@@ -398,8 +400,15 @@ border:1px solid rgb(117, 0, 92);
   font-family: 'Meltland', serif;
   color: #76d5f0;
   text-shadow: 1px solid blue;
-  padding-left: 1690px;
+  padding-left: 87%;
   padding-top: 10px;
+}
+
+.text-center{
+  position: absolute;
+  height: 200px; 
+  left: 84%;
+  
 }
 
 .imageFeed{

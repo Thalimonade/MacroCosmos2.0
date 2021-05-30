@@ -1,66 +1,76 @@
 <template name="creationProfil">
   <h1>Complete your profile</h1>
-  
-  {{> idUser}}
-  {{> liensExt}}
-  {{> CVart}}
-  {{> listCategoriesCoches}}
-  {{> NotesAuto}}
-  <br>
-  <br>
-  <br>
-  <br>
-  {{> BoutonC}}
-  {{> BoutonP}}
+  <div class="container">
+    <div class= "row">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        {{> idUser}}
+      </div>
+      <div class="col-sm-12 col-md-5 col-lg-5">
+        {{> liensExt}}
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        {{> CVart}}
+      </div>
+    </div>
+    <div class= "row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        {{> listCategoriesCoches}}
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        {{> NotesAuto}}
+      </div>
+    </div>
+    <div class= "row">
+      <div class= "col-sm-6 col-md-6 col-lg-6">
+        {{> BoutonC}}
+      </div>
+      <div class= "col-sm-6 col-md-6 col-lg-6">
+        {{> BoutonP}}
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="idUser">
   <input id= "Nickname" type="text" placeholder="Nickname" class="Pseudo">
   <p1>Profile Picture</p1>
-  <form action="/action_page.php">
-    <input type="file" id="myFile" name="filename">
-  </form>
+  {{#with UserImage}}
+  <img src="{{image}}" class="priflePic">
+  {{else}}
+  <img src="MacroPic.jpeg" class="priflePic">
+  {{/with}}
+  <!--<form enctype="multipart/form-data" class="editProfile">
+    <label for="profilePict">Select a profil picture</label>
+    <span id="filename"></span>
+    <input type="file" id="profilePict" name="profilePict">
+    <br>
+    <button type="submit" value="upload" id="profileBtn">Upload the picture</button>
+  </form> -->
   <input id="PrefPronouns" type="text" placeholder="PrefPronouns" class="Pronouns">
+  <br>
   <input id="submitId" type="button" class="submit" value="Submit">
 </template>
 
 <template name="CVart">
-  <div class="container3">
-    <div class= "row">
-      <div class="col-sm-12 col-md-6">
-        <h2>Artistic Resume</h2>
-        <p id="expDonnées"></p>
-        <dl>
-          <dt>
-            <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
-          </dt>
-          <br>
-          <dd>
-            <input type="text" name="description" id="details" placeholder="Experience details">
-          </dd>
-        </dl>
-        <input id= "submitExp" type="button" class="Button" value="Submit">
-      </div>
-    </div>
-  </div>
+  <h2>Artistic Resume</h2>
+  <p id="expDonnées"></p>
+  <input type="text" name="experience" id="experienceTitle1" placeholder="Experience 1"> 
+  <br>
+  <input type="text" name="description" id="details" placeholder="Experience details">
+  <br>
+  <input id= "submitExp" type="button" class="Button" value="Submit">
 </template>
 
 <template name="liensExt">
-  <div class="container">
-    <div class= "row">
-      <div class="col-sm-12 col-md-6">
-        <h2>Links to other accounts</h2>
-        <p id="liensDonnés"></p>
-        <input id="plateforme" type="text" placeholder="name of the site">
-        <input id="liens" type="url" name="url" class="Lien"
-        placeholder="https://example.com"
-        pattern="https://.*" size="30"
-        required>
-        <br>
-        <input id="submitLiens" type="button" class="Button" value="Submit">
-      </div>
-    </div>
-  </div>
+  <h2>Links to other accounts</h2>
+  <p id="liensDonnés"></p>
+  <input id="plateforme" type="text" placeholder="name of the site">
+  <input id="liens" type="url" name="url" class="Lien"
+  placeholder="https://example.com"
+  pattern="https://.*" size="30"
+  required>
+  <br>
+  <input id="submitLiens" type="button" class="Button" value="Submit">
 </template>
 
 <template name="NotesAuto">
@@ -68,8 +78,8 @@
     <h3>Autobiography:</h3>
     <form action="/action_page.php">
       <textarea id="autoBio" class="bio" name="bio"
-      rows="5" cols="33" maxlength="500">
-    </textarea>
+     minlength="500" placeholder="Tell us something about yourself!"></textarea>
+    <br>
     <button id="submitBio" class="Button">Submit</button>
   </form> 
 </div>
@@ -87,34 +97,44 @@
 
 <template name="listCategoriesCoches">
   <div id="categCrea">
-     <div class= "row">
-      <div class="col-sm-12 col-md-6">
     <h2>List of artistic practices</h2>
     <ul>
       <input type="checkbox" name="Music" value="Music" >
       <label for="Music">Music</label>
+      <br>
       <input type="checkbox" name="Cinema" value="Cinema">
       <label for="Cinema">Cinema</label>
+      <br>
       <input type="checkbox" name="Audio-visual" value="Audio-visual">
       <label type="Audio-visual">Audio-Visual</label>
+      <br>
       <input type="checkbox" name="Litterature" value="Litterature">
       <label type="Litterature">Litterature</label>
+      <br>
       <input type="checkbox" name="Scenic Arts" value="ScenicArts">
       <label type="Scenic Arts">Scenic Arts</label>
+      <br>
       <input type="checkbox" name="Danse" value="Danse">
       <label type= "Danse">Dance</label>
+      <br>
       <input type="checkbox" name="Graphical Arts" value="GraphicalArts">
       <label type="Graphical Arts">Graphic Arts</label>
+      <br>
       <input type="checkbox" name="Architecture" value="Architecture">
       <label type="Architecture">Architecture</label>
+      <br>
       <input type="checkbox" name= "Fashion" value="Fashion">
       <label type= "Fashion">Fashion</label>
+      <br>
       <input type="checkbox" name="BodyModification" value="BodyModification">
       <label type="BodyModification">Body Modifications</label>
+      <br>
       <input type="checkbox" name="DigitalArt" value="DigitalArt">
       <label type="DigitalArt">Digital Art</label>
+      <br>
       <input type="checkbox" name="CulinaryArts" value="CulinaryArts">
       <label type= "CulinaryArts">Culinary Arts</label>
+      <br>
       <input type="checkbox" name="Tuning" value="Tuning">
       <label type= "Tuning">Tuning</label>
     </ul>
@@ -123,6 +143,4 @@
     <input id="newCat" class="newCat" name= "newCateg" type="text" placeholder="Proposer une catégorie">
     <button id="Suggest">Suggest</button>
   </div>
-</div>
-</div>
 </template>

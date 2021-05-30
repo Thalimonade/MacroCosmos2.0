@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Accounts } from 'meteor/accounts-base';
+import { Mongo } from 'meteor/mongo';
 import { Template } from 'meteor/templating';
 
 // importer DB du fil d'actualité
@@ -95,7 +97,7 @@ Template.accueilRouge.onCreated(function(){
 	this.showFeedMacro = new ReactiveVar( true );
 	this.showSearch = new ReactiveVar( false );
 
-	this.prof = new ReactiveVar(true);
+	this.prof = new ReactiveVar();
 });
 
 Template.accueilRouge.helpers({
@@ -116,7 +118,13 @@ Template.accueilRouge.helpers({
 	},
 
 	//recherche Utilisateurs
+	/*searchedUser() {
+		return Template.instance().prof
+	}*/
+
 });
+
+
 
 Template.accueilRouge.events({
 	'change select': function( event, template ) {
@@ -143,6 +151,7 @@ Template.accueilRouge.events({
 	},
 
 	//recherche utilisateurs
+	
 	'click #searchProfil'(event, template) {
 		event.preventDefault();  
 		var search = document.getElementById("search").value;
@@ -152,15 +161,68 @@ Template.accueilRouge.events({
 		//var foundUser = Meteor.users.find({ username: search }).fetch();
 		if (template.prof.get()) {
 		  finds.innerHTML = `We found a match: <br> <b>${template.prof.get()[0].profile.firstName} ${template.prof.get()[0].profile.lastName} </b> 
-		  (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button>`
+		  (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button> <button id="follow">follow</button>`
 		} else {
 		  finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
 		}
 	  },
-	  'click #viewP'(event) {
+	'click #viewP'(event) {
 		event.preventDefault();  
 		var viewP = document.getElementById("viewP");
+		var finds = document.getElementById("finds");
+		infoUser = Template.instance().prof.get()[0].profile
+		/*Meteor.users.find({username: search},{
+			fields: { 
+			firstName: 1,
+			lastName: 1,
+			Nickname: 1,
+			username: 1,
+			prefPronouns: 1,
+			birthday: 1,
+			plateformes: 1,
+			categories: 1,
+			experiences: 1
+			}
+			});*/
+		let exptab = [];
+    if (Template.instance().prof.get()[0].profile.experiences) {
+		for (let i = 0; i < Template.instance().prof.get()[0].profile.experiences.length; i++) {
+			let element = Template.instance().prof.get()[0].profile.experiences[i];
+			let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
+			exptab.push(explist);
+		   }
+	} else {
+		let explist = "none, for now";
+		exptab.push(explist)
 	}
+		let linktab = [];
+	if (Template.instance().prof.get()[0].profile.plateformes) {
+		for (let i = 0; i < Template.instance().prof.get()[0].profile.plateformes.length; i++) {
+		  let element = Template.instance().prof.get()[0].profile.plateformes[i];
+		  let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+		  linktab.push(Phref);
+		  ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+		 }
+	   }
+     
+		console.log(infoUser);
+		finds.innerHTML = `${Template.instance().prof.get()[0].profile.firstName} ${Template.instance().prof.get()[0].profile.lastName} <br>
+		 Also known as ${Template.instance().prof.get()[0].profile.Nickname} <br> 
+		 uses the username: ${Template.instance().prof.get()[0].profile.firstName} <br>
+		Preferes to be addressed as ${Template.instance().prof.get()[0].profile.prefPronouns} <br>
+		Was born on the ${Template.instance().prof.get()[0].profile.birthday} <br>
+		Joined MarcoCosmos's following categories: ${Template.instance().prof.get()[0].profile.categories} <br>
+		${Template.instance().prof.get()[0].profile.firstName}'s experiences<br>` + exptab + `<br>
+		Find ${Template.instance().prof.get()[0].profile.firstName} on: <br> `+ linktab + ` <br> 
+		bio: ${Template.instance().prof.get()[0].profile.autoBio}`
+		},
+	'click #follow'(event) {
+		event.preventDefault();  
+		var follow = document.getElementById("follow");
+		tabFollows = [];
+		Meteor.users.update({_id: Meteor.userId()}, 
+   		{$push: {"profile.follows": Template.instance().prof.get()[0].username}});
+		},
 });
 
 

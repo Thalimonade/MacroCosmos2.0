@@ -27,7 +27,7 @@
 
     {{#if showMap}}
     <br>
-      {{>map2}}
+      {{>blueMap}}
     {{/if}}
 
     {{#if showChat}}
@@ -67,10 +67,10 @@
   <p>Réseau des collaborations accomplies</p>
 </template>
 
-<template name="map2">
-  <div class="map-container">
+<template name="blueMap">
+  <div class="blueMap-container">
     {{#unless geolocationError}}
-         {{> googleMap name="map" options=mapOptions}}
+         {{> googleMap name="blueMap" options=mapOptions}}
        {{else}}
          Geolocation failed: {{geolocationError}}
     {{/unless}}

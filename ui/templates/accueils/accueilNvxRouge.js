@@ -1,23 +1,69 @@
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Accounts } from 'meteor/accounts-base';
+import { Mongo } from 'meteor/mongo';
+import { Template } from 'meteor/templating';
+
+// importer DB du fil d'actualité
+import {ObjetsRedFeed} from '../../../import/api/listesDB.js';
 
 import './accueilNvxRouge.html';
+
+Template.feedMacro.helpers({
+	post: function() {
+		return ObjetsRedFeed.find({});
+	}
+})
+
+Template.feedMacro.events({
+	'click #newPost': function() {
+		const newPost = prompt('Share your art!')
+		Meteor.call('ajouterPost', newPost);
+	},
+});
 /*
 import 'jquery-ui-dist/jquery-ui'
 import 'jquery-ui-dist/jquery-ui.css'
 */
 
+
+
 // ReactiveVars Red
-	// RV carte réseau macro 
+	// RV carte réseau macro, Swipe, recherche et feed
 Template.accueilRouge.onCreated(function(){
-	this.showCosmos = new ReactiveVar( true );
+	this.showCosmos = new ReactiveVar( false );
+	this.showSwipe = new ReactiveVar( false );
+	this.showFeedMacro = new ReactiveVar( true );
+	this.showSearch = new ReactiveVar( false );
+
+	this.prof = new ReactiveVar();
 });
 
 Template.accueilRouge.helpers({
+	//RV
 	showCosmos: function() {
 		return Template.instance().showCosmos.get();
-	}
+	},
+
+	showSwipe: function() {
+		return Template.instance().showSwipe.get();
+	},
+
+	showFeedMacro: function() {
+		return Template.instance().showFeedMacro.get();
+	},
+	showSearch: function() {
+		return Template.instance().showSearch.get();
+	},
+
+	//recherche Utilisateurs
+	/*searchedUser() {
+		return Template.instance().prof
+	}*/
+
 });
+
+
 
 Template.accueilRouge.events({
 	'change select': function( event, template ) {
@@ -26,50 +72,99 @@ Template.accueilRouge.events({
 		} else {
 		template.showCosmos.set( false );
 		}
-	}
-});
-
-	// RV Swipe 
-Template.accueilRouge.onCreated(function(){
-	this.showSwipe = new ReactiveVar( false );
-});
-
-Template.accueilRouge.helpers({
-	showSwipe: function() {
-		return Template.instance().showSwipe.get();
-	}
-});
-
-Template.accueilRouge.events({
-	'change select': function( event, template ) {
 		if ( $( event.target ).val() === "swipe" ) {
 		template.showSwipe.set( true );
 		} else {
 		template.showSwipe.set( false );
 		}
-	}
-});
-
-		// RV feed macro 
-Template.accueilRouge.onCreated(function(){
-	this.showFeedMacro = new ReactiveVar( false );
-});
-
-Template.accueilRouge.helpers({
-	showFeedMacro: function() {
-		return Template.instance().showFeedMacro.get();
-	}
-});
-
-Template.accueilRouge.events({
-	'change select': function( event, template ) {
 		if ( $( event.target ).val() === "feedRed" ) {
 		template.showFeedMacro.set( true );
 		} else {
 		template.showFeedMacro.set( false );
 		}
+		if ( $( event.target ).val() === "searchProfil" ) {
+		template.showSearch.set( true );
+		} else {
+		template.showSearch.set( false );
+		}
+	},
+
+	//recherche utilisateurs
+	
+	'click #searchProfil'(event, template) {
+		event.preventDefault();  
+		var search = document.getElementById("search").value;
+		var finds = document.getElementById("finds");
+		template.prof.set(Meteor.users.find({ username: search }).fetch());
+		console.log(Meteor.users.find({ username: search }).fetch());
+		//var foundUser = Meteor.users.find({ username: search }).fetch();
+		if (template.prof.get()) {
+		  finds.innerHTML = `We found a match: <br> <b>${template.prof.get()[0].profile.firstName} ${template.prof.get()[0].profile.lastName} </b> 
+		  (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button> <button id="follow">follow</button>`
+		} else {
+		  finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
+		}
+	  },
+	'click #viewP'(event) {
+		event.preventDefault();  
+		var viewP = document.getElementById("viewP");
+		var finds = document.getElementById("finds");
+		infoUser = Template.instance().prof.get()[0].profile
+		/*Meteor.users.find({username: search},{
+			fields: { 
+			firstName: 1,
+			lastName: 1,
+			Nickname: 1,
+			username: 1,
+			prefPronouns: 1,
+			birthday: 1,
+			plateformes: 1,
+			categories: 1,
+			experiences: 1
+			}
+			});*/
+		let exptab = [];
+    if (Template.instance().prof.get()[0].profile.experiences) {
+		for (let i = 0; i < Template.instance().prof.get()[0].profile.experiences.length; i++) {
+			let element = Template.instance().prof.get()[0].profile.experiences[i];
+			let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
+			exptab.push(explist);
+		   }
+	} else {
+		let explist = "none, for now";
+		exptab.push(explist)
 	}
+		let linktab = [];
+	if (Template.instance().prof.get()[0].profile.plateformes) {
+		for (let i = 0; i < Template.instance().prof.get()[0].profile.plateformes.length; i++) {
+		  let element = Template.instance().prof.get()[0].profile.plateformes[i];
+		  let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+		  linktab.push(Phref);
+		  ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+		 }
+	   }
+     
+		console.log(infoUser);
+		finds.innerHTML = `${Template.instance().prof.get()[0].profile.firstName} ${Template.instance().prof.get()[0].profile.lastName} <br>
+		 Also known as ${Template.instance().prof.get()[0].profile.Nickname} <br> 
+		 uses the username: ${Template.instance().prof.get()[0].profile.firstName} <br>
+		Preferes to be addressed as ${Template.instance().prof.get()[0].profile.prefPronouns} <br>
+		Was born on the ${Template.instance().prof.get()[0].profile.birthday} <br>
+		Joined MarcoCosmos's following categories: ${Template.instance().prof.get()[0].profile.categories} <br>
+		${Template.instance().prof.get()[0].profile.firstName}'s experiences<br>` + exptab + `<br>
+		Find ${Template.instance().prof.get()[0].profile.firstName} on: <br> `+ linktab + ` <br> 
+		bio: ${Template.instance().prof.get()[0].profile.autoBio}`
+		},
+	'click #follow'(event) {
+		event.preventDefault();  
+		var follow = document.getElementById("follow");
+		tabFollows = [];
+		Meteor.users.update({_id: Meteor.userId()}, 
+   		{$push: {"profile.follows": Template.instance().prof.get()[0].username}});
+		},
 });
+
+
 
 Template.logoutRéglages.events({
     'click #logout'(event) {
@@ -83,7 +178,7 @@ Template.logoutRéglages.events({
             }
 });
 
-// Création de la carte pour accueil rouge
+//Création de la carte pour accueil rouge
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;
 
@@ -107,7 +202,7 @@ if (Meteor.isClient) {
 		if (! marker) {
 			marker = new google.maps.Marker({
 			position: new google.maps.LatLng(latLng.lat, latLng.lng),
-			map: redMap.instance
+			map: map.instance
 			});
 		}
 		// Si marker, changement de position
@@ -140,24 +235,81 @@ if (Meteor.isClient) {
 		}
 	}
 	});
+
+// Ajouter les markers de tous les autres utilisateurs du réseau MacroCosmos sur cette carte
 }
-//rechercher des utilisateur 
-Template.accueilRouge.events({
-	'click #searchProfil'(event) {
-	  event.preventDefault();  
-	  var search = document.getElementById("search").value;
-	  var finds = document.getElementById("finds");
-	  console.log(Meteor.users.find({ username: search }).fetch());
-	  foundUser = Meteor.users.find({ username: search }).fetch();
-	  if (foundUser) {
-		finds.innerHTML = `We found a match: <br> <b>${foundUser[0].profile.firstName} ${foundUser[0].profile.lastName} </b> 
-		(${foundUser[0].profile.Nickname}) <button id="viewP">view profile</button>`
-	  } else {
-		finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
-	  }
-	} // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
-	// VAR POUR AFFICHER LE PROFILE
-  })
+
+
+
+  /*
+Template.profilPersoContact.helpers({
+    getPhoto: function() {
+      if (foundUser) return foundUser.picture
+      else return "none"
+    },
+    getName: function() {
+     let user = Meteor.user().profile;
+     if (user) return user.firstName
+    }, 
+    getLastName: function() {
+      let user = Meteor.user().profile;
+      if (user) return user.lastName
+     }, 
+    getPronouns: function() {
+      let user = Meteor.user().profile.PrefPronouns;
+      let PP = `Would like to be adressed as ${user}`;
+      if (user) return PP                             
+	  },
+    getNickname: function() {
+      let user = Meteor.user().profile.Nickname;
+      let NN = `Also known as ${user}`;
+      if (user) {
+        return NN
+      } 
+     },     
+    getBday: function() {
+    let user = Meteor.user().profile.birthday;
+    let BD = `Born on ${user}`;
+    if (user) {
+      return BD
+     }                             
+  },
+    getLiens: function() {
+    let user = Meteor.user().profile.plateformes;
+    var ptf = document.getElementById("ptf");
+    let linktab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+        linktab.push(Phref);
+        ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+       }
+     }                             
+  },
+  getExp: function() {
+    let user = Meteor.user().profile.experiences;
+    var expCv = document.getElementById("expCv");
+    let exptab = [];
+    if (user) {
+      for (let i = 0; i < user.length; i++) {
+        let element = user[i];
+        let explist = `<br>` + `<b>${element[0]}</b> : ${element[1]}`;
+        exptab.push(explist);
+        expCv.innerHTML = ` ${Meteor.user().profile.firstName}'s experiences<br>` + exptab + `<br>` ;
+       }
+     }                             
+  },
+  getBio: function() {
+    let user = Meteor.user().profile.autoBio;
+    let Abio = `${user}`;
+    if (user) {
+      return Abio
+     }                            
+  },
+});
+
+  */
 
 /* Swipe */
 /*
@@ -200,8 +352,19 @@ function swipeEnded(event, direction, $card) {
 		});
 	}
 
-
-	TENTATIVE DE SWIPE 2
+	//rechercher des utilisateur 
+Template.accueilRouge.events({
+  'click #searchProfil'(event) {
+	event.preventDefault();  
+	var search = document.getElementById("search").value;
+	var finds = document.getElementById("finds");
+	console.log(Meteor.users.find({ username: search }).fetch());
+	foundUser = Meteor.users.find({ username: search }).fetch();
+	finds.innerHTML = `We found a match: <br> <b>${foundUser[0].profile.firstName} ${foundUser[0].profile.lastName} </b> 
+	(${foundUser[0].profile.Nickname}) <button id="viewP">view profile</button>`
+  } // TROUVER UN MOYEN DE LIER CE BOUTON A UNE RéACTIVE
+  // VAR POUR AFFICHER LE PROFILE
+})
 
 	/*'use strict';
 

@@ -1,14 +1,18 @@
 <template name="app_body">
-    <header>
-      <h1 style="display: inline-block;">MACROCOSMOS</h1>
-    </header>
-    {{#if currentUser}}
-    <div class="btn-group">
-      <button id="accueils2x">home</button>
-      <button id="préf">settings</button>
-      <button id="Logout">logout</button>
-      {{> Template.dynamic template=main}}
+  {{#if currentUser}}
+  <nav class="navbar navbar-light" style="background-color: #ffa6c8;">
+    <div class="container-md">
+      <a class="navbar-brand mb-0 h1">MACROCOSMOS</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" id="accueils2x">Home</a>
+          <a class="nav-link" id="préf">Settings</a>
+          <a class="nav-link" id="Logout">Log Out</a>
+          {{> Template.dynamic template=main}}
+        </div>
+      </div>
     </div>
+  </nav>
     {{else}}
       {{> Template.dynamic template=main}}
     {{/if}}

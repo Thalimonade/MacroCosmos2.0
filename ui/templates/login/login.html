@@ -1,9 +1,15 @@
 <template name="login">
   <h1>Welcome to MacroCosmos !</h1>
-  
+  <div class="container">
+    <div class= "row">
+      <div class="col-sm-12 col-md-8 col-lg-8">
   {{> map}}
-
+</div>
+<div class="col-sm-12 col-md-4 col-lg-4">
   {{> listCategories}}
+</div>
+</div>
+</div>
   <br>
   {{> LoginSignUp}}
 </template>
@@ -33,9 +39,8 @@
 
 <template name="LoginSignUp">
   <div class="logSign">
-    <input id="eMail" class= "Mail" type="text" placeholder="Username">
+    <input id="eMail" class= "Mail" type="text" placeholder="Email">
     <input id="pwd" class="pwd" type="text" placeholder="Password">
-    <br>
     <button id= "LogIn" class="LogIn">Log in</button>
     <br>
     <p> Not a registered artist yet? Help yourself and Sign up! </p>

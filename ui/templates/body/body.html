@@ -1,18 +1,18 @@
 <template name="app_body">
   {{#if currentUser}}
-  <nav class="navbar navbar-light" style="background-color: #ffa6c8;">
+  <nav class="navbar navbar-light py-1" style="background-color: #ffa6c8;">
     <div class="container-md">
       <a class="navbar-brand mb-0 h1">MACROCOSMOS</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" id="accueils2x">Home</a>
-          <a class="nav-link" id="préf">Settings</a>
-          <a class="nav-link" id="Logout">Log Out</a>
-          {{> Template.dynamic template=main}}
+          <button type="button" class="btn btn-dark" id="accueils2x">Home</button>
+          <button type="button" class="btn btn-dark" id="préf">Settings</button>
+          <button type="button" class="btn btn-dark" id="Logout">Log Out</button>
         </div>
       </div>
     </div>
   </nav>
+  {{> Template.dynamic template=main}}
     {{else}}
       {{> Template.dynamic template=main}}
     {{/if}}

@@ -1,7 +1,18 @@
 <template name="accueils">
     <h1>Welcome to your MacroHomepage!</h1>
-  
-    {{> accueilRouge}}
-    {{> accueilBleu}}
-</template>
-  
+    <div class="container">
+        <div class= "row">
+            <div class="col-sm-12 col-md-6 col-lg-6">     
+                <div id= "rouge">
+                {{> accueilRouge}}
+            </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+            <div id="bleu">
+                {{> accueilBleu}}
+            </div>
+            </div>
+        </div>
+        </div>
+    </template>
+    

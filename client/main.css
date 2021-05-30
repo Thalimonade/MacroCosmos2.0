@@ -303,3 +303,44 @@ display: inline-block;
   color: black;
   margin: 0 auto;
 }
+
+/*accueil Rouge*/
+.container-fluid2{
+  background-color: aquamarine;
+  height: fit-content;
+  padding: 3px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+#searchProfil{
+background-color: white;
+border: 1px solid rgb(117, 0, 92);
+color: black;
+}
+
+#search{
+border:1px solid rgb(117, 0, 92);
+}
+
+#logout{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;  
+}
+
+#boutonPref{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;  
+}
+
+#newPost{
+  background-color: white;
+  border: 1px solid rgb(117, 0, 92);
+  color: black;   
+}
+
+#search{
+  border:1px solid rgb(117, 0, 92);
+}

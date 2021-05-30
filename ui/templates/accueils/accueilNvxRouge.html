@@ -1,8 +1,3 @@
-<!--
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
--->
 <template name="indexRouge">
   {{>accueilRouge}}
 </template>
@@ -18,34 +13,34 @@
     <option value="searchProfil">Profil search</option>
   </select>
   <br>
-    {{#if showCosmos}}
-    <br>
-      {{>redMap}}
-    {{/if}}
-
-    {{#if showSwipe}}
-    <br>
-      {{>Swipe}}
-    {{/if}}
-
-    {{#if showFeedMacro}}
-    <br>
-      {{>feedMacro}}
-    {{/if}}
-
-    {{#if showSearch}}
-    <br>
-     {{>RechercheProf}}
-    {{/if}}
+  {{#if showCosmos}}
+  <br>
+  {{>redMap}}
+  {{/if}}
+  
+  {{#if showSwipe}}
+  <br>
+  {{>Swipe}}
+  {{/if}}
+  
+  {{#if showFeedMacro}}
+  <br>
+  {{>feedMacro}}
+  {{/if}}
+  
+  {{#if showSearch}}
+  <br>
+  {{>RechercheProf}}
+  {{/if}}
 </template>
 
 <!--carte-->
 <template name="redMap">
   <div class="redMap-container">
     {{#unless geolocationError}}
-      {{> googleMap name="redMap" options=mapOptions}}
+    {{> googleMap name="redMap" options=mapOptions}}
     {{else}}
-      Geolocation failed: {{geolocationError}}
+    Geolocation failed: {{geolocationError}}
     {{/unless}}
   </div>
 </template>
@@ -58,37 +53,48 @@
       <i class="fa fa-remove"></i>
       <i class="fa fa-heart"></i>
     </div>
-  
+    
     <div class="tinder--cards">
-      <div class="tinder--card">
-        <img src="https://placeimg.com/600/300/people">
-        <h3>Demo User 1</h3>
-        <p>This is a demo for Tinder like swipe cards</p>
+      <div class="container-fluid2 align-self-center">
+        <div class="tinder--card">
+          <img src="https://placeimg.com/600/300/people">
+          <h3>Demo User 1</h3>
+          <p>This is a demo for Tinder like swipe cards</p>
+        </div>
       </div>
-      <div class="tinder--card">
-        <img src="https://placeimg.com/600/300/animals">
-        <h3>Demo User 2</h3>
-        <p>This is a demo for Tinder like swipe cards</p>
+      <div class="container-fluid2">
+        <div class="tinder--card">
+          <img src="https://placeimg.com/600/300/animals">
+          <h3>Demo User 2</h3>
+          <p>This is a demo for Tinder like swipe cards</p>
+        </div>
       </div>
-      <div class="tinder--card">
-        <img src="https://placeimg.com/600/300/nature">
-        <h3>Demo User 3</h3>
-        <p>This is a demo for Tinder like swipe cards</p>
+      <div class="container-fluid2">
+        <div class="tinder--card">
+          <img src="https://placeimg.com/600/300/nature">
+          <h3>Demo User 3</h3>
+          <p>This is a demo for Tinder like swipe cards</p>
+        </div>
       </div>
-      <div class="tinder--card">
-        <img src="https://placeimg.com/600/300/tech">
-        <h3>Demo User 4</h3>
-        <p>This is a demo for Tinder like swipe cards</p>
+      <div class="container-fluid2">
+        <div class="tinder--card">
+          <img src="https://placeimg.com/600/300/tech">
+          <h3>Demo User 4</h3>
+          <p>This is a demo for Tinder like swipe cards</p>
+        </div>
       </div>
-      <div class="tinder--card">
-        <img src="https://placeimg.com/600/300/arch">
-        <h3>Demo User 5</h3>
-        <p>This is a demo for Tinder like swipe cards</p>
+      <div class="container-fluid2">
+        <div class="tinder--card">
+          <img src="https://placeimg.com/600/300/arch">
+          <h3>Demo User 5</h3>
+          <p>This is a demo for Tinder like swipe cards</p>
+        </div>
       </div>
       {{initCards}} 
-  {{createButtonListener}}
+      {{createButtonListener}}
     </div>
-  
+    
+    
     <div class="tinder--buttons">
       <button id="nope"><i class="fa fa-remove"></i></button>
       <button id="love"><i class="fa fa-heart"></i></button>
@@ -98,98 +104,30 @@
 
 <!--fil d'actualité-->
 <template name="feedMacro">
-  <h2>What's new ?</h2>
+  <div class="container-fluid2">
+    <h2>What's new ?</h2>
   <button id="newPost">new post</button>
-
+  
   <ul>
     {{#each post}}
-      {{> elements_feed}}
+    {{> elements_feed}}
     {{/each}}
   </ul>
+  </div>
 </template>
 
 <!--recherche des profils hors de ses contacts-->
 <template name="RechercheProf">
+  <div class="container-fluid2">
   <input id="search" type="text" placeholder="Search for artists around!">
   <button id="searchProfil">search</button>
   <div><p id="finds"></p></div>
   <p>{{getName}}</p>
-  
+  </div>
 </template>
 
 <!--log out-->
 <template name="logoutRéglages">
   <p><button id="logout">logout</button>
-  <button id="boutonPref">preferences</button></p>
-</template> 
-  
-<!--
-<div class="container">
-  <div class="stack">
-    <div class="final-message"> There are no other recommendations</div>
-    <ul>
-      <li>
-
-        Trouver comment lier l'image des profils dans data-original
-
-        <div id="card10" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card9" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="car8" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card7" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card6" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card5" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card4" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card3" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card2" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-      <li>
-        <div id="card1" class="card js-swiping-card">
-          <div class="card-illustration js-lazyload" data-original=></div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="btn-controls text-center">
-    <button type="button" class="btn btn-danger js-left-trigger">
-      Reject
-    </button>
-    <button type="button" class="btn btn-primary js-right-trigger">
-      Heart
-    </button>
-  </div>
-</div>
--->
+    <button id="boutonPref">preferences</button></p>
+  </template> 

@@ -16,7 +16,8 @@ Meteor.methods({
   'markers.insert': (lat, lng) => {
     const ajout = Markers.insert({
       lat: lat,
-      lng: lng
+      lng: lng,
+      user: Meteor.user().username
     },
     (err, res) => {
       if (err) {

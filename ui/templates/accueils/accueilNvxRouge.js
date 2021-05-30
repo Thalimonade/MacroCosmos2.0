@@ -152,7 +152,7 @@ Template.accueilRouge.events({
 		//var foundUser = Meteor.users.find({ username: search }).fetch();
 		if (template.prof.get()) {
 		  finds.innerHTML = `We found a match: <br> <b>${template.prof.get()[0].profile.firstName} ${template.prof.get()[0].profile.lastName} </b> 
-		  (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button> <button id="follow">follow</button>`
+		  (${template.prof.get()[0].profile.Nickname}) <button id="viewP">view profile</button> <button id="follow">connect</button>`
 		} else {
 		  finds.innerHTML = "We didn't find any match. Make sure there is no typo!" 
 		}

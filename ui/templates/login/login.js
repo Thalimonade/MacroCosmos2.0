@@ -4,6 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Markers } from '../../../import/api/listesDB';
+import { Suggestions } from '../../../import/api/listesDB';
 
 
 import './login.html';
@@ -99,5 +100,20 @@ var MAP_ZOOM = 15;
   });
 }
   
+Template.listCategories.events({
+  'click #Suggest'(event) {
+    event.preventDefault();
+    let newCat = document.getElementById("newCat").value;
+    console.log(newCat);
+    /*Meteor.call('sugg.insert', newCat, (err) => {
+        if (err) {
+            alert(err.message);
+        } else {
+            event.target.reset();
+        }
+    })*/
+    Meteor.call('Suggérer', newCat);
+    }
+})
 
 

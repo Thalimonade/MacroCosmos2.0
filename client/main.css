@@ -109,12 +109,17 @@ label {
   font-family: 'Times New Roman', Times, serif;
 }
 
+.p-2{
+  align-self: right;
+}
+
 /*Log In */
 /* liste catégories */
 .container-fluid{
   background-image: linear-gradient(to bottom, #ffffff, #5b29ff 100%);
   border: 1px solid rgb(117, 0, 92);
   color: black;
+  align-self: center ;
 }
 
  /*Creation Profil */
@@ -184,6 +189,7 @@ label {
   background-color: white;
   border: 1px solid rgb(117, 0, 92);
   color: black;
+
 }
 
  /*Creation Profil */
@@ -350,6 +356,7 @@ border:1px solid rgb(117, 0, 92);
   border:1px solid rgb(117, 0, 92);
 }
 
+/* barre de navigation */
 .navbar-brand{
   font-family: 'Meltland', serif;
   color: #76d5f0;

@@ -1,6 +1,6 @@
 body {
   font-family: 'Times New Roman', Times, serif;
-  background: url(https://i.pinimg.com/originals/f8/14/cd/f814cd9030f0ab158438122256745aab.jpg) no-repeat center center fixed;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Plasma_globe_60th.jpg/1920px-Plasma_globe_60th.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -265,7 +265,7 @@ p1 {
 }
 
 .containerChat{
-  background-image: linear-gradient(to bottom, #76d5f0, #6050f1 100%);
+  background-image: linear-gradient(to bottom, #76d5f0, #8073f5 100%);
   width: relative;
   height: fit-content;
   padding: 3px;

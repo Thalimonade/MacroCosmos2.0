@@ -226,7 +226,15 @@ Meteor.startup(function() {
   },
 });
 
-
+Template.reseauCollab.helpers({
+  showCollabs: function() {
+    let user = Meteor.user().profile.follows;
+    let coll = document.getElementById("myCollabs");
+    let colla = `<b>You currently follow the works of:</b> <br> ${user}`
+    //coll.innerHTML = `<b>You currently follow the works of:</b> <br> ${user}`
+    return colla
+  }
+})
 
 
 

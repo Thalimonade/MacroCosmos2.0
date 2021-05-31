@@ -49,11 +49,27 @@ p {
   text-align: center;
 }
 
+p2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+}
+
 label {
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin-left: 590px;
+}
+label2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  vertical-align: middle;
 }
 
 .btn-group button {
@@ -78,6 +94,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .Location {
@@ -85,6 +104,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .email {
@@ -92,6 +114,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 #code-select {
@@ -99,6 +124,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .phone{
@@ -106,6 +134,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .password{
@@ -113,6 +144,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .verify{
@@ -120,6 +154,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 #birthday{
@@ -127,6 +164,9 @@ label {
   border: 1px solid rgb(117, 0, 92);
   color: black;
   align-content: space-around;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .userConditions{
@@ -139,8 +179,11 @@ label {
   background: white;
 }
 
-.ButtonNS{
-  font-family: 'Times New Roman', Times, serif;
+#creer_compte{
+  border:1px solid rgb(117, 0, 92);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .p-2{
@@ -362,6 +405,7 @@ display: inline-block;
   border-radius: 10px;
 }
 
+
 #searchProfil{
 background-color: white;
 border: 1px solid rgb(117, 0, 92);
@@ -412,6 +456,9 @@ border:1px solid rgb(117, 0, 92);
 }
 
 .imageFeed{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 

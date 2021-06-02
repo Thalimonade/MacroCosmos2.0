@@ -184,10 +184,11 @@ Meteor.startup(function() {
     if (user) {
       for (let i = 0; i < user.plateformes.length; i++) {
         let element = user.plateformes[i];
-        let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
-        linktab.push(Phref);
+        //let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
+        
+        //linktab.push(Phref);
         //ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
-        return `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+       // return `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
        }
      }                             
   },

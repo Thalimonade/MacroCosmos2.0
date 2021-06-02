@@ -192,7 +192,7 @@ Template.accueilRouge.events({
 		  let element = Template.instance().prof.get()[0].profile.plateformes[i];
 		  let Phref = `<br>` + `<a href=${element[1]}>${element[0]}</a>`;
 		  linktab.push(Phref);
-		  ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
+		  //ptf.innerHTML = `Find ${Meteor.user().profile.firstName} on: <br> `+ linktab;
 		 }
 	   }
      
